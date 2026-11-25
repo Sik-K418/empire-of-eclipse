@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<meta name="theme-color" content="#15100e">
+<meta name="theme-color" content="#0a080d">
 <meta name="description" content="마왕군 중간계 동부대륙 전략실 — 시즌별 지역과 국가, 세력과 인물의 전략 브리핑을 열람하는 세계관 소개 사이트.">
 <title>일식의 제국 | 동부대륙 전략회의실 V1</title>
 <style>
@@ -206,6 +206,113 @@ body::before{opacity:1;background:
  .skip{padding:11px 13px}
 }
 
+
+/* ============================================================
+   일식의 제국 V1 · 심홍 마왕성 / 흑요석 석조 전략회의실
+   Warm brown -> obsidian, oxblood, worn pewter. Retain parchment map.
+   No structural, content, or JS changes.
+   ============================================================ */
+:root{--bg:#0a080d;--panel:#1b121a;--panel2:#261823;--panel3:#31202a;--edge:#72505b;--border:#75515d;--gold:#c4a18b;--gold-light:#ead6c3;--cream:#f2e9e6;--sub:#c7b6b8;--muted:#a18e93;--red:#b43e56;--red2:#581e32;--green:#7a8987;--shadow:0 20px 55px #020103cb}
+body{background:var(--bg);color:var(--cream)}
+body::before{background:
+radial-gradient(ellipse 50% 44% at 67% -6%,#6721394b,transparent 72%),
+radial-gradient(ellipse 40% 60% at -8% 100%,#3f182c2c,transparent 76%),
+repeating-linear-gradient(0deg,#151019 0 2px,#0b080e 2px 112px,#2a1b25 113px 115px,#0b080e 115px 228px),
+repeating-linear-gradient(90deg,transparent 0 130px,#9c6d7e11 131px 133px,transparent 134px 260px),#09070c}
+::selection{background:#822a48;color:#fff}
+.sidebar{background:linear-gradient(90deg,#060508bd,#21131e29 55%,#0008),repeating-linear-gradient(0deg,transparent 0 85px,#b594a214 86px 88px,transparent 88px 175px),linear-gradient(130deg,#23141f,#120d14 54%,#20101a);border-right:3px double #805568;box-shadow:inset -14px 0 24px #0009,9px 0 36px #0009}
+.sidebar::before{border-color:#a4788a3d;box-shadow:inset 0 0 0 4px #09050a7a}
+.emblem{border-bottom-color:#8a586c7a}
+.emblem-icon{background:radial-gradient(circle,#7c2845,#21121e 69%);color:#e8bba8;border-color:#9c6075;box-shadow:0 0 0 2px #090609,inset 0 0 16px #0008,0 0 18px #69233a2f}
+.emblem strong{color:#f1dfdc}.emblem small{color:#ca9dac}.nav-label{color:#c89dac}
+.nav button{background:linear-gradient(90deg,#3018225e,transparent);border-color:#8c61723c;color:#c8b7bc}
+.nav button svg{color:#bf8b9c}.nav button:hover{background:linear-gradient(90deg,#482334,#261722);border-color:#a15b71;color:#ffe9e7}
+.nav button.active{background:linear-gradient(90deg,#64243d,#341925 72%,#21121b);border-color:#a9697b;box-shadow:inset 0 0 0 1px #32101f,0 2px 13px #0009;color:#ffe1df}
+.nav button.active::after{color:#e4a6b3}.sidebar-bottom{border-top-color:#845568}.sidebar-bottom b{color:#d5adbb}.sidebar-bottom p{color:#ae9ca3}
+.topbar{background:repeating-linear-gradient(90deg,#c28aa00a 0 2px,transparent 2px 62px),linear-gradient(180deg,#2c1927,#1a101b 57%,#100b14);border-bottom:3px double #845467;box-shadow:0 5px 27px #0009,inset 0 -1px #b9829844}
+.topbar::after{border-bottom-color:#b8758a32}.sigil{color:#cd8498;text-shadow:0 0 16px #ae234e6b}.bread-title{color:#f3dfe3}.bread-sub{color:#bd9dab}.top-status{color:#c9a7b3}
+.led{background:#9c314e;border-color:#e09bac}.season-switch{border-color:#865c72;background:#100a12}.season-switch button{color:#c1a3ae}
+.season-switch button:hover{background:#762b463e}.season-switch button[aria-pressed=true]{background:linear-gradient(180deg,#883752,#501b35);border:1px solid #ad7186;color:#ffe3e2}
+.mobile-menu{background:#21121d;border-color:#956278;color:#ecc0cd}.content::before{color:#bb698444}
+.eyebrow{color:#d2a0ac}.eyebrow::before{background:linear-gradient(90deg,#c46e88,#9b49666a)}
+.hero-title{color:#faf0ed}.hero-title span{color:#dd9ab0}.hero-desc{color:#c3b3b9}.section-head{border-bottom-color:#78546699}
+.section-head::after{color:#c87b93;background:#0b080d}.section-head strong{color:#edd8de}.section-head small,.header-stamp{color:#ae92a0}
+.header-stamp{border-left-color:#9d5b73}.header-stamp strong{color:#dca2b2}.rule{background:linear-gradient(90deg,#975b72,#a96b854d,transparent)}
+.ch-tag{background:#54253b5c;border-color:#9e657b91;color:#e0aebd}.ch-tag.red{background:#71243f80;border-color:#ba536e;color:#f0afbf}.ch-tag.dim{background:#30202a;border-color:#78606a;color:#bcadb2}
+.stat,.summary-card,.panel,.slot-card,.info-item,.form-preview,.archive-item{background:linear-gradient(145deg,#2b1c29 0%,#211621 53%,#171018 100%);border:1px solid #795365;box-shadow:inset 0 0 0 3px #0b080e,inset 0 0 0 4px #a3718736,0 12px 26px #0008}
+.stat::after{border-color:#d391a421}.stat-top{color:#c1a8b1}.stat-main{color:#fae9e7}.stat-main b{color:#d48da3}.stat-foot{color:#a78f99}
+.summary-card::after{color:#a96b842b}.summary-card small,.slot-index,.info-item small{color:#dba3b4}
+.summary-card h3,.slot-card h3,.info-item h3,.form-preview h3,.archive-item h3,.panel h3{color:#f0d7dc}
+.summary-card p,.slot-card p,.info-item p,.panel p,.archive-item p{color:#c1aeb6}
+.text-btn,.slot-bottom{color:#e3a6b7;border-color:#9f6075}.text-btn:hover{color:#ffe3e9}
+.log-line{border-bottom-color:#8e5c713e}.log-line small{color:#cf90a4}.log-line span{color:#cbb6bd}.quote{color:#ead0d8;border-color:#b97089}
+.archive-item{border-left-color:#a56a80}.archive-num{color:#dfb0c0}
+.empty-layout{border-color:#81596e;background:linear-gradient(160deg,#2b1b29,#17101b)}.empty-icon{color:#a56a8599}
+.empty-layout h3{color:#f0d6df}.empty-layout p{color:#bdadb7}.form-preview .intel-row dd{color:#e9cad4}
+.divider-title{border-top-color:#915e7c;color:#dca8bc}.pill-button{background:#632b464d;border-color:#a26d85;color:#efcbd5}
+.map-panel{background:#1f1822;border:4px ridge #795764;box-shadow:inset 0 0 0 2px #1b0e18,0 15px 38px #000c}
+.map-panel::before{border-color:#d8a6b539;box-shadow:inset 0 0 0 4px #27151b21}
+.map-head{background:linear-gradient(180deg,#32202d,#190e19);border-bottom-color:#895c70}
+.map-head strong{color:#f1dadd}.map-head small{color:#bda1aa}
+.tool-chip{background:#281923;border-color:#865e70;color:#c3a7b2}.tool-chip.on{background:#71314a;border-color:#ae7a91;color:#f6d9e2}
+.map-wrap{background:radial-gradient(ellipse at 46% 39%,#a99a90 0%,#8d7776 52%,#54434b 100%),#766364;box-shadow:inset 0 0 100px #23131ec9,inset 0 0 0 3px #a28a86}
+.map-wrap::before{background:repeating-linear-gradient(0deg,#24161e12 0 1px,transparent 1px 25px),repeating-linear-gradient(90deg,#24161e12 0 1px,transparent 1px 29px),radial-gradient(ellipse at center,transparent 30%,#34252b9a 100%)}
+.map-wrap::after{color:#39252ec9;text-shadow:0 1px #eedcd4a4}
+.map-svg{filter:saturate(.76) brightness(.91) drop-shadow(0 5px 8px #301c276a)}
+.map-pin .pin-core{background:linear-gradient(145deg,#70253c,#32101d);border-color:#daa2b1;box-shadow:0 0 0 3px #331623a8,inset 0 0 0 3px #a3536a78,0 3px 9px #000c;color:#ffdae1}
+.map-pin small{color:#fff3e8;text-shadow:0 2px 3px #180c14,0 0 8px #27101b,1px 1px #000}
+.map-pin:hover .pin-core,.map-pin.selected .pin-core{background:linear-gradient(150deg,#b15a77,#69283f);box-shadow:0 0 0 5px #6e1d3dae,0 2px 12px #0c050d}
+.map-pin.s2 .pin-core{background:linear-gradient(160deg,#61547f,#322743);border-color:#c4b2c5}.map-pin.s2.selected .pin-core{background:#755c83}
+.map-compass{color:#4b333f;text-shadow:0 1px #e8d9cf}.map-foot{background:#231623;border-top-color:#7b5069;color:#c2a4b2}.map-foot em{color:#ddb0bc}
+.intel{background:linear-gradient(160deg,#352130,#211521 52%,#160e18);border:4px double #98677c;box-shadow:inset 0 0 0 5px #0c070f,0 16px 36px #000b}
+.intel::before{border-color:#cd90ab39}.intel::after{color:#cc779417}.intel-id{color:#d3a4b7}.intel h2{color:#f9e6e6}.intel-sub{color:#c7a5b4}
+.intel-lead{color:#d3bfc7}.intel-rows{border-top-color:#bd819b69}.intel-row{border-bottom-color:#96667b58}
+.intel-row dt{color:#bfa5b0}.intel-row dd{color:#f3d8df}
+.note-strip{background:#75364b4d;border-left-color:#bb7088;color:#edc7d4}
+.intel-action{background:linear-gradient(180deg,#71304b,#42182e);border-color:#b0738a;color:#ffe6ed;box-shadow:inset 0 1px #eba5bd42}
+.intel-action:hover{background:linear-gradient(180deg,#954965,#62233b)}
+/* Opening: weathered black iron gate, crimson magical seal */
+#intro{background:#050407}.intro-back{background:radial-gradient(ellipse 38% 43% at 50% 52%,#a3294d70,transparent 80%),linear-gradient(180deg,#28111f,#050407)}
+.intro-back::before{border-color:#77445d;box-shadow:0 0 80px #961d4959,inset 0 0 110px #1d0614ed;background:repeating-linear-gradient(90deg,transparent 0 68px,#a46b8218 69px 70px)}
+.arch{background:linear-gradient(90deg,#050407f2 0%,transparent 35%,transparent 65%,#050407f2 100%),linear-gradient(0deg,#060408e5,transparent 22%,transparent 81%,#060408e5)}
+.arch::after{border-color:#25141ed9;box-shadow:inset 0 0 0 2px #9b5e774f,inset 0 0 90px #000a}
+.door{background:repeating-linear-gradient(0deg,transparent 0 130px,#ad738a32 132px 137px,#150913 138px 142px,transparent 143px 275px),repeating-linear-gradient(90deg,#141018 0 32px,#30202b 33px 49px,#1d1521 50px 56px,#0b0911 57px 67px);border-color:#76546a;box-shadow:0 0 85px #000,inset 0 0 105px #000c}
+.door::before{border-color:#805066;box-shadow:inset 0 0 0 6px #0e0813eb,inset 0 0 0 10px #9e667c65,inset 0 0 0 14px #090710,inset 0 0 105px #000c}
+.door::after{border-color:#b28498;background:radial-gradient(circle,#25101e 0 36%,#b38396 37% 45%,#28131d 46%);box-shadow:inset 0 1px 8px #000b,0 3px 12px #000b}
+.door-crest{background:radial-gradient(circle,#63223b 27%,#210d1a 28% 42%,#ad687f 43% 47%,#160a13 48%);border-color:#d09ab0;box-shadow:0 0 0 9px #0f0810,0 0 0 12px #805168,0 0 49px #a722516b}
+.door-crest svg{color:#ebafbe}.intro-kicker{color:#e0afbd}.intro-title{color:#ffe8ee}.intro-desc{color:#dac1cd}
+.progress-track{border-color:#99576f;background:#160b16}.progress-fill{background:linear-gradient(90deg,#6e1f3c,#c06584,#edd0d7);box-shadow:0 0 13px #b54469}
+.loading-label{color:#d8aab9}.skip{border-color:#ac7488;background:#22111ddf;color:#ffe2e9}.skip:hover{background:#5f2a43;border-color:#f1b2c8}
+.page-footer{border-top-color:#785065;color:#ac8e9e}.page-footer b{color:#d9a3b6}
+@media(max-width:680px){.sidebar{border-right-color:#805568}}
+
+/* FINAL TONE · 검은 쇠/심홍 봉인/고동 금박 (핑크 광택 억제) */
+:root{--bg:#0a090b;--panel:#171216;--panel2:#21181c;--panel3:#2a1b21;--edge:#675054;--border:#69444b;--gold:#bca477;--gold-light:#e3d3b4;--cream:#efe9e1;--sub:#c4b8b3;--muted:#9b9090;--red:#a12b3c;--red2:#501824}
+body{background:#09080a}
+body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,transparent 72%),repeating-linear-gradient(0deg,#171115 0 2px,#09080b 2px 114px,#26171d 115px 116px,#09080b 116px 230px),repeating-linear-gradient(90deg,transparent 0 132px,#9072790a 133px 135px,transparent 135px 263px),#09080b}
+.sidebar{background:linear-gradient(90deg,#070609bb,#1d12162a 55%,#0008),repeating-linear-gradient(0deg,transparent 0 85px,#a58e7910 86px 88px,transparent 88px 175px),linear-gradient(130deg,#1b1216,#0e0b0f 55%,#1b1015);border-right-color:#78575c}
+.sidebar::before{border-color:#997e7344}.emblem{border-bottom-color:#7b4b55}.emblem-icon{background:radial-gradient(circle,#64202b,#1a1016 70%);border-color:#9a7166;color:#dcc3a2}.emblem strong{color:#f0e2d4}.emblem small{color:#c1a58c}.nav-label{color:#b7a28e}
+.nav button{color:#bcb0a7;border-color:#63454a55;background:linear-gradient(90deg,#2b171c58,transparent)}.nav button svg{color:#ab9688}.nav button:hover{color:#ffeada;border-color:#926568;background:linear-gradient(90deg,#371b22,#1d1419)}
+.nav button.active{color:#f3e3cf;background:linear-gradient(90deg,#581d2b,#30151c 75%,#1b1116);border-color:#98656a}.nav button.active::after{color:#c9b28a}
+.sidebar-bottom{border-top-color:#78575c}.sidebar-bottom b{color:#cbb398}
+.topbar{background:repeating-linear-gradient(90deg,#ba9c7e06 0 2px,transparent 2px 62px),linear-gradient(180deg,#26161c,#151016 57%,#0d0b10);border-bottom-color:#765054}.topbar::after{border-bottom-color:#8e6c6544}
+.sigil{color:#bda47d;text-shadow:0 0 14px #8e283444}.bread-title{color:#f3e5d8}.bread-sub{color:#ad9a91}.top-status{color:#c9b4a3}.led{background:#8d2837;border-color:#c79a92}
+.season-switch{border-color:#79535a;background:#100d10}.season-switch button{color:#bca99d}.season-switch button[aria-pressed=true]{background:linear-gradient(180deg,#7f2c3a,#4b1726);border-color:#a26b68;color:#f5e5d4}
+.hero-title{color:#f7eee3}.hero-title span{color:#c7a780}.eyebrow{color:#be9e87}.eyebrow::before{background:linear-gradient(90deg,#a96a66,#855e544d)}.section-head strong{color:#efe0d0}.section-head::after{color:#b89d7c}.header-stamp strong{color:#ceb18b}
+.stat,.summary-card,.panel,.slot-card,.info-item,.form-preview,.archive-item{background:linear-gradient(142deg,#261920,#1c151a 54%,#120e12);border-color:#6d5053;box-shadow:inset 0 0 0 3px #0a080b,inset 0 0 0 4px #9d7f7526,0 12px 25px #0008}
+.stat-main{color:#f5e7d7}.stat-main b{color:#c7a77f}.summary-card small,.slot-index,.info-item small{color:#c3a385}
+.summary-card h3,.slot-card h3,.info-item h3,.form-preview h3,.archive-item h3,.panel h3{color:#f0ddc6}.summary-card p,.slot-card p,.info-item p,.panel p,.archive-item p{color:#c2b5b0}.text-btn,.slot-bottom{color:#c8ac8b;border-color:#8e6760}
+.map-panel{border-color:#78635a}.map-panel::before{border-color:#d2b59530}.map-head{background:linear-gradient(180deg,#302027,#160f14);border-bottom-color:#7c5357}.map-head strong{color:#f1dfcb}.map-head small{color:#b4a29a}
+.tool-chip{border-color:#76575a;color:#c1b1a8}.tool-chip.on{background:#612532;border-color:#9e6b68;color:#f1e0cb}
+.map-wrap{background:radial-gradient(ellipse at 46% 39%,#a6988b 0%,#85756c 55%,#4b4141 100%),#786b63;box-shadow:inset 0 0 100px #20151ac9,inset 0 0 0 3px #948880}
+.map-pin .pin-core{background:linear-gradient(145deg,#802d3a,#3c121d);border-color:#c6a68f;color:#f5e1c9}.map-pin:hover .pin-core,.map-pin.selected .pin-core{background:linear-gradient(150deg,#a74a54,#61202d)}.map-foot{background:#1d1419;border-top-color:#745456;color:#bfae9d}.map-foot em{color:#cdb18e}
+.intel{background:linear-gradient(160deg,#2b1c23,#1b141a 55%,#110d12);border-color:#87616a}.intel::before{border-color:#a58b7b38}.intel-id{color:#c9b09b}.intel h2{color:#f6e6d3}.intel-sub{color:#baa39b}.intel-lead{color:#cabcba}.intel-row dd{color:#ecd9c7}.intel-row dt{color:#bca8a0}.note-strip{background:#5a27323d;border-left-color:#a9585e;color:#dcb9ad}.intel-action{background:linear-gradient(180deg,#752d3a,#451721);border-color:#a66f6a;color:#f7e5cf}.intel-action:hover{background:linear-gradient(180deg,#914251,#61202d)}
+#intro{background:#050506}.intro-back{background:radial-gradient(ellipse 40% 45% at 50% 52%,#8f1f324d,transparent 80%),linear-gradient(180deg,#1a0d13,#050506)}.intro-back::before{border-color:#74484c;box-shadow:0 0 80px #9e23364c,inset 0 0 110px #1a0810ec}
+.door{border-color:#745258;background:repeating-linear-gradient(0deg,transparent 0 130px,#90717724 132px 137px,#12090e 138px 142px,transparent 143px 275px),repeating-linear-gradient(90deg,#121016 0 32px,#2d2227 33px 49px,#1a161b 50px 56px,#0b0910 57px 67px)}
+.door::before{border-color:#77605b}.door::after{border-color:#b8a08a;background:radial-gradient(circle,#1d1419 0 36%,#b19a85 37% 45%,#25171c 46%)}
+.door-crest{background:radial-gradient(circle,#5e1d2c 27%,#190d13 28% 42%,#aa7970 43% 47%,#130b10 48%);border-color:#bb9482;box-shadow:0 0 0 9px #0d090d,0 0 0 12px #72555a,0 0 49px #9d253653}.door-crest svg{color:#d7b59a}
+.intro-title{color:#f7e9db}.intro-kicker{color:#c5a58a}.intro-desc{color:#d1beb4}.progress-track{border-color:#956568}.progress-fill{background:linear-gradient(90deg,#722431,#a95153,#d0b190);box-shadow:0 0 12px #a13c47}.loading-label{color:#baa393}.skip{color:#f0dcc6;border-color:#a47b78;background:#1b1217dc}.skip:hover{background:#4d222a;border-color:#c1a28c}
+
 </style>
 </head>
 <body>
@@ -263,7 +370,7 @@ const SECTORS={
 let currentSeason=1,currentPage='command',selectedIndex=0;
 const $=id=>document.getElementById(id);
 const MAP_SVG=`<svg class="map-svg" viewBox="0 0 700 490" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="동부대륙의 임시 윤곽 지도. 정확한 경계는 확정되지 않았습니다.">
-  <defs><linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#837a50"/><stop offset=".45" stop-color="#696b47"/><stop offset="1" stop-color="#58583d"/></linearGradient><linearGradient id="coast" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#edcd87"/><stop offset="1" stop-color="#cfa96b"/></linearGradient><filter id="soft"><feGaussianBlur stdDeviation="4"/></filter></defs>
+  <defs><linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#586164"/><stop offset=".45" stop-color="#434d55"/><stop offset="1" stop-color="#333940"/></linearGradient><linearGradient id="coast" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c5b09c"/><stop offset="1" stop-color="#a08d83"/></linearGradient><filter id="soft"><feGaussianBlur stdDeviation="4"/></filter></defs>
   <g opacity=".55" fill="none" stroke="#725632" stroke-width=".8"><path d="M0 80H700M0 160H700M0 240H700M0 320H700M0 400H700M100 0V490M200 0V490M300 0V490M400 0V490M500 0V490M600 0V490"/><circle cx="360" cy="246" r="169"/><circle cx="360" cy="246" r="230"/><path d="M360 0V490M0 246H700"/></g>
   <path d="M214 43 258 31 286 47 321 31 351 60 403 66 430 91 470 101 498 146 487 179 514 205 492 235 517 263 494 299 484 340 452 358 436 403 391 408 364 442 319 414 297 428 250 405 224 356 193 354 165 316 182 287 155 254 180 223 174 180 199 164 179 123 198 90Z" fill="url(#land)" stroke="url(#coast)" stroke-width="2.5"/>
   <path d="m267 65 25 33 42 10 31 37-13 34 32 37-12 25 22 38-16 49-20 44m-131-233 29 20 5 31 42 22 15 28-29 46 19 38 10 31m-104-155 47-11 19 29 37 11 27 27m-19-215 12 38-15 46 30 29 21 55" fill="none" stroke="#d9b87d" stroke-width="1" opacity=".4"/>
