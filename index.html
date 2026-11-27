@@ -460,12 +460,88 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
 .season-summary.single{grid-template-columns:minmax(0,1fr)}
 .season-summary.single .summary-card{padding:26px 28px}
 @media(max-width:790px){.season-only{font-size:10px;padding:9px 10px;letter-spacing:.3px}}
+
+/* ========================= ECLIPSE · SEASON 01 · IMAGE SLOTS ===================== */
+.media-slot{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:9px;color:#b89a8e;text-align:center;background:radial-gradient(circle at 52% 27%,#873a3330,transparent 54%),repeating-linear-gradient(45deg,#b5816913 0 1px,transparent 1px 17px),linear-gradient(135deg,#20161d,#0f131a 73%);border:1px solid #7d5e5e5e;background-size:cover;background-position:center}
+.media-slot::before{content:'';position:absolute;inset:10px;border:1px solid #af978330;pointer-events:none;z-index:2}
+.media-slot .slot-await{position:relative;z-index:1;max-width:90%;word-break:keep-all}
+.media-slot strong.slot-await{font-family:Georgia,'Noto Serif KR',serif;letter-spacing:.2px;font-size:18px;color:#e9d1c0;font-weight:500}
+.media-slot small.slot-await,.media-slot span.slot-await{font:10px/1.6 ui-monospace,monospace;letter-spacing:1.2px;color:#a9847b}
+.media-slot.has-image{background-image:linear-gradient(0deg,#130a10aa 0%,#130a1033 65%,#130a1030 100%),var(--uploaded-image);background-size:cover;background-position:center}
+.media-slot.has-image .slot-await{display:none}
+/* Intro artwork slot goes behind the existing iron doors */
+#intro .intro-back.has-image{background-image:linear-gradient(0deg,#060305c7,#0a030a66),var(--uploaded-image);background-size:cover;background-position:center}
+/* Images on headings are optional: preserve readable titles over them */
+.fac-titleblock.has-image{background-image:linear-gradient(90deg,#0d0b10f5,#0d0b10ad),var(--uploaded-image);background-position:center;background-size:cover;padding-left:clamp(18px,3vw,42px);padding-right:20px}
+/* Command center intentionally has no clickable map or duplicate national dossier */
+#page-command .command-header{margin-bottom:24px}
+.council-hero{position:relative;min-height:400px;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(330px,.86fr);border:1px solid #846d6770;background:#101015;overflow:hidden;margin-bottom:22px}
+.council-hero-media{min-height:400px;border:0;border-right:1px solid #89625c55}
+.council-hero-media strong.slot-await{font-size:clamp(18px,2.1vw,29px)}
+.council-hero-media:not(.has-image)::after{content:'✠';position:absolute;z-index:0;color:#b76d683a;font-size:240px;transform:rotate(-10deg);pointer-events:none}
+.council-hero-text{padding:clamp(28px,3.7vw,57px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:radial-gradient(circle at 100% 0%,#4b233142,transparent 65%)}
+.council-hero-text>span,.council-notice>small{font:10px ui-monospace,monospace;letter-spacing:2px;color:#bb8980}
+.council-hero-text h2{font:500 clamp(27px,3.2vw,46px)/1.32 Georgia,'Noto Serif KR',serif;color:#f0e4d7;word-break:keep-all;margin:22px 0}
+.council-hero-text p{font-size:13px;line-height:2;color:#b9aaa6;margin:0 0 25px;word-break:keep-all}
+.council-main-action,.council-notice button{border:1px solid #ad696b;background:#542c3499;color:#f6dfd1;padding:13px 18px;text-align:left;font:600 12px/1.5 inherit;cursor:pointer;transition:background .2s,border-color .2s}
+.council-main-action:hover,.council-notice button:hover{background:#824148;border-color:#e0b2a2}
+.council-main-action span{margin-left:15px}
+.council-stats{margin:0 0 34px}
+.council-destinations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:17px 0 37px}
+.council-destination{display:flex;flex-direction:column;align-items:flex-start;min-height:260px;background:linear-gradient(147deg,#271a22,#0e1218);border:1px solid #8f665d60;text-align:left;padding:24px 20px;color:#e8dacc;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}
+.council-destination:hover{transform:translateY(-4px);border-color:#d39a88;background:linear-gradient(147deg,#452a34,#111016)}
+.council-destination small{font:9px ui-monospace,monospace;color:#9b746e;letter-spacing:1.1px}
+.council-destination .dest-glyph{font:38px Georgia,serif;color:#b87f72;margin:18px 0 11px}
+.council-destination h3{font:500 23px/1.35 Georgia,'Noto Serif KR',serif;margin:0 0 9px}
+.council-destination p{font-size:12px;line-height:1.8;color:#aca29f;word-break:keep-all;margin:0 0 17px}
+.council-destination strong{font-size:11px;color:#e9b5a2;margin-top:auto}
+.council-bottom{display:grid;grid-template-columns:1.2fr .8fr;gap:15px}
+.council-notice{border-top:1px solid #b184725b;background:#17141b;padding:28px;display:flex;flex-direction:column;align-items:flex-start}
+.council-notice h3{font:500 26px Georgia,'Noto Serif KR',serif;margin:17px 0 8px;color:#e6d6c9}
+.council-notice p{font-size:13px;color:#baaaa5;line-height:2;max-width:650px;flex:1;margin:0 0 23px}
+.council-notice-media{min-height:260px}
+/* Atlas is the only interactive map page */
+#page-continent .atlas-masthead{min-height:180px;margin:0 0 25px}
+#page-continent .atlas-only{display:block}
+#page-continent .atlas-only>#continentMap,#page-continent .atlas-only>#continentIntel{width:100%}
+#page-continent .atlas-only>#continentIntel{margin-top:21px}
+#page-continent .atlas-only .map-wrap{aspect-ratio:1.92}
+#page-continent .atlas-only .map-svg{width:100%;height:100%}
+#page-continent .atlas-only .map-panel{max-width:none}
+#page-continent .map-wrap.has-image{background-image:linear-gradient(#170d133a,#140a1447),var(--uploaded-image);background-size:cover;background-position:center}
+#page-continent .map-wrap.has-image .map-svg>rect:first-of-type{opacity:.10}
+#page-continent .map-wrap.has-image .map-svg{opacity:.83}
+.section-cover{min-height:190px;margin:0 0 20px}
+.nation-card{padding-top:0;overflow:hidden}
+.nation-card-image{height:170px;margin:0 -1px 15px;border-left:0;border-right:0;border-top:0}
+.nation-card-image .slot-await{font-size:11px}
+.emblem-img{display:inline-flex;justify-content:center;align-items:center;width:55px;height:55px;font-size:33px;color:#d2a8a1}
+.emblem-img.has-image{color:transparent}
+#page-factions .fac-hero-upload{position:absolute;inset:0;z-index:-2;display:none;border:0}
+#page-factions .fac-hero-upload.has-image{display:block}
+#page-factions .fac-hero:has(.fac-hero-upload.has-image) .fac-scene{opacity:0}
+#page-factions .fac-scenery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 0}
+#page-factions .fac-scene-photo{height:255px}
+#page-factions .fac-character{overflow:hidden}
+#page-factions .fac-person-photo{width:100%;height:210px;margin-bottom:18px}
+.figure-group .figure-portraits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0}
+.figure-group .figure-person{min-width:0;color:#ebd9d0}
+.figure-portrait{height:150px;margin-bottom:8px}
+.figure-portrait .slot-await{font-size:8px}
+.figure-group .figure-person b{display:block;font:500 13px/1.6 Georgia,'Noto Serif KR',serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.figure-group .figure-person small{font-size:10px;color:#a98f88;overflow-wrap:anywhere;line-height:1.4}
+.figure-group .figure-map-link{display:block;width:100%;color:#d8a49b;border:1px solid #8b6b6d;background:#261821;padding:10px;cursor:pointer;text-align:left;font-size:11px}
+.figure-group .figure-map-link:hover{background:#5c2a39;color:#fff}
+@media(max-width:1160px){.council-destinations{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.council-hero{grid-template-columns:1fr}.council-hero-media{min-height:270px}.council-hero-text{padding:26px 23px 31px}.council-bottom{grid-template-columns:1fr}.council-notice-media{min-height:180px}#page-continent .atlas-only .map-wrap{aspect-ratio:1.32}}
+@media(max-width:530px){.council-destinations{grid-template-columns:1fr 1fr;gap:8px}.council-destination{padding:16px 13px;min-height:255px}.council-destination h3{font-size:18px}.council-destination .dest-glyph{margin:14px 0 10px;font-size:29px}.council-destination p{font-size:11px}.council-hero-media{min-height:210px}.council-hero-media:not(.has-image)::after{font-size:150px}#page-continent .atlas-masthead{min-height:120px}#page-factions .fac-scenery{grid-template-columns:1fr}#page-factions .fac-scene-photo{height:200px}#page-factions .fac-person-photo{height:130px}.figure-portrait{height:100px}.nation-card-image{height:130px}}
+
 </style>
 </head>
 <body>
 <!-- 첫 진입: 마왕성의 흑철 관문 -->
 <div id="intro" role="dialog" aria-label="마왕군 전략실 입장 연출">
-  <div class="intro-back"></div><div class="arch"></div>
+  <div class="intro-back" data-image-slot="introBackdrop"></div><div class="arch"></div>
   <div class="door left"></div><div class="door right"></div>
   <div class="door-crest" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 19 27 29 40 8 53 29 63 19 58 54 40 67 22 54Z"/><path d="m27 38 13-13 13 13-13 16Z"/><path d="M40 8v59M20 52h40"/></svg></div>
   <div class="intro-content"><div class="intro-kicker">EMPIRE OF ECLIPSE · WAR COUNCIL</div><h1 class="intro-title">일식의 제국</h1><div class="intro-desc">봉인된 흑철문 너머, 중간계의 전략회의실이 열립니다.</div><div class="progress-track"><div id="introProgress" class="progress-fill"></div></div><div class="loading-label"><span id="progressText">왕성의 관문을 개방하는 중</span><span id="progressNumber">000%</span></div></div>
@@ -490,25 +566,30 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
     <header class="topbar"><button class="mobile-menu" id="mobileMenu" type="button" aria-label="메뉴 열기">☰</button><div class="breadcrumb"><span class="sigil">✦</span><div><span class="bread-title" id="topTitle">마왕군 최고 전략회의실</span><span class="bread-sub">MIDDLE WORLD / EASTERN CONTINENT</span></div></div><div class="top-right"><span class="top-status"><i class="led"></i> 왕성 문서 열람</span><div class="season-only" aria-label="시즌 1 전용 홈페이지">SEASON 01 · 동부대륙</div></div></header>
     <main class="content">
       <section class="page active" id="page-command">
-        <div class="command-header"><div><div class="eyebrow">THE WAR COUNCIL · 동부 전선</div><h1 class="hero-title">중간계, <span>동부대륙</span></h1><p class="hero-desc">마왕군 전략회의실에 오신 것을 환영합니다. 이곳은 중간계 동부대륙의 국가와 세력, 주요 인물을 분석하는 작전 기록실입니다. 지도에서 조사할 지역을 선택하고 해당 브리핑을 열람하십시오.</p></div><div class="header-stamp">IMPERIAL WAR COUNCIL<strong>EASTERN FRONT</strong>왕실 군략도 · V1 / 초안</div></div>
-        <div class="overview-stats"><div class="stat"><div class="stat-top">작전 대상</div><div class="stat-main">동부대륙</div><div class="stat-foot">WESTERN FRONT · NOT INCLUDED</div></div><div class="stat"><div class="stat-top">현재 작전</div><div class="stat-main" id="statSeason">SEASON <b>01</b></div><div class="stat-foot">시즌 1 전용 · 독립 작전 기록</div></div><div class="stat"><div class="stat-top">확정 국가 기록</div><div class="stat-main"><b>8</b>개국</div><div class="stat-foot">8개 국가 · 기본 정보 등록</div></div></div>
-        <div class="section-head"><strong>동부대륙 전술 지도</strong><small>REGION · WAR COUNCIL SCROLL</small></div>
-        <div class="strategy-grid"><div id="commandMap"></div><div id="commandIntel"></div></div>
-        <div class="season-summary single"><article class="summary-card" data-index="Ⅰ"><small>CAMPAIGN FILE / SEASON 01</small><h3>시즌 1 · 동부대륙 작전 기록</h3><p>동부대륙의 8개 국가, 세력과 핵심 인물을 분석합니다. 실제 영토를 선택하면 해당 국가의 작전 브리핑이 펼쳐집니다. 이 홈페이지에는 시즌 1 기록만 수록합니다.</p><button class="text-btn" type="button" id="openEastArchive">동부대륙 8개국 작전 지도 열기 ↗</button></article></div>
-        <div class="lower-grid"><article class="panel"><h3>전략실 이용 안내</h3><div class="log-line"><small>01 / MAP</small><span>중앙의 큰 지도에서 국가 영토를 누르면 선택 영역이 빛나고, 지도 아래 상세 보고서가 펼쳐집니다.</span></div><div class="log-line"><small>02 / DOSSIER</small><span>국가를 선택하면 지리, 군사와 정복 이후의 전략적 이점을 한 번에 확인할 수 있습니다.</span></div><div class="log-line"><small>03 / ARCHIVE</small><span>좌측 메뉴에서 국가, 세력, 인물 및 세계관 설정을 확인할 수 있습니다.</span></div></article><article class="panel"><h3>사령부 공지</h3><p>이 V1 지도는 8개 국가의 상대 위치를 바탕으로 구성한 <b style="color:#d1b88e">군략도</b>입니다. 8개 국가의 상대적 위치는 원본 설정을 반영했으며, 국경 윤곽은 연출을 위한 임시 도식입니다. 정식 지도와 국경은 향후 교체할 수 있습니다.</p><p style="color:#c19b6d">서부대륙 자료는 이번 버전에 포함하지 않습니다.</p></article></div>
+        <div class="command-header"><div><div class="eyebrow">THE BLACK THRONE · IMPERIAL WAR COUNCIL</div><h1 class="hero-title">마왕군 <span>전략회의실</span></h1><p class="hero-desc">왕좌의 명령이 내려오면 이곳에서 전쟁의 모든 기록이 모입니다. 먼저 작전 현황을 확인하고, 각 자료실에서 동부대륙의 국가·군사·인물 정보를 열람하십시오.</p></div><div class="header-stamp">EMPIRE OF ECLIPSE<strong>WAR COUNCIL</strong>시즌 1 · 동부대륙 전선</div></div>
+        <div class="council-hero"><div class="council-hero-media media-slot" data-image-slot="councilHero" aria-label="전략회의실 대표 이미지 교체 영역"><span class="slot-await">IMAGE SLOT 01</span><strong class="slot-await">마왕군 전략회의실 대표 이미지</strong><small class="slot-await">IMAGE_URLS.councilHero</small></div><div class="council-hero-text"><span>WAR COUNCIL · COMMAND CHAMBER</span><h2>동부의 여덟 왕국,<br>하나의 왕좌 아래.</h2><p>신성 제국부터 백룡의 성역까지. 여덟 국가의 정찰 기록을 취합했습니다. 이곳은 지도가 아닌, 각 작전 보고서로 이동하는 <b>최고 사령부</b>입니다.</p><button type="button" class="council-main-action" data-council-nav="continent">동부대륙 지도로 이동 <span>↗</span></button></div></div>
+        <div class="overview-stats council-stats"><div class="stat"><div class="stat-top">CURRENT CAMPAIGN</div><div class="stat-main">시즌 <b>01</b></div><div class="stat-foot">동부대륙 전선 · 독립 기록</div></div><div class="stat"><div class="stat-top">INTELLIGENCE FILES</div><div class="stat-main"><b>08</b>개 국가</div><div class="stat-foot">동부대륙 국가 자료 확보</div></div><div class="stat"><div class="stat-top">KEY PERSONNEL</div><div class="stat-main"><b>24</b>명</div><div class="stat-foot">각국 핵심 인물 · 3명씩</div></div></div>
+        <div class="section-head"><strong>사령부 작전 자료실</strong><small>SELECT AN ARCHIVE / 작전 항목을 선택하십시오</small></div>
+        <div class="council-destinations">
+          <button type="button" class="council-destination" data-council-nav="continent"><small>01 / TERRITORIAL ATLAS</small><span class="dest-glyph">✥</span><h3>동부대륙 지도</h3><p>여덟 국가의 영토를 눌러 위치와 국가별 브리핑을 확인합니다.</p><strong>전략 지도 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-council-nav="nations"><small>02 / COUNTRY CHRONICLES</small><span class="dest-glyph">♜</span><h3>국가 기록</h3><p>각 국가의 수도, 문명과 지리, 기본 설정을 살펴봅니다.</p><strong>국가 기록 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-council-nav="factions"><small>03 / MILITARY DOSSIER</small><span class="dest-glyph">⚔</span><h3>세력 분석</h3><p>군사력, 내부 균열과 정복 이후 전략적 변화를 분석합니다.</p><strong>세력 분석 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-council-nav="figures"><small>04 / PERSONNEL ARCHIVE</small><span class="dest-glyph">♛</span><h3>핵심 인물</h3><p>동부대륙 각국의 핵심 인물과 소속 세력을 확인합니다.</p><strong>핵심 인물 열람 ↗</strong></button>
+        </div>
+        <div class="council-bottom"><div class="council-notice"><small>WAR DESK / 전선 현황</small><h3>시즌 1 — 동부대륙</h3><p>현재 등록된 국가는 여덟 개입니다. 지도상의 국경은 임시 작전 도식으로, 실제 지리와 설정에 맞춰 향후 보완할 수 있습니다. 서부대륙과 시즌 2는 본 사이트에서 다루지 않습니다.</p><button type="button" data-council-nav="archive">중간계 기록보관실 열기 ↗</button></div><div class="council-notice-media media-slot" data-image-slot="councilOrders"><span class="slot-await">IMAGE SLOT 02</span><strong class="slot-await">회의실 보조 일러스트 / 작전 문서</strong><small class="slot-await">IMAGE_URLS.councilOrders</small></div></div>
       </section>
-      <section class="page" id="page-continent"><div class="page-head"><div class="eyebrow">CARTOGRAPHIC ARCHIVE / EAST</div><h1 class="hero-title">동부대륙 <span>전략 지도</span></h1><p class="hero-desc">동부대륙 전역에 흩어진 8개 국가의 영토를 선택해 보세요. 선택한 국가가 강조되고 바로 아래에서 군사·지리·인물·전략 정보를 열람할 수 있습니다.</p></div><div class="strategy-grid"><div id="continentMap"></div><div id="continentIntel"></div></div><div class="rule"></div><div class="section-head"><strong>동부대륙 군략도 안내</strong><small>SEASON 01 · EASTERN ARCHIVE</small></div><div class="info-list"><div class="info-item"><small>01 / MAP SELECTION</small><h3>8개 국가 영토 선택</h3><p>각 영토를 누르면 선택한 국가가 강조되고 아래쪽에 해당 국가의 상세 브리핑이 나타납니다.</p></div><div class="info-item"><small>02 / INTELLIGENCE</small><h3>시즌 1 국가 기록</h3><p>국가별 수도, 문명, 군사 체계, 전략적 약점과 주요 인물을 열람합니다. 국경 윤곽은 V1 임시 도식입니다.</p></div></div></section>
-      <section class="page" id="page-nations"><div class="page-head"><div class="eyebrow">POLITICAL INTELLIGENCE</div><h1 class="hero-title">국가 <span>기록</span></h1><p class="hero-desc">원본 세계관에서 확정된 8개 국가의 개요입니다. 카드를 누르면 지도와 해당 국가의 상세 전략 브리핑으로 이동합니다.</p></div><div class="section-head"><strong id="nationHeading">동부대륙 8개국 · 시즌 1</strong><small>COUNTRY FILES / SEASON 01</small></div><div class="slots-grid" id="nationSlots"></div><div class="divider-title">국가 기록 안내</div><div class="record-shell"><div class="form-preview"><h3>지도 브리핑에서 확인할 항목</h3><p class="section-explain">영토를 선택하면 지리·기후·문명·군사·취약점·주요 인물·거점·전략적 이점이 한눈에 펼쳐집니다.</p></div><div class="form-preview"><h3>시즌 1 기록 적용 기준</h3><p class="section-explain">이 사이트에는 동부대륙 8개국의 시즌 1 소개만 수록하며, 확인되지 않은 국경 변화나 사건은 임의로 작성하지 않았습니다.</p></div></div></section>
+      <section class="page" id="page-continent"><div class="page-head"><div class="eyebrow">CARTOGRAPHIC ARCHIVE / EAST</div><h1 class="hero-title">동부대륙 <span>전략 지도</span></h1><p class="hero-desc">동부대륙 전역에 흩어진 8개 국가의 영토를 선택해 보세요. 선택한 국가가 강조되고 바로 아래에서 군사·지리·인물·전략 정보를 열람할 수 있습니다.</p></div><div class="atlas-masthead media-slot" data-image-slot="continentHeader"><span class="slot-await">IMAGE SLOT 03</span><strong class="slot-await">동부대륙 대표 전경</strong><small class="slot-await">IMAGE_URLS.continentHeader</small></div><div class="strategy-grid atlas-only"><div id="continentMap"></div><div id="continentIntel"></div></div><div class="rule"></div><div class="section-head"><strong>동부대륙 군략도 안내</strong><small>SEASON 01 · EASTERN ARCHIVE</small></div><div class="info-list"><div class="info-item"><small>01 / MAP SELECTION</small><h3>8개 국가 영토 선택</h3><p>각 영토를 누르면 선택한 국가가 강조되고 아래쪽에 해당 국가의 상세 브리핑이 나타납니다.</p></div><div class="info-item"><small>02 / INTELLIGENCE</small><h3>시즌 1 국가 기록</h3><p>국가별 수도, 문명, 군사 체계, 전략적 약점과 주요 인물을 열람합니다. 국경 윤곽은 V1 임시 도식입니다.</p></div></div></section>
+      <section class="page" id="page-nations"><div class="page-head"><div class="eyebrow">POLITICAL INTELLIGENCE</div><h1 class="hero-title">국가 <span>기록</span></h1><p class="hero-desc">원본 세계관에서 확정된 8개 국가의 개요입니다. 카드를 누르면 지도와 해당 국가의 상세 전략 브리핑으로 이동합니다.</p></div><div class="section-head"><strong id="nationHeading">동부대륙 8개국 · 시즌 1</strong><small>COUNTRY FILES / SEASON 01</small></div><div class="section-cover media-slot" data-image-slot="nationsHeader"><span class="slot-await">NATION ARCHIVE · 대표 이미지</span><small class="slot-await">IMAGE_URLS.nationsHeader</small></div><div class="slots-grid" id="nationSlots"></div><div class="divider-title">국가 기록 안내</div><div class="record-shell"><div class="form-preview"><h3>지도 브리핑에서 확인할 항목</h3><p class="section-explain">영토를 선택하면 지리·기후·문명·군사·취약점·주요 인물·거점·전략적 이점이 한눈에 펼쳐집니다.</p></div><div class="form-preview"><h3>시즌 1 기록 적용 기준</h3><p class="section-explain">이 사이트에는 동부대륙 8개국의 시즌 1 소개만 수록하며, 확인되지 않은 국경 변화나 사건은 임의로 작성하지 않았습니다.</p></div></div></section>
       <section class="page" id="page-factions">
   <div class="fac-topline"><span>IMPERIAL WAR COUNCIL <em>/</em> EASTERN CONTINENT</span><span>ARCHIVE NO. 008 — FACTION DOSSIERS</span></div>
-  <div class="fac-titleblock"><div class="eyebrow">마왕군 비밀 전략보고 · 여덟 국가의 기록</div><h1>세력의 <i>민낯</i>을<br>들여다보다.</h1><p>동부대륙을 지배하는 여덟 국가. 그들이 쌓아 올린 권력, 지키려는 가치, 견고한 방어선과 그 안에 난 균열까지. 국가를 선택하여 작전 보고서를 펼치십시오.</p></div>
+  <div class="fac-titleblock" data-image-slot="factionsHeader"><div class="eyebrow">마왕군 비밀 전략보고 · 여덟 국가의 기록</div><h1>세력의 <i>민낯</i>을<br>들여다보다.</h1><p>동부대륙을 지배하는 여덟 국가. 그들이 쌓아 올린 권력, 지키려는 가치, 견고한 방어선과 그 안에 난 균열까지. 국가를 선택하여 작전 보고서를 펼치십시오.</p></div>
   <div class="fac-pick-head"><span>SELECT A FACTION <b>08</b></span><small>국가 문장을 선택하면 아래 보고서가 바뀝니다</small></div>
   <div class="fac-picker" id="factionCards" aria-label="국가별 세력 선택"></div>
   <div id="factionDetail" class="fac-detail" aria-live="polite"></div>
   <p class="fac-bottom-note" id="factionSeasonText">시즌 1 · 동부대륙 8개 국가의 세력과 전략 정보를 열람합니다.</p>
 </section>
-      <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 주요 인물 24명을 국가별로 소개합니다. 국가를 선택하면 지도에서 소속 국가와 작전 정보를 확인할 수 있습니다.</p></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">국가별 핵심 인물을 확인할 수 있습니다.</p></section>
-      <section class="page" id="page-archive"><div class="page-head"><div class="eyebrow">LORE ARCHIVE / MIDDLE WORLD</div><h1 class="hero-title">중간계 <span>기록보관실</span></h1><p class="hero-desc">마왕 시뮬레이터의 세계관을 자연스럽게 소개하는 기록실입니다. 아래는 중간계 및 동부대륙 설정을 나중에 추가할 수 있도록 마련한 기본 구조입니다.</p></div><div class="quote">“세계를 이해하는 것은, 지도를 펼치는 일에서 시작된다.”</div><div class="archive-scroll"><div class="archive-item"><div class="archive-num">I</div><div><h3>중간계의 개요</h3><p>중간계가 어떤 세계인지, 그 역사와 주요 무대에 대한 소개가 들어갈 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">II</div><div><h3>동부대륙의 역사</h3><p>동부대륙의 형성과 시대별 사건, 국가 간 흐름을 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">III</div><div><h3>시즌 1 · 주요 사건</h3><p>시즌 1의 배경과 등장 국가 및 중요한 사건의 흐름을 소개합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">IV</div><div><h3>동부대륙 주요 세력</h3><p>8개국의 정치 세력, 군사 조직과 동맹 관계를 추후 보강할 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">V</div><div><h3>종족 · 문화 · 신앙</h3><p>세계관에 존재하는 종족과 문화권, 신앙과 생활 양식에 관한 자료를 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div></div></section>
+      <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 주요 인물 24명을 국가별로 소개합니다. 국가를 선택하면 지도에서 소속 국가와 작전 정보를 확인할 수 있습니다.</p></div><div class="section-cover media-slot" data-image-slot="figuresHeader"><span class="slot-await">KEY PERSONNEL · 대표 이미지</span><small class="slot-await">IMAGE_URLS.figuresHeader</small></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">국가별 핵심 인물을 확인할 수 있습니다.</p></section>
+      <section class="page" id="page-archive"><div class="page-head"><div class="eyebrow">LORE ARCHIVE / MIDDLE WORLD</div><h1 class="hero-title">중간계 <span>기록보관실</span></h1><p class="hero-desc">마왕 시뮬레이터의 세계관을 자연스럽게 소개하는 기록실입니다. 아래는 중간계 및 동부대륙 설정을 나중에 추가할 수 있도록 마련한 기본 구조입니다.</p></div><div class="section-cover media-slot" data-image-slot="archiveHeader"><span class="slot-await">WORLD LORE · 대표 이미지</span><small class="slot-await">IMAGE_URLS.archiveHeader</small></div><div class="quote">“세계를 이해하는 것은, 지도를 펼치는 일에서 시작된다.”</div><div class="archive-scroll"><div class="archive-item"><div class="archive-num">I</div><div><h3>중간계의 개요</h3><p>중간계가 어떤 세계인지, 그 역사와 주요 무대에 대한 소개가 들어갈 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">II</div><div><h3>동부대륙의 역사</h3><p>동부대륙의 형성과 시대별 사건, 국가 간 흐름을 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">III</div><div><h3>시즌 1 · 주요 사건</h3><p>시즌 1의 배경과 등장 국가 및 중요한 사건의 흐름을 소개합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">IV</div><div><h3>동부대륙 주요 세력</h3><p>8개국의 정치 세력, 군사 조직과 동맹 관계를 추후 보강할 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">V</div><div><h3>종족 · 문화 · 신앙</h3><p>세계관에 존재하는 종족과 문화권, 신앙과 생활 양식에 관한 자료를 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div></div></section>
       <footer class="page-footer"><span>EMPIRE OF ECLIPSE · EASTERN WAR COUNCIL</span><span><b>V1 · 동부대륙 8개국 반영</b> / 선택형 전략 지도 · 국경 도식은 임시</span></footer>
     </main>
   </div>
@@ -518,6 +599,118 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
 // 제국 설정 원본.txt의 공개 가능한 지정학·역사·전력·인물 정보를 바탕으로 구성한 동부대륙 기록.
 // 국경의 세부 형상은 V1 지도 연출용으로 제작한 가상 도식이며, 사용자 원본에서 확정한 것은 국가별 방향/지형입니다.
 const NATIONS=[{"id":"luminus","name":"루미나스 신성제국","short":"루미나스","kind":"신정 제국 · 인간","tag":"여신의 성광과 교황청","zone":"동부대륙 서부","capital":"성도 루미나스","px":316,"py":522,"tone":"#82745e","icon":"✠","intro":"빛의 여신을 섬기는 신정 제국. 신성력이 여성에게 집중되어 대성녀의 교황청과 모계 귀족원이 권력을 양분합니다.","geo":"서부 고원과 황금 평원, 성천이 흐르는 구릉지. 온화한 사계절과 순례 가도, 성수 수로, 치유원과 귀족 장원이 발달했습니다.","civ":"치유·정화·축복·신성 결계에 특화된 신정 문명. 교황청, 여성 대귀족이 주도하는 귀족원, 전투 수녀단이 핵심입니다.","military":"국경 요새, 성소 결계망, 전투 수녀단과 성기사단. 개인 무력과 신앙적 결속이 강합니다.","weakness":"교황청과 귀족원 간 권력 암투, 계층 간 불만, 경직된 지휘 체계가 내부 균열입니다.","leaders":"대성녀 셀레스티아 · 성기사단장 발레리아 · 여공작 엘레오노라","places":"여신의 대성당 · 귀족원 대의사당 · 대수녀원·신학교 · 성기사단 본부","resources":"황금 밀·성수 약초·치유 인프라·신성 결계 기술","benefit":"치유·성소 인프라 활용, 타락한 발키리 전력 편입, 인간권 신앙 체계에 대한 전략적 영향력","faction":"교황청 / 모계 귀족원 / 성기사단 / 전투 수녀단","paths":"M 190 331 L253 412 375 455 447 403 500 477 489 543 565 607 500 678 405 682 329 655 246 606 184 555 180 472 146 418 Z"},{"id":"astria","name":"아스트리아 대제국","short":"아스트리아","kind":"패권 제국 · 인간","tag":"기사도와 실전 마법","zone":"동부대륙 중앙","capital":"황도 아스트리아","px":741,"py":482,"tone":"#887064","icon":"♛","intro":"비옥한 중앙 대평원과 대하를 장악한 인간 진영 최대 제국. 기사도의 오러 검술과 실전 마법을 균형 있게 발전시켰습니다.","geo":"광대한 중앙 평원, 대하 유역, 사방으로 뻗은 교역로. 곡창지대·명마 목장·포도주 산지가 풍부합니다.","civ":"황실과 대귀족 가문, 황립 사관학교, 거대 상단이 얽힌 풍요로운 대도시 문명입니다.","military":"성휘기사단, 제국 근위대, 오러와 마법을 겸비한 정규 병력. 전면전과 병력 규모가 인간 진영 최고 수준입니다.","weakness":"장기간의 평화로 심화된 황실파·귀족파·기사단 수뇌부의 파벌 암투, 천연 방벽이 적은 평원 국경이 약점입니다.","leaders":"제1황녀 이리나 · 성휘기사단장 레오나 · 대공작 영애 세실리아","places":"황금의 황궁 · 제국 개선 광장 · 황도 대극장 · 황립 사관학교 · 성휘기사단 본부","resources":"곡물·명마·인구·보석·포도주·대륙 교역망","benefit":"황도 교역망과 사치품 공급 장악, 정예 흑휘 기사단 편입, 원정군 사기·보급 기반 강화","faction":"황실 / 대귀족 가문 / 성휘기사단 / 황립 사관학교 / 거대 상단","paths":"M 623 356 L666 285 778 255 854 283 951 275 971 372 1064 442 1034 527 1082 603 983 660 893 638 852 705 738 678 667 702 565 607 489 543 500 477 566 403 Z"},{"id":"etheria","name":"에테리아 마법왕국","short":"에테리아","kind":"마법 왕국 · 인간","tag":"마탑·연금술·공간 전이","zone":"동부대륙 동남부","capital":"마법도시 에테리아","px":971,"py":747,"tone":"#777488","icon":"✧","intro":"호수와 거대한 마력 맥 위에 세워진 마법 중심 왕국. 원소 마법, 연금술, 마법공학과 공간 전이가 발달했습니다.","geo":"동남부 거대 호수와 마정석 구릉, 속성별 마탑 분지. 마력 포도주와 희귀 약초가 생산됩니다.","civ":"여왕과 대마탑주, 왕립 마법학원과 마법학회가 주도하는 학술 문명. 마탑·공방·전이진이 일상 생활을 떠받칩니다.","military":"왕립 마법 군단(공격·방어·지원·정찰·전이)과 마탑 수호기사단. 강력한 원소 포격과 마법 결계가 강점입니다.","weakness":"물리적 전위가 얇고 마력 의존도가 높습니다. 마탑의 연구 독점 갈등과 비마법사 계층에 대한 차별도 불안 요소입니다.","leaders":"여왕 에밀리아 · 성운의 대마탑주 이졸데 · 수석 여생도 클로에","places":"성운의 대마탑 · 왕궁 · 왕립 대마법학원 · 마탑 지하 연구동","resources":"마정석·마법 문헌·연금술 공방·마법구·전이진","benefit":"흑마법 연구 기지 구축, 암흑 마법 군단 편입, 마탑 통신망과 전이진을 통한 화력·보급 지원","faction":"왕실 / 대마탑주 의회 / 마법학회 / 왕립 마법 군단 / 마탑 수호기사단","paths":"M 983 659 L1082 603 1144 641 1174 696 1125 756 1062 783 981 748 955 789 905 840 828 844 788 790 819 744 852 705 893 638 Z"},{"id":"silvarion","name":"실바리온 하이엘프 제국","short":"실바리온","kind":"고대 제국 · 하이엘프","tag":"고위 비전 마법의 원류","zone":"동부대륙 동쪽 끝","capital":"천공도 실바리온","px":1181,"py":565,"tone":"#77837e","icon":"✦","intro":"수천 년의 고위 비전 마법을 계승한 하이엘프 제국. 고원 위 계단식 도시와 부유섬을 마법공학으로 연결합니다.","geo":"동쪽 끝의 고도 높은 개조 고원과 천공 부유섬. 기상 제어 결계와 마력 기반 교통망이 발달했습니다.","civ":"장명종 순혈 귀족과 여제, 원로원이 중심인 계층 사회. 비전 마법원, 자동화 공방과 공중 회랑을 보유합니다.","military":"다중 비전 결계와 은빛 마법 여기사단. 공간·시간 간섭, 영구 마법 부여와 정밀 마법에 강합니다.","weakness":"저출산에 따른 적은 병력, 중앙 마력로와 통합 제어망에 대한 극단적인 의존, 경직된 순혈주의가 약점입니다.","leaders":"하이엘프 여제 아우렐리아 · 궁정 대마법사 루시엘 · 원로원 영애 세라피나","places":"여제의 천공궁 · 원로원 대의사당 · 황립 비전 마법원 · 은빛 기사단 본부","resources":"고위 비전 마법·부유섬·자동화 공방·마법 부여 기술","benefit":"고위 비전 기술과 정예 타락 비전 기사단 편입, 천공 도시·마법 공방을 전략 거점으로 활용","faction":"여제 궁정 / 원로원 순혈 귀족 / 궁정 대마법사 / 은빛 마법 여기사단","paths":"M1282 435 L1253 532 1298 613 1253 691 1195 750 1125 756 1174 696 1144 641 1082 603 1034 527 1064 442 1122 415 1210 452 Z"},{"id":"selenia","name":"셀레니아 월광 신국","short":"셀레니아","kind":"월광 신국 · 월광 엘프","tag":"별의 신탁과 절대 결계","zone":"동부대륙 북동부","capital":"월광성 셀레니아","px":1129,"py":309,"tone":"#667788","icon":"☾","intro":"달과 별의 여신을 섬기는 월광 엘프의 신정국. 별의 신탁, 환술, 월광 첨탑이 만들어내는 다중 결계로 성역을 지킵니다.","geo":"북동부의 안개 고원과 거울 호수, 은빛 자작나무 숲. 서늘한 기후와 월광주·몽환초가 특징입니다.","civ":"대여사제와 신탁관, 무녀단이 주도하는 폐쇄적인 성역 문명. 천문대·월광 첨탑·침묵의 수도원이 있습니다.","military":"은월 수호대의 야간 기습, 몽환 환술, 월광 첨탑의 절대 방어 결계와 환상 미궁이 주력입니다.","weakness":"첨탑과 신탁에 대한 과신, 좁은 경작지와 적은 정규 병력 때문에 결계가 무너지면 취약합니다.","leaders":"대여사제 아르테미아 · 은월 수호대장 카엘라 · 수석 무녀 미리엘","places":"달빛 대성소 · 성월의 대첨탑 · 거울 호수 · 월광 무녀 수련원","resources":"월광 결계술·점성술·몽환초·치유 성역","benefit":"최상급 회복·휴양 성역 확보, 암월 특수부대 편입, 엘프권의 점성·신탁 체계 약화","faction":"대여사제 성역 / 별의 사제단 / 월광 무녀단 / 은월 수호대","paths":"M1010 166 L1150 171 1210 218 1263 304 1236 361 1282 435 1210 452 1122 415 1064 442 971 372 951 275 1030 243 Z"},{"id":"verdia","name":"베르디아 우드엘프 왕국","short":"베르디아","kind":"숲의 왕국 · 우드엘프","tag":"세계수와 태고의 원시림","zone":"동부대륙 최남단","capital":"수해성 베르디아","px":628,"py":777,"tone":"#617662","icon":"❦","intro":"세계수를 중심으로 태고 원시림과 공존하는 우드엘프의 쇄국 왕국. 드루이드와 정령사가 살아 있는 숲을 수호합니다.","geo":"최남단의 광대한 원시림과 세계수 분지, 덩굴 협곡·맹독 늪지. 희귀 약초, 세계수 수액과 과실이 풍부합니다.","civ":"여왕과 대드루이드, 정령사와 수렵단이 자연의 질서를 지킵니다. 수목 주거지와 덩굴 현수교가 발달했습니다.","military":"숲속 게릴라전·신궁술·자연 함정·정령과 맹수 전력. 정찰대 여궁수와 드루이드 방어술이 주력입니다.","weakness":"쇄국으로 인해 외부 지원망이 거의 없고 대규모 군단전에 익숙하지 않습니다. 방어 체계는 온전한 숲에 크게 의존합니다.","leaders":"숲의 여왕 실피아 · 대드루이드 리아나 · 원시 정령사 세레나","places":"세계수의 심장부 · 여왕의 수목전 · 드루이드 성소 · 정찰대 수련장","resources":"세계수 수액·영약·희귀 약초·맹독 초목·정령 전력","benefit":"세계수 기반 생명력·회복 강화, 최상급 숲 휴양 거점 확보, 정령 척후·궁수 전력 편입","faction":"숲의 여왕 궁정 / 대드루이드 성소 / 정령사 / 수해 정찰대 / 세계수 무녀단","paths":"M500 678 L565 607 667 702 738 678 852 705 819 744 788 790 828 844 765 879 677 859 608 873 531 833 474 839 412 778 357 759 329 655 405 682 Z"},{"id":"azulon","name":"아줄론 청룡 제국","short":"아줄론","kind":"청룡 제국 · 용인·수인","tag":"창공 산과 뇌전의 수호신","zone":"동부대륙 북서부","capital":"창공성 아줄론","px":385,"py":296,"tone":"#5e7f81","icon":"ϟ","intro":"영산 창공 산의 청룡들이 산 아래 수인 부족을 보호하고, 수인들이 청룡을 살아 있는 수호신으로 섬기는 공존 제국입니다.","geo":"북서부의 창공 산 정상·절벽과 산기슭 분지·대초원. 뇌전 청옥, 희귀 광석, 식량과 목축 자원이 생산됩니다.","civ":"청룡 여황제와 용혈 귀족, 수인 대무녀장과 각 수인 부족이 이루는 산악·신전 중심 문명입니다.","military":"소수 정예 청룡·용기병단의 제공권과 늑대·표범 등 수인 지상 전사단의 기동·물량이 결합된 입체 전력입니다.","weakness":"청룡 개체 수가 적고 지휘·신앙의 구심점이 창공 산 정상과 청룡 지도부에 과도하게 집중되어 있습니다.","leaders":"청룡 여황제 사피리아 · 대무녀장 밀레아 · 수인 전사단장 울리카","places":"청옥 신궁 · 수호 대제단 · 수인 신전 · 용기병단 양성소","resources":"청옥·뇌전 광석·목축 자원·기상 조절 마법","benefit":"청룡·용기병단의 공중 전력과 뇌전 화력, 기상 조절 능력 확보, 지상 수인 군단 및 보급망 편입","faction":"청룡 여황제 궁정 / 용혈 귀족 / 수인 신전 / 용기병단 / 수인 지상 전사단","paths":"M225 170 L358 138 442 157 540 155 567 249 666 285 623 356 566 403 500 477 447 403 375 455 253 412 190 331 196 280 Z"},{"id":"frijia","name":"프리지아 백룡 왕국","short":"프리지아","kind":"백룡 왕국 · 고룡·수인","tag":"태고의 용언과 성전","zone":"동부대륙 최북단","capital":"성룡도 프리지아","px":788,"py":187,"tone":"#928d90","icon":"✧","intro":"백석 고원과 거대 성봉에 자리한 태고의 백룡 왕국. 고룡 혈통과 수인 신도들이 신앙으로 결속되어 있습니다.","geo":"최북단 백석 고원·성봉·절벽과 아래쪽 비옥한 계곡. 고원 약초·광물·목축 자원이 풍부합니다.","civ":"백룡 여왕과 고룡 혈통 귀족, 백여우 무녀단, 여러 수인 시녀단·성전 기사단이 성룡 신앙을 중심으로 모입니다.","military":"소수 정예 백룡 고룡 전사단과 대규모 수인 성전 기사단. 용의 위압·고대 용언 마법·순백 브레스가 핵심입니다.","weakness":"고룡의 소수 정예 구조와 외부 보급의 어려움, 백룡 여왕과 신앙에 집중된 결속력이 전략상 취약 요소입니다.","leaders":"백룡 여왕 프리지아 · 수석 백여우 무녀 설화 · 수석 시녀 미엘","places":"성룡 대성전 · 순백의 대제단 · 용천 목욕탕 · 수인 성전 기사단 본부","resources":"용력·백석 광물·성봉 약초·용천의 회복 기운","benefit":"태고 용력 기반 군단 전체의 생명력·재생력·회복 능력 강화, 백룡 결전 전력과 성전 기사단 편입","faction":"백룡 여왕 궁정 / 고룡 여사제 / 백여우 무녀단 / 수인 성전 기사단","paths":"M540 155 L614 98 757 90 899 113 1010 166 1030 243 951 275 854 283 778 255 666 285 567 249 Z"}];
+// ================================================================
+// IMAGE URLS · 일식의 제국 시즌 1 이미지 링크 교체 표
+// 각 값의 빈 따옴표 '' 안에 https://...png 또는 images/파일명.webp 를 입력하세요.
+// 비어 있으면 사이트가 깨지지 않고 이미지 안내 영역 또는 기본 그림이 유지됩니다.
+// introBackdrop = 시작 흑철문 배경 / councilHero = 전략회의실 대표 이미지
+// continentMapBackground는 임시 SVG 국경과 정확히 일치하지 않을 수 있습니다.
+// 실제 지도를 넣을 때는 국가별 클릭 영토의 좌표도 함께 조정하면 됩니다.
+// countries.국가ID : card(국가기록), hero(세력분석), capital/landscape(사진), emblem(문장)
+// people.인물이름 : 24명 초상화
+// ================================================================
+const IMAGE_URLS = {
+  "introBackdrop": "",
+  "councilHero": "",
+  "councilOrders": "",
+  "continentHeader": "",
+  "continentMapBackground": "",
+  "nationsHeader": "",
+  "factionsHeader": "",
+  "figuresHeader": "",
+  "archiveHeader": "",
+  "countries": {
+    "luminus": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "astria": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "etheria": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "silvarion": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "selenia": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "verdia": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "azulon": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    },
+    "frijia": {
+      "card": "",
+      "hero": "",
+      "capital": "",
+      "landscape": "",
+      "emblem": ""
+    }
+  },
+  "people": {
+    "셀레스티아": "",
+    "발레리아": "",
+    "엘레오노라": "",
+    "이리나": "",
+    "레오나": "",
+    "세실리아": "",
+    "에밀리아": "",
+    "이졸데": "",
+    "클로에": "",
+    "아우렐리아": "",
+    "루시엘": "",
+    "세라피나": "",
+    "아르테미아": "",
+    "카엘라": "",
+    "미리엘": "",
+    "실피아": "",
+    "리아나": "",
+    "세레나": "",
+    "사피리아": "",
+    "밀레아": "",
+    "울리카": "",
+    "프리지아": "",
+    "설화": "",
+    "미엘": ""
+  }
+};
+function lookupImageSlot(key){const parts=key.split('.');let obj=IMAGE_URLS;for(const part of parts){if(!obj||typeof obj!=='object')return '';obj=obj[part]}return typeof obj==='string'?obj.trim():''}
+function applyImageSlots(root=document){root.querySelectorAll('[data-image-slot]').forEach(el=>{
+  const url=lookupImageSlot(el.dataset.imageSlot);if(!url)return;
+  if(!/^(https?:\/\/|images\/|\.\/images\/|data:image\/)/i.test(url))return;
+  el.style.setProperty('--uploaded-image','url('+JSON.stringify(url)+')');el.classList.add('has-image');
+});}
+
 const currentSeason=1;let currentPage='command',selectedIndex=1;
 const $=id=>document.getElementById(id);
 const ESCAPE=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -551,11 +744,11 @@ const SVG_MAP=`<svg class="map-svg strategic-atlas" viewBox="0 0 1450 960" xmlns
 <text x="735" y="929" text-anchor="middle" font-family="Georgia,serif" font-size="16" letter-spacing="6" fill="#dcc8ab" opacity=".82" pointer-events="none">E M P I R E   O F   E C L I P S E   ·   E A S T E R N   C O N T I N E N T</text>
 </svg>`;
 function mapRegion(n,i){return `<g class="realm" role="button" tabindex="0" data-nation="${i}" aria-label="${ESCAPE(n.name)} 선택" aria-pressed="false"><path class="realm-territory" d="${n.paths}" fill="${n.tone}"/><g class="realm-label"><text class="realm-sigil" x="${n.px}" y="${n.py-39}" text-anchor="middle">${n.icon}</text><text class="realm-name" x="${n.px}" y="${n.py-7}" text-anchor="middle">${ESCAPE(n.short)}</text><text class="realm-sub" x="${n.px}" y="${n.py+17}" text-anchor="middle">${ESCAPE(n.kind.split(' · ')[0])}</text></g></g>`}
-function makeMap(hostId){const host=$(hostId);host.innerHTML=`<div class="map-panel"><div class="map-head"><div><strong>중간계 / 동부대륙 8개 국가</strong><small>WAR COUNCIL · EASTERN CONTINENT · SEASON <span class="mapSeason">01</span></small></div><div class="map-tools"><span class="tool-chip on">동부대륙 군략도</span><span class="tool-chip">영토 선택</span></div></div><div class="map-wrap">${SVG_MAP}</div><div class="map-scroll-tip">↔ 지도를 좌우로 밀어 다른 국가를 찾으세요. 아래 국가명 버튼으로 바로 선택할 수도 있습니다.</div><div class="map-foot"><span><em>✦</em> 지도에서 국가의 영토를 선택하십시오</span><span>국경 윤곽은 V1 임시 도식</span></div></div><div class="realm-quick-pick" aria-label="국가 빠른 선택">${NATIONS.map((n,i)=>`<button type="button" data-nation-pick="${i}" class="realm-pick" aria-pressed="false"><span class="pick-dot" style="--pick:${n.tone}"></span>${ESCAPE(n.short)}</button>`).join('')}</div>`;
+function makeMap(hostId){const host=$(hostId);host.innerHTML=`<div class="map-panel"><div class="map-head"><div><strong>중간계 / 동부대륙 8개 국가</strong><small>WAR COUNCIL · EASTERN CONTINENT · SEASON <span class="mapSeason">01</span></small></div><div class="map-tools"><span class="tool-chip on">동부대륙 군략도</span><span class="tool-chip">영토 선택</span></div></div><div class="map-wrap" data-image-slot="continentMapBackground">${SVG_MAP}</div><div class="map-scroll-tip">↔ 지도를 좌우로 밀어 다른 국가를 찾으세요. 아래 국가명 버튼으로 바로 선택할 수도 있습니다.</div><div class="map-foot"><span><em>✦</em> 지도에서 국가의 영토를 선택하십시오</span><span>국경 윤곽은 V1 임시 도식</span></div></div><div class="realm-quick-pick" aria-label="국가 빠른 선택">${NATIONS.map((n,i)=>`<button type="button" data-nation-pick="${i}" class="realm-pick" aria-pressed="false"><span class="pick-dot" style="--pick:${n.tone}"></span>${ESCAPE(n.short)}</button>`).join('')}</div>`;
   host.querySelectorAll('[data-nation]').forEach(g=>{g.addEventListener('click',()=>selectSector(Number(g.dataset.nation),true));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectSector(Number(g.dataset.nation),true)}})});
   host.querySelectorAll('[data-nation-pick]').forEach(b=>b.addEventListener('click',()=>selectSector(Number(b.dataset.nationPick),true)));
 }
-function renderMaps(){for(const id of ['commandMap','continentMap']){const host=$(id);host.querySelector('.mapSeason').textContent=String(currentSeason).padStart(2,'0');host.querySelectorAll('[data-nation]').forEach(g=>{const on=Number(g.dataset.nation)===selectedIndex;g.classList.toggle('selected',on);g.setAttribute('aria-pressed',String(on))});host.querySelectorAll('[data-nation-pick]').forEach(b=>{const on=Number(b.dataset.nationPick)===selectedIndex;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))})}}
+function renderMaps(){for(const id of ['continentMap']){const host=$(id);host.querySelector('.mapSeason').textContent=String(currentSeason).padStart(2,'0');host.querySelectorAll('[data-nation]').forEach(g=>{const on=Number(g.dataset.nation)===selectedIndex;g.classList.toggle('selected',on);g.setAttribute('aria-pressed',String(on))});host.querySelectorAll('[data-nation-pick]').forEach(b=>{const on=Number(b.dataset.nationPick)===selectedIndex;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))})}}
 function renderIntel(){const n=NATIONS[selectedIndex];const html=`<article class="intel realm-dossier" id="dossier-${n.id}">
  <div class="dossier-head"><div><span class="intel-id">IMPERIAL INTELLIGENCE · NATION FILE ${String(selectedIndex+1).padStart(2,'0')}</span><h2>${ESCAPE(n.name)}</h2><p class="dossier-tagline">${ESCAPE(n.tag)}</p></div><div class="dossier-seal">${n.icon}<small>동부대륙</small></div></div>
  <p class="dossier-intro">${ESCAPE(n.intro)}</p>
@@ -569,11 +762,11 @@ function renderIntel(){const n=NATIONS[selectedIndex];const html=`<article class
  <div class="dossier-bottom"><div><small>핵심 인물</small><p>${ESCAPE(n.leaders)}</p></div><div><small>주요 시설 · 거점</small><p>${ESCAPE(n.places)}</p></div><div><small>자원 · 기술</small><p>${ESCAPE(n.resources)}</p></div><div><small>정복 이후의 전략적 가치</small><p>${ESCAPE(n.benefit)}</p></div></div>
  <div class="dossier-footer"><span>※ 이 지도는 시즌 1 동부대륙의 지역 방향을 기준으로 제작한 V1 시각화입니다. 국경선은 임시 도식입니다.</span><button class="intel-action" type="button" data-page-to="nations">8개 국가 기록 열기 ↗</button></div>
  </article>`;
- for(const id of ['commandIntel','continentIntel'])$(id).innerHTML=html;
+ $('continentIntel').innerHTML=html;
  document.querySelectorAll('.intel-action').forEach(btn=>btn.onclick=()=>showPage('nations'));
 }
-function selectSector(i,scroll=false){selectedIndex=i;renderMaps();renderIntel();if(scroll){const target=$(currentPage==='continent'?'continentIntel':'commandIntel');target?.scrollIntoView({behavior:'smooth',block:'start'})}}
-function renderNationSlots(){const el=$('nationSlots');el.innerHTML=NATIONS.map((n,i)=>`<button class="slot-card nation-card" type="button" data-jump="${i}"><div class="slot-index"><span>NATION ${String(i+1).padStart(2,'0')}</span><span class="ch-tag red">기록 확보</span></div><div class="slot-glyph">${n.icon}</div><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.zone)} · ${ESCAPE(n.tag)}<br/>수도 ${ESCAPE(n.capital)}</p><div class="slot-divider"></div><div class="slot-bottom">지도에서 상세 브리핑 열기 ↗</div></button>`).join('');el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.jump);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
+function selectSector(i,scroll=false){selectedIndex=i;renderMaps();renderIntel();if(scroll){const target=$('continentIntel');target?.scrollIntoView({behavior:'smooth',block:'start'})}}
+function renderNationSlots(){const el=$('nationSlots');el.innerHTML=NATIONS.map((n,i)=>`<button class="slot-card nation-card" type="button" data-jump="${i}"><div class="nation-card-image media-slot" data-image-slot="countries.${n.id}.card"><span class="slot-await">국가 일러스트</span></div><div class="slot-index"><span>NATION ${String(i+1).padStart(2,'0')}</span><span class="ch-tag red">기록 확보</span></div><div class="slot-glyph"><span class="emblem-img media-slot" data-image-slot="countries.${n.id}.emblem">${n.icon}</span></div><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.zone)} · ${ESCAPE(n.tag)}<br/>수도 ${ESCAPE(n.capital)}</p><div class="slot-divider"></div><div class="slot-bottom">지도에서 상세 브리핑 열기 ↗</div></button>`).join('');applyImageSlots(el);el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.jump);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
 
 const FACTION_COLORS={luminus:'#d7b38e',astria:'#d4aa81',etheria:'#93a9bd',silvarion:'#adbebd',selenia:'#b4aacd',verdia:'#8aa48e',azulon:'#9bacc0',frijia:'#d4c9b9'};
 const FACTION_STORIES={
@@ -601,26 +794,27 @@ function renderFactionDetail(){const n=NATIONS[activeFaction];if(!n)return;const
 const factions=n.faction.split(' / ');const people=n.leaders.split(' · ').map(x=>x.trim()).filter(Boolean);const info=[['국가 위치',n.zone],['수도',n.capital],['지배 체제',n.kind],['국가 특색',n.tag]];
 sec.style.setProperty('--fac-color',color);
 sec.innerHTML=`
- <section class="fac-hero">${factionScene(n)}<div class="fac-hero-side">MIDDLE WORLD / EAST<br>CAMPAIGN DOSSIER · ${String(activeFaction+1).padStart(2,'0')}</div><div class="fac-hero-copy"><div class="fac-serial">CONFIDENTIAL · FACTION ${String(activeFaction+1).padStart(2,'0')} / 08</div><span class="fac-glyph" aria-hidden="true">${ESCAPE(n.icon)}</span><div class="fac-tag">${ESCAPE(n.tag)} / ${ESCAPE(n.zone)}</div><h2>${ESCAPE(n.name)}</h2><p class="fac-intro">${ESCAPE(n.intro)}</p><div class="fac-herometa"><span>${ESCAPE(n.capital)}</span><span>${ESCAPE(n.kind)}</span><span>SEASON ${String(currentSeason).padStart(2,'0')}</span></div></div></section>
+ <section class="fac-hero">${factionScene(n)}<div class="fac-hero-upload media-slot" data-image-slot="countries.${n.id}.hero"></div><div class="fac-hero-side">MIDDLE WORLD / EAST<br>CAMPAIGN DOSSIER · ${String(activeFaction+1).padStart(2,'0')}</div><div class="fac-hero-copy"><div class="fac-serial">CONFIDENTIAL · FACTION ${String(activeFaction+1).padStart(2,'0')} / 08</div><span class="fac-glyph" aria-hidden="true">${ESCAPE(n.icon)}</span><div class="fac-tag">${ESCAPE(n.tag)} / ${ESCAPE(n.zone)}</div><h2>${ESCAPE(n.name)}</h2><p class="fac-intro">${ESCAPE(n.intro)}</p><div class="fac-herometa"><span>${ESCAPE(n.capital)}</span><span>${ESCAPE(n.kind)}</span><span>SEASON ${String(currentSeason).padStart(2,'0')}</span></div></div></section>
+ <div class="fac-scenery"><div class="fac-scene-photo media-slot" data-image-slot="countries.${n.id}.capital"><span class="slot-await">수도 · 대표 건축 일러스트</span><small class="slot-await">IMAGE_URLS.countries.${n.id}.capital</small></div><div class="fac-scene-photo media-slot" data-image-slot="countries.${n.id}.landscape"><span class="slot-await">국가 · 자연환경 일러스트</span><small class="slot-await">IMAGE_URLS.countries.${n.id}.landscape</small></div></div>
  <section class="fac-section"><div class="fac-sectiontag">01 — THE EMPIRE / 제국의 정체</div><div class="fac-two-col"><div><h3>그들이 세운<br><em>질서와 문명.</em></h3><p class="fac-quote">${ESCAPE(n.civ)}</p><p style="margin-top:23px">${ESCAPE(n.geo)}</p></div><div class="fac-outline-grid">${info.map(([k,v],i)=>`<div class="fac-outline-item"><small>0${i+1} / ${ESCAPE(k)}</small><strong>${ESCAPE(v)}</strong></div>`).join('')}</div></div></section>
  <section class="fac-section"><div class="fac-sectiontag">02 — WAR ASSESSMENT / 전력 분석</div><div class="fac-army"><h3>그들의 힘,<br><em>그리고 균열.</em></h3><div class="fac-army-grid"><div class="fac-army-box"><div class="fac-num">I</div><strong>전장에 나서는 군대</strong><p>${ESCAPE(n.military)}</p></div><div class="fac-army-box"><div class="fac-num">II</div><strong>견고한 질서의 약점</strong><p>${ESCAPE(n.weakness)}</p></div></div><div class="fac-ranks">${factions.map(f=>`<span>${ESCAPE(f)}</span>`).join('')}</div></div></section>
  <section class="fac-section"><div class="fac-sectiontag">03 — SPOILS OF CONQUEST / 정복 이후의 세계</div><div class="fac-two-col" style="margin-bottom:30px"><div><h3>무너진 왕국에서<br><em>얻게 될 것들.</em></h3></div><div><p>정복 후의 변화를 세 가지 관점으로 정리한 전망 보고서입니다. 원본 세계관의 전략적 효과와 성인향 분위기를 참고하되, 이 공개 사이트에서는 노골적인 장면 대신 제도·세력·거점의 변화를 중심으로 소개합니다.</p></div></div><div class="fac-results"><article class="fac-result"><div class="fac-num">01</div><h4>전력 · 전략적 이점</h4><p>${ESCAPE(n.benefit)}</p></article><article class="fac-result"><div class="fac-num">02</div><h4>접수 가능한 거점 · 자원</h4><p>${ESCAPE(n.places)}<br><span style="color:var(--fac-color)">+</span> ${ESCAPE(n.resources)}</p></article><article class="fac-result"><div class="fac-num">03</div><h4>성인향 서사 · 지배 질서의 변화</h4><p>${ESCAPE(FACTION_STORIES[n.id])}</p></article></div></section>
- <section class="fac-section"><div class="fac-sectiontag">04 — KEY PERSONNEL / 핵심 인물</div><div class="fac-two-col" style="margin-bottom:26px"><div><h3>그 나라를 움직이는<br><em>세 명의 인물.</em></h3></div><p>정치와 군사의 중추를 이루는 인물들입니다. 개인의 상세 프로필과 일러스트는 후속 작업에서 확장할 수 있도록 이름과 직책을 기준으로 정리했습니다.</p></div><div class="fac-character-grid">${people.map((p,i)=>{const t=p.split(' ');return `<article class="fac-character"><small>TARGET 0${i+1}</small><strong>${ESCAPE(t[t.length-1])}</strong><em>${ESCAPE(t.slice(0,-1).join(' ')||'주요 인물')}</em></article>`}).join('')}</div></section>
+ <section class="fac-section"><div class="fac-sectiontag">04 — KEY PERSONNEL / 핵심 인물</div><div class="fac-two-col" style="margin-bottom:26px"><div><h3>그 나라를 움직이는<br><em>세 명의 인물.</em></h3></div><p>정치와 군사의 중추를 이루는 인물들입니다. 개인의 상세 프로필과 일러스트는 후속 작업에서 확장할 수 있도록 이름과 직책을 기준으로 정리했습니다.</p></div><div class="fac-character-grid">${people.map((p,i)=>{const t=p.split(' ');return `<article class="fac-character"><div class="fac-person-photo media-slot" data-image-slot="people.${t[t.length-1]}"><span class="slot-await">인물 일러스트</span></div><small>TARGET 0${i+1}</small><strong>${ESCAPE(t[t.length-1])}</strong><em>${ESCAPE(t.slice(0,-1).join(' ')||'주요 인물')}</em></article>`}).join('')}</div></section>
  <div class="fac-return"><span style="font:11px ui-monospace,monospace;letter-spacing:1px;color:#8f827d">END OF FACTION DOSSIER · ${ESCAPE(n.short)}</span><button type="button" id="facToMap">동부대륙 지도에서 위치 확인 ↗</button></div>`;
-const mapBtn=$('facToMap');if(mapBtn)mapBtn.onclick=()=>{selectedIndex=activeFaction;showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})};
+applyImageSlots(sec);const mapBtn=$('facToMap');if(mapBtn)mapBtn.onclick=()=>{selectedIndex=activeFaction;showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})};
  document.querySelectorAll('#factionCards [data-faction]').forEach(b=>{const on=Number(b.dataset.faction)===activeFaction;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
 }
 
 function renderFactionsAndFigures(){const factions=$('factionCards');if(factions){factions.innerHTML=NATIONS.map((n,i)=>`<button class="fac-select" style="--fac-color:${FACTION_COLORS[n.id]}" type="button" data-faction="${i}" aria-pressed="false"><span class="fs-num">${String(i+1).padStart(2,'0')}</span><span class="fs-icon" aria-hidden="true">${ESCAPE(n.icon)}</span><span class="fs-text"><strong>${ESCAPE(n.short)}</strong><small>${ESCAPE(n.kind)}</small></span></button>`).join('');factions.querySelectorAll('[data-faction]').forEach(b=>b.onclick=()=>{activeFaction=Number(b.dataset.faction);renderFactionDetail();$('factionDetail').scrollIntoView({behavior:'smooth',block:'start'})});renderFactionDetail()}
-const figures=$('figureCards');if(figures)figures.innerHTML=NATIONS.map((n,i)=>`<button class="archive-country" type="button" data-figure="${i}"><small>핵심 인물 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.leaders)}</p><span>해당 국가 지도 열기 ↗</span></button>`).join('');document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
+const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>국가별 주요 인물 03 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<div class="figure-person"><div class="figure-portrait media-slot" data-image-slot="people.${name}"><span class="slot-await">PORTRAIT 0${j+1}</span></div><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></div>`}).join('')}</div><button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures)}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
 const PAGE_NAMES={command:'마왕군 최고 전략회의실',continent:'동부대륙 전략 지도',nations:'국가 기록',factions:'세력 분석',figures:'핵심 인물',archive:'세계관 기록보관실'};
 function showPage(page){if(!PAGE_NAMES[page])return;currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('#sideNav button').forEach(btn=>{let active=btn.dataset.page===page;btn.classList.toggle('active',active);active?btn.setAttribute('aria-current','page'):btn.removeAttribute('aria-current')});$('topTitle').textContent=PAGE_NAMES[page];closeSidebar();window.scrollTo({top:0,behavior:'instant'});}
 function closeSidebar(){$('sidebar').classList.remove('open');$('sidebarShade').classList.remove('show');}
 function toggleSidebar(){const open=$('sidebar').classList.toggle('open');$('sidebarShade').classList.toggle('show',open);}
 
-$('sideNav').querySelectorAll('button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));$('openEastArchive').onclick=()=>showPage('continent');$('mobileMenu').onclick=toggleSidebar;$('sidebarShade').onclick=closeSidebar;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar()});
-for(const host of ['commandMap','continentMap'])makeMap(host);
-$('nationHeading').textContent='동부대륙 8개국 · 시즌 1';renderMaps();renderIntel();renderNationSlots();renderFactionsAndFigures();
+$('sideNav').querySelectorAll('button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-council-nav]').forEach(b=>b.onclick=()=>showPage(b.dataset.councilNav));$('mobileMenu').onclick=toggleSidebar;$('sidebarShade').onclick=closeSidebar;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar()});
+makeMap('continentMap');applyImageSlots($('continentMap'));
+$('nationHeading').textContent='동부대륙 8개국 · 시즌 1';renderMaps();renderIntel();renderNationSlots();renderFactionsAndFigures();applyImageSlots();
 // 로딩이 완료되거나 스킵 버튼 클릭 시 중복 타이머 없이 즉시 화면을 전환합니다.
 const intro=$('intro'),app=$('app');let ended=false,opened=false,frame=0,finishTimer=null,fadeTimer=null;
 function enterSite(immediately=false){if(ended)return;ended=true;cancelAnimationFrame(frame);clearTimeout(finishTimer);clearTimeout(fadeTimer);app.classList.add('ready');if(!immediately){intro.classList.add('doors-open');finishTimer=setTimeout(()=>{intro.classList.add('is-leaving');fadeTimer=setTimeout(()=>intro.remove(),800)},1430)}else{intro.classList.add('is-leaving');fadeTimer=setTimeout(()=>intro.remove(),800)}}
