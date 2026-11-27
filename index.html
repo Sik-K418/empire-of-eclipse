@@ -378,6 +378,82 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
 @media(max-width:1080px){.dossier-grid{grid-template-columns:1fr}.realm-quick-pick{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:680px){.map-head{padding:15px 14px;gap:12px;flex-wrap:wrap}.map-head strong{font-size:14px}.map-wrap::after{font-size:11px;left:13px}.map-svg.strategic-atlas{min-width:880px}.map-foot{padding:12px 13px}.realm-quick-pick{grid-template-columns:repeat(2,minmax(0,1fr))}.realm-pick{font-size:11px;padding:11px 8px}.dossier-head h2{font-size:26px}.dossier-seal{font-size:40px;min-width:55px}.dossier-metrics{grid-template-columns:1fr}.dossier-bottom{grid-template-columns:1fr}.archive-grid{grid-template-columns:1fr}.realm-dossier{scroll-margin-top:75px}.dossier-footer .intel-action{width:100%}.slots-grid{grid-template-columns:1fr}}
 
+
+/* V1 FACTION EDITORIAL · medieval campaign dossier */
+#page-factions{color:#eee9e0}
+#page-factions .fac-topline{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;border-bottom:1px solid #8f817255;padding:0 0 18px;font:10px/1.5 ui-monospace,monospace;letter-spacing:2.1px;color:#9c9187}
+#page-factions .fac-topline em{font-style:normal;color:#91494a;margin:0 8px}
+#page-factions .fac-titleblock{padding:48px 0 54px;position:relative;max-width:870px}
+#page-factions .fac-titleblock h1{font-weight:450;font-family:Georgia,'Noto Serif KR',serif;font-size:clamp(44px,7vw,100px);line-height:1.16;letter-spacing:-4.5px;margin:24px 0 23px;color:#f1e9e1}
+#page-factions .fac-titleblock h1 i{font-style:normal;color:#ad6468}
+#page-factions .fac-titleblock p{max-width:590px;line-height:2.1;color:#b7aaa5;font-size:14px;margin:0}
+#page-factions .fac-pick-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 1px;border-top:1px solid #85746848;color:#c2b3a0;font:10px/1.5 ui-monospace,monospace;letter-spacing:2.3px}
+#page-factions .fac-pick-head b{color:#b95964;font-size:17px;margin-left:7px}
+#page-factions .fac-pick-head small{font:11px/1.5 system-ui,sans-serif;letter-spacing:0;color:#887d77}
+#page-factions .fac-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#463139;border:1px solid #463139;margin:0 0 35px}
+#page-factions .fac-select{min-width:0;border:none;display:flex;align-items:center;text-align:left;gap:11px;color:#e4ddd2;padding:20px 14px;background:linear-gradient(125deg,#211b20,#14151a);transition:background .2s;position:relative}
+#page-factions .fac-select::after{content:'';position:absolute;inset:auto 0 0;height:2px;background:var(--fac-color,#c49583);transform:scaleX(0);transition:transform .24s;transform-origin:left}
+#page-factions .fac-select.active{background:linear-gradient(110deg,#48252b,#22171d)}
+#page-factions .fac-select.active::after,#page-factions .fac-select:hover::after{transform:scaleX(1)}
+#page-factions .fac-select:hover{background:#362229}
+#page-factions .fac-select .fs-num{font:10px/1.2 ui-monospace,monospace;color:#99817a;align-self:flex-start}
+#page-factions .fac-select .fs-icon{font:26px/1.1 Georgia,serif;color:var(--fac-color,#d2b4a6);width:30px;text-align:center;flex:none;filter:drop-shadow(0 1px 10px #a4383c33)}
+#page-factions .fac-select .fs-text{min-width:0;display:block}
+#page-factions .fac-select .fs-text strong{display:block;font-size:12px;font-weight:680;line-height:1.55;word-break:keep-all}
+#page-factions .fac-select .fs-text small{display:block;margin-top:5px;color:#948983;font-size:10px;line-height:1.4}
+#page-factions .fac-detail{animation:page-in .3s ease;--fac-color:#d5afa2}
+#page-factions .fac-hero{position:relative;isolation:isolate;overflow:hidden;min-height:550px;display:flex;align-items:flex-end;background:#0c0c11;border:1px solid #4e41444d}
+#page-factions .fac-hero .fac-scene{position:absolute;inset:0;width:100%;height:100%;z-index:-2;filter:saturate(.72)}
+#page-factions .fac-hero:before{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#0b090def 0%,#0d0b11d8 34%,#100c155a 66%,#100c1525 100%),linear-gradient(0deg,#08090be1 0%,transparent 52%,#08080b18 100%)}
+#page-factions .fac-hero:after{content:'';position:absolute;inset:19px;border:1px solid #dbc4a322;pointer-events:none}
+#page-factions .fac-hero-copy{position:relative;padding:clamp(35px,5vw,72px) clamp(29px,6vw,75px) 66px;max-width:860px}
+#page-factions .fac-serial{color:var(--fac-color);letter-spacing:3px;font:11px/1.5 ui-monospace,monospace}
+#page-factions .fac-glyph{font:45px/1 Georgia,serif;color:var(--fac-color);display:inline-block;margin:20px 0 12px;text-shadow:0 2px 25px #d4a6b152}
+#page-factions .fac-hero h2{font-family:Georgia,'Noto Serif KR',serif;word-break:keep-all;font-size:clamp(38px,5.6vw,85px);line-height:1.15;letter-spacing:-2.4px;font-weight:450;color:#f2eadf;margin:0 0 20px}
+#page-factions .fac-hero .fac-tag{font:11px/1.6 ui-monospace,monospace;letter-spacing:2.2px;color:var(--fac-color);margin-bottom:15px}
+#page-factions .fac-hero .fac-intro{color:#d2c7bd;max-width:605px;font-size:14px;line-height:2.0;margin:0 0 25px}
+#page-factions .fac-herometa{display:flex;flex-wrap:wrap;gap:10px}
+#page-factions .fac-herometa span{padding:8px 12px;color:#e4d3c2;background:#140d12aa;border:1px solid #c99b8b54;font-size:11px}
+#page-factions .fac-hero-side{position:absolute;right:32px;top:27px;text-align:right;font:10px/1.9 ui-monospace,monospace;color:#d8c7bd94;letter-spacing:2px}
+#page-factions .fac-section{padding:68px 0 62px;border-bottom:1px solid #87766a52}
+#page-factions .fac-sectiontag{color:var(--fac-color);font:10px/1.3 ui-monospace,monospace;letter-spacing:3px;margin-bottom:25px;display:flex;align-items:center;gap:16px}
+#page-factions .fac-sectiontag::after{content:'';height:1px;width:45px;background:var(--fac-color);opacity:.6}
+#page-factions .fac-two-col{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(24px,5vw,75px)}
+#page-factions .fac-section h3{font-family:Georgia,'Noto Serif KR',serif;font-weight:450;color:#eee4d7;font-size:clamp(28px,3.2vw,48px);line-height:1.35;letter-spacing:-1px;margin:0 0 24px}
+#page-factions .fac-section h3 em{color:var(--fac-color);font-style:normal}
+#page-factions .fac-section p{color:#b7ada5;line-height:2.08;font-size:13px;margin:0}
+#page-factions .fac-quote{position:relative;padding:16px 24px;border-left:2px solid var(--fac-color);background:linear-gradient(90deg,#2d2024,transparent);color:#e2d5cb!important;font-size:15px!important;line-height:2.05!important;margin:17px 0 0!important}
+#page-factions .fac-outline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#42363b;border:1px solid #42363b}
+#page-factions .fac-outline-item{min-width:0;padding:23px;background:#141319;min-height:115px;display:flex;flex-direction:column;justify-content:space-between}
+#page-factions .fac-outline-item small{font:10px ui-monospace,monospace;color:#9c8c80;letter-spacing:2px}
+#page-factions .fac-outline-item strong{font-size:13px;color:#ede2d2;font-weight:590;line-height:1.65}
+#page-factions .fac-army{position:relative;overflow:hidden;padding:74px clamp(25px,5vw,62px);border:1px solid #57434b;background:linear-gradient(125deg,#221a20ee,#0c0c12 70%)}
+#page-factions .fac-army:after{content:'✦';position:absolute;right:3%;top:-28%;font:450px/1 Georgia,serif;color:#ad595d0a;pointer-events:none}
+#page-factions .fac-army-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+#page-factions .fac-army-box{padding:28px 0;border-top:1px solid #967c725c}
+#page-factions .fac-army-box strong{display:block;font:14px/1.7 system-ui,sans-serif;color:#f0ded2;margin:0 0 14px}
+#page-factions .fac-army-box p{color:#bdada9;line-height:2;font-size:13px}
+#page-factions .fac-army-box .fac-num{font:28px Georgia,serif;color:var(--fac-color);opacity:.9;margin-bottom:15px}
+#page-factions .fac-ranks{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+#page-factions .fac-ranks span{font-size:11px;background:#5b30332c;border:1px solid #97696967;color:#e0c7bf;padding:8px 10px;line-height:1.5}
+#page-factions .fac-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#page-factions .fac-result{position:relative;min-height:235px;background:linear-gradient(145deg,#322229,#131219 72%);border:1px solid #614e52;padding:28px 24px;display:flex;flex-direction:column}
+#page-factions .fac-result::before{content:'';height:2px;position:absolute;left:24px;right:24px;top:0;background:var(--fac-color);opacity:.63}
+#page-factions .fac-result .fac-num{color:var(--fac-color);font:23px Georgia,serif}
+#page-factions .fac-result h4{color:#f1e6dc;font-weight:640;font-size:15px;line-height:1.5;margin:22px 0 12px}
+#page-factions .fac-result p{color:#b8ada8;font-size:12px;line-height:1.9}
+#page-factions .fac-character-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#page-factions .fac-character{min-height:150px;border:1px solid #645259;background:linear-gradient(120deg,#271e24,#111116);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between}
+#page-factions .fac-character small{font:10px/1.4 ui-monospace,monospace;letter-spacing:2px;color:var(--fac-color)}
+#page-factions .fac-character strong{font-size:16px;line-height:1.5;font-family:Georgia,'Noto Serif KR',serif;font-weight:500;color:#e9ddd1}
+#page-factions .fac-character em{font-style:normal;color:#b8a7a1;font-size:12px}
+#page-factions .fac-return{margin-top:36px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #65535c;padding-top:18px}
+#page-factions .fac-return button{border:1px solid #9e766ca8;background:#311c23;color:#eee4d6;padding:12px 19px;font-size:12px}
+#page-factions .fac-return button:hover{background:#51292d}
+#page-factions .fac-bottom-note{font-size:11px;color:#8f837e;padding:20px 0 40px;line-height:1.7}
+@media(max-width:1180px){#page-factions .fac-picker{grid-template-columns:repeat(2,minmax(0,1fr))}#page-factions .fac-hero{min-height:505px}}
+@media(max-width:700px){#page-factions .fac-titleblock{padding:35px 0 38px}#page-factions .fac-titleblock h1{font-size:clamp(41px,10vw,68px);letter-spacing:-2px}#page-factions .fac-picker{grid-template-columns:repeat(2,minmax(0,1fr))}#page-factions .fac-select{padding:15px 8px;gap:6px}#page-factions .fac-select .fs-num{font-size:9px}#page-factions .fac-select .fs-icon{font-size:22px;width:22px}#page-factions .fac-select .fs-text strong{font-size:11px}#page-factions .fac-select .fs-text small{font-size:9px}#page-factions .fac-hero{min-height:505px}#page-factions .fac-hero-copy{padding:48px 24px 42px}#page-factions .fac-hero h2{font-size:clamp(36px,9vw,62px)}#page-factions .fac-hero:before{background:linear-gradient(90deg,#0b090def,#0b090dc7 69%,#0b090d77),linear-gradient(0deg,#08090be6,transparent)}#page-factions .fac-hero-side{right:26px;top:25px;font-size:8px}#page-factions .fac-section{padding:44px 0}#page-factions .fac-two-col,#page-factions .fac-army-grid{grid-template-columns:1fr;gap:25px}#page-factions .fac-outline-grid{margin-top:5px}#page-factions .fac-army{padding:42px 22px}#page-factions .fac-results,#page-factions .fac-character-grid{grid-template-columns:1fr}#page-factions .fac-result{min-height:175px}#page-factions .fac-character{min-height:120px}#page-factions .fac-topline span:last-child{display:none}#page-factions .fac-pick-head small{font-size:10px;text-align:right}}
+
 </style>
 </head>
 <body>
@@ -417,7 +493,14 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
       </section>
       <section class="page" id="page-continent"><div class="page-head"><div class="eyebrow">CARTOGRAPHIC ARCHIVE / EAST</div><h1 class="hero-title">동부대륙 <span>전략 지도</span></h1><p class="hero-desc">동부대륙 전역에 흩어진 8개 국가의 영토를 선택해 보세요. 선택한 국가가 강조되고 바로 아래에서 군사·지리·인물·전략 정보를 열람할 수 있습니다.</p></div><div class="strategy-grid"><div id="continentMap"></div><div id="continentIntel"></div></div><div class="rule"></div><div class="section-head"><strong>시즌별 작전 기록</strong><small>SEASON ARCHIVE</small></div><div class="info-list"><div class="info-item"><small>01 / EASTERN ARCHIVE</small><h3>시즌 1</h3><p>8개 국가의 기본 설정을 열람할 수 있습니다. 시즌 1의 개별 사건과 국경 변화는 이후 추가합니다.</p></div><div class="info-item"><small>02 / EASTERN ARCHIVE</small><h3>시즌 2</h3><p>같은 8개 국가의 기본 기록을 활용하며, 시즌 2의 정세와 관련 사건은 후속 설정에서 보완할 예정입니다.</p></div></div></section>
       <section class="page" id="page-nations"><div class="page-head"><div class="eyebrow">POLITICAL INTELLIGENCE</div><h1 class="hero-title">국가 <span>기록</span></h1><p class="hero-desc">원본 세계관에서 확정된 8개 국가의 개요입니다. 카드를 누르면 지도와 해당 국가의 상세 전략 브리핑으로 이동합니다.</p></div><div class="section-head"><strong id="nationHeading">시즌 1 · 미등록 지역</strong><small>COUNTRY FILES / DRAFT</small></div><div class="slots-grid" id="nationSlots"></div><div class="divider-title">국가 기록 안내</div><div class="record-shell"><div class="form-preview"><h3>지도 브리핑에서 확인할 항목</h3><p class="section-explain">영토를 선택하면 지리·기후·문명·군사·취약점·주요 인물·거점·전략적 이점이 한눈에 펼쳐집니다.</p></div><div class="form-preview"><h3>시즌 기록 적용 기준</h3><p class="section-explain">기본 국가 설정은 두 시즌 공통입니다. 아직 공개되지 않은 시즌별 사건과 국경 변동은 임의로 작성하지 않았습니다.</p></div></div></section>
-      <section class="page" id="page-factions"><div class="page-head"><div class="eyebrow">FACTION INTELLIGENCE</div><h1 class="hero-title">세력 <span>분석</span></h1><p class="hero-desc">동부대륙 8개 국가에서 확인된 황실·교황청·원로원·기사단·마탑 등의 주요 조직입니다. 국가를 선택하면 관련 전략 보고서로 이동합니다.</p></div><div class="archive-grid" id="factionCards"></div><p class="section-explain" id="factionSeasonText">국가별 정치·군사 조직을 확인할 수 있습니다.</p></section>
+      <section class="page" id="page-factions">
+  <div class="fac-topline"><span>IMPERIAL WAR COUNCIL <em>/</em> EASTERN CONTINENT</span><span>ARCHIVE NO. 008 — FACTION DOSSIERS</span></div>
+  <div class="fac-titleblock"><div class="eyebrow">마왕군 비밀 전략보고 · 여덟 국가의 기록</div><h1>세력의 <i>민낯</i>을<br>들여다보다.</h1><p>동부대륙을 지배하는 여덟 국가. 그들이 쌓아 올린 권력, 지키려는 가치, 견고한 방어선과 그 안에 난 균열까지. 국가를 선택하여 작전 보고서를 펼치십시오.</p></div>
+  <div class="fac-pick-head"><span>SELECT A FACTION <b>08</b></span><small>국가 문장을 선택하면 아래 보고서가 바뀝니다</small></div>
+  <div class="fac-picker" id="factionCards" aria-label="국가별 세력 선택"></div>
+  <div id="factionDetail" class="fac-detail" aria-live="polite"></div>
+  <p class="fac-bottom-note" id="factionSeasonText">시즌 1·2 공통 국가 정보입니다. 시즌별 사건은 추후 추가됩니다.</p>
+</section>
       <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 주요 인물 24명을 국가별로 소개합니다. 국가를 선택하면 지도에서 소속 국가와 작전 정보를 확인할 수 있습니다.</p></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">국가별 핵심 인물을 확인할 수 있습니다.</p></section>
       <section class="page" id="page-archive"><div class="page-head"><div class="eyebrow">LORE ARCHIVE / MIDDLE WORLD</div><h1 class="hero-title">중간계 <span>기록보관실</span></h1><p class="hero-desc">마왕 시뮬레이터의 세계관을 자연스럽게 소개하는 기록실입니다. 아래는 중간계 및 동부대륙 설정을 나중에 추가할 수 있도록 마련한 기본 구조입니다.</p></div><div class="quote">“세계를 이해하는 것은, 지도를 펼치는 일에서 시작된다.”</div><div class="archive-scroll"><div class="archive-item"><div class="archive-num">I</div><div><h3>중간계의 개요</h3><p>중간계가 어떤 세계인지, 그 역사와 주요 무대에 대한 소개가 들어갈 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">II</div><div><h3>동부대륙의 역사</h3><p>동부대륙의 형성과 시대별 사건, 국가 간 흐름을 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">III</div><div><h3>시즌 1 · 주요 사건</h3><p>시즌 1의 배경과 등장 국가 및 중요한 사건의 흐름을 소개합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">IV</div><div><h3>시즌 2 · 주요 사건</h3><p>시즌 2에서 다루는 지역과 사건, 전 시즌과의 연결을 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">V</div><div><h3>종족 · 문화 · 신앙</h3><p>세계관에 존재하는 종족과 문화권, 신앙과 생활 양식에 관한 자료를 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div></div></section>
       <footer class="page-footer"><span>EMPIRE OF ECLIPSE · EASTERN WAR COUNCIL</span><span><b>V1 · 동부대륙 8개국 반영</b> / 선택형 전략 지도 · 국경 도식은 임시</span></footer>
@@ -486,7 +569,45 @@ function renderIntel(){const n=NATIONS[selectedIndex];const html=`<article class
 function selectSector(i,scroll=false){selectedIndex=i;renderMaps();renderIntel();if(scroll){const target=$(currentPage==='continent'?'continentIntel':'commandIntel');target?.scrollIntoView({behavior:'smooth',block:'start'})}}
 function setSeason(s){currentSeason=s;try{sessionStorage.setItem('demonV1Season',String(s))}catch(e){}$('season1').setAttribute('aria-pressed',String(s===1));$('season2').setAttribute('aria-pressed',String(s===2));$('statSeason').innerHTML=`SEASON <b>${String(s).padStart(2,'0')}</b>`;$('nationHeading').textContent=`동부대륙 8개 국가 · 공통 기록`;$('factionSeasonText').textContent=`시즌 ${s} / 8개 국가의 기본 조직과 핵심 세력은 확인되었습니다. 시즌별 권력 변동은 후속 설정에서 반영합니다.`;$('figureSeasonText').textContent=`시즌 ${s} / 국가별 주요 인물 24명의 명칭과 직책을 확인했습니다. 상세 프로필과 시즌별 이력은 추후 추가합니다.`;renderMaps();renderIntel();renderNationSlots();renderFactionsAndFigures()}
 function renderNationSlots(){const el=$('nationSlots');el.innerHTML=NATIONS.map((n,i)=>`<button class="slot-card nation-card" type="button" data-jump="${i}"><div class="slot-index"><span>NATION ${String(i+1).padStart(2,'0')}</span><span class="ch-tag red">기록 확보</span></div><div class="slot-glyph">${n.icon}</div><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.zone)} · ${ESCAPE(n.tag)}<br/>수도 ${ESCAPE(n.capital)}</p><div class="slot-divider"></div><div class="slot-bottom">지도에서 상세 브리핑 열기 ↗</div></button>`).join('');el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.jump);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
-function renderFactionsAndFigures(){const factions=$('factionCards');if(factions)factions.innerHTML=NATIONS.map((n,i)=>`<button class="archive-country" type="button" data-faction="${i}"><small>${ESCAPE(n.zone)}</small><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.faction)}</p><span>전략 보고서 열기 ↗</span></button>`).join('');const figures=$('figureCards');if(figures)figures.innerHTML=NATIONS.map((n,i)=>`<button class="archive-country" type="button" data-figure="${i}"><small>핵심 인물 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.leaders)}</p><span>해당 국가 지도 열기 ↗</span></button>`).join('');document.querySelectorAll('[data-faction],[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.faction??b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
+
+const FACTION_COLORS={luminus:'#d7b38e',astria:'#d4aa81',etheria:'#93a9bd',silvarion:'#adbebd',selenia:'#b4aacd',verdia:'#8aa48e',azulon:'#9bacc0',frijia:'#d4c9b9'};
+const FACTION_STORIES={
+ luminus:'교황청과 귀족원의 권위가 뒤집히며 신성한 질서가 새로운 권력 아래 재편되는 타락·권력 역전 서사.',
+ astria:'황실과 귀족의 화려한 사교 문화가 정복 이후 이질적인 유흥·권력 질서로 재편되는 몰락 서사.',
+ etheria:'마법사들이 독점하던 연구와 마탑의 위계가 역전되고 흑마법 연구가 확장되는 성인 다크 판타지 서사.',
+ silvarion:'순혈 귀족의 오만한 질서가 몰락하고 천공 궁정의 위계가 전복되는 극적인 변화를 다룹니다.',
+ selenia:'신탁과 정결의 성역이 무너지며 월광 신국의 신앙과 문화가 뒤바뀌는 타락 서사.',
+ verdia:'세계수의 보호 아래 고립된 왕국이 외부 권력과 충돌하며 숲의 질서가 뒤바뀌는 서사.',
+ azulon:'청룡의 절대적인 신격이 흔들리고 수인 부족들의 충성 관계가 변화하는 지배 질서 역전 서사.',
+ frijia:'백룡 신앙의 위엄이 무너지고 성전과 궁정의 권력 관계가 새롭게 재편되는 몰락 서사.'
+};
+let activeFaction=0;
+function factionScene(n){const key=n.id;const c=FACTION_COLORS[key];const moon=key==='selenia'||key==='frijia'; const forest=key==='verdia'; const tower=key==='etheria'||key==='silvarion';
+return `<svg class="fac-scene" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 670" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="facSky" x1="0" x2=".6" y1="0" y2="1"><stop stop-color="#514349"/><stop offset=".45" stop-color="#3a3640"/><stop offset="1" stop-color="#1a171f"/></linearGradient><radialGradient id="facHalo"><stop offset="0" stop-color="${c}" stop-opacity=".52"/><stop offset=".4" stop-color="${c}" stop-opacity=".15"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient><linearGradient id="facHill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#393339"/><stop offset="1" stop-color="#100e16"/></linearGradient></defs>
+<rect width="1400" height="670" fill="url(#facSky)"/><ellipse cx="1085" cy="182" rx="250" ry="230" fill="url(#facHalo)"/><circle cx="1085" cy="178" r="${moon?72:58}" fill="${c}" opacity=".42"/><circle cx="1095" cy="176" r="${moon?66:53}" fill="#28242c"/><circle cx="1085" cy="178" r="${moon?73:59}" fill="none" stroke="${c}" stroke-opacity=".38" stroke-width="2"/>
+<path d="M0 330 110 260 180 292 300 225 410 309 525 245 635 311 760 208 900 301 1000 225 1110 301 1270 215 1400 290 V670H0Z" fill="#161a20" opacity=".72"/><path d="M0 445 90 380 220 406 350 335 515 432 650 362 765 428 905 329 1014 402 1200 327 1400 394 V670H0Z" fill="url(#facHill)"/>
+${forest?`<g fill="#101a1b" opacity=".9"><path d="M880 535 948 260 1016 535Z"/><path d="M1020 520 1130 190 1230 520Z"/><path d="M1160 540 1262 270 1364 540Z"/><path d="M800 556 857 318 920 556Z"/></g>`:''}
+<g fill="#141218" stroke="${c}" stroke-width="1" stroke-opacity=".24" opacity=".88"><path d="M780 590V385h70V340h29v-28h24v28h32v250Z"/><path d="M897 590V300h38V255h27v45h32v290Z"/><path d="M990 590V380h78V334h31v-36h24v36h27v256Z"/><path d="M1117 590V313h56v-65l22-34 22 34v65h57v277Z"/><path d="M1230 590V407h110V368h30v222Z"/><path d="M752 590V466h67V450h13v140Z"/></g>
+<g fill="#111017"><path d="M903 319 948 226 994 319Z"/><path d="M1135 318 1194 195 1256 318Z"/><path d="M764 385 880 285 996 385Z"/><path d="M985 380 1097 281 1187 380Z"/><path d="M934 251v-77h7v77ZM1192 212v-73h7v73Z"/></g>
+${tower?`<g fill="#181922" stroke="${c}" stroke-opacity=".36"><path d="M1190 570V170h25V99l20-47 20 47v71h30v400Z"/><path d="M865 570V269h21v-77l15-40 15 40v77h24v301Z"/></g>`:''}
+<g fill="#281c1f"><rect x="1080" y="433" width="9" height="16"/><rect x="1102" y="433" width="9" height="16"/><rect x="1190" y="372" width="13" height="25"/><rect x="927" y="365" width="12" height="20"/></g>
+<path d="M0 532 Q220 500 410 546 T830 518 T1400 545V670H0Z" fill="#110e13" opacity=".88"/><path d="M0 605Q370 579 700 596T1400 586V670H0Z" fill="#09090d"/><g stroke="${c}" stroke-opacity=".17"><path d="M80 150h390M480 150h100M1000 570h180"/></g></svg>`}
+function renderFactionDetail(){const n=NATIONS[activeFaction];if(!n)return;const color=FACTION_COLORS[n.id]||'#c6aaa4';const sec=$('factionDetail');if(!sec)return;
+const factions=n.faction.split(' / ');const people=n.leaders.split(' · ').map(x=>x.trim()).filter(Boolean);const info=[['국가 위치',n.zone],['수도',n.capital],['지배 체제',n.kind],['국가 특색',n.tag]];
+sec.style.setProperty('--fac-color',color);
+sec.innerHTML=`
+ <section class="fac-hero">${factionScene(n)}<div class="fac-hero-side">MIDDLE WORLD / EAST<br>CAMPAIGN DOSSIER · ${String(activeFaction+1).padStart(2,'0')}</div><div class="fac-hero-copy"><div class="fac-serial">CONFIDENTIAL · FACTION ${String(activeFaction+1).padStart(2,'0')} / 08</div><span class="fac-glyph" aria-hidden="true">${ESCAPE(n.icon)}</span><div class="fac-tag">${ESCAPE(n.tag)} / ${ESCAPE(n.zone)}</div><h2>${ESCAPE(n.name)}</h2><p class="fac-intro">${ESCAPE(n.intro)}</p><div class="fac-herometa"><span>${ESCAPE(n.capital)}</span><span>${ESCAPE(n.kind)}</span><span>SEASON ${String(currentSeason).padStart(2,'0')}</span></div></div></section>
+ <section class="fac-section"><div class="fac-sectiontag">01 — THE EMPIRE / 제국의 정체</div><div class="fac-two-col"><div><h3>그들이 세운<br><em>질서와 문명.</em></h3><p class="fac-quote">${ESCAPE(n.civ)}</p><p style="margin-top:23px">${ESCAPE(n.geo)}</p></div><div class="fac-outline-grid">${info.map(([k,v],i)=>`<div class="fac-outline-item"><small>0${i+1} / ${ESCAPE(k)}</small><strong>${ESCAPE(v)}</strong></div>`).join('')}</div></div></section>
+ <section class="fac-section"><div class="fac-sectiontag">02 — WAR ASSESSMENT / 전력 분석</div><div class="fac-army"><h3>그들의 힘,<br><em>그리고 균열.</em></h3><div class="fac-army-grid"><div class="fac-army-box"><div class="fac-num">I</div><strong>전장에 나서는 군대</strong><p>${ESCAPE(n.military)}</p></div><div class="fac-army-box"><div class="fac-num">II</div><strong>견고한 질서의 약점</strong><p>${ESCAPE(n.weakness)}</p></div></div><div class="fac-ranks">${factions.map(f=>`<span>${ESCAPE(f)}</span>`).join('')}</div></div></section>
+ <section class="fac-section"><div class="fac-sectiontag">03 — SPOILS OF CONQUEST / 정복 이후의 세계</div><div class="fac-two-col" style="margin-bottom:30px"><div><h3>무너진 왕국에서<br><em>얻게 될 것들.</em></h3></div><div><p>정복 후의 변화를 세 가지 관점으로 정리한 전망 보고서입니다. 원본 세계관의 전략적 효과와 성인향 분위기를 참고하되, 이 공개 사이트에서는 노골적인 장면 대신 제도·세력·거점의 변화를 중심으로 소개합니다.</p></div></div><div class="fac-results"><article class="fac-result"><div class="fac-num">01</div><h4>전력 · 전략적 이점</h4><p>${ESCAPE(n.benefit)}</p></article><article class="fac-result"><div class="fac-num">02</div><h4>접수 가능한 거점 · 자원</h4><p>${ESCAPE(n.places)}<br><span style="color:var(--fac-color)">+</span> ${ESCAPE(n.resources)}</p></article><article class="fac-result"><div class="fac-num">03</div><h4>성인향 서사 · 지배 질서의 변화</h4><p>${ESCAPE(FACTION_STORIES[n.id])}</p></article></div></section>
+ <section class="fac-section"><div class="fac-sectiontag">04 — KEY PERSONNEL / 핵심 인물</div><div class="fac-two-col" style="margin-bottom:26px"><div><h3>그 나라를 움직이는<br><em>세 명의 인물.</em></h3></div><p>정치와 군사의 중추를 이루는 인물들입니다. 개인의 상세 프로필과 일러스트는 후속 작업에서 확장할 수 있도록 이름과 직책을 기준으로 정리했습니다.</p></div><div class="fac-character-grid">${people.map((p,i)=>{const t=p.split(' ');return `<article class="fac-character"><small>TARGET 0${i+1}</small><strong>${ESCAPE(t[t.length-1])}</strong><em>${ESCAPE(t.slice(0,-1).join(' ')||'주요 인물')}</em></article>`}).join('')}</div></section>
+ <div class="fac-return"><span style="font:11px ui-monospace,monospace;letter-spacing:1px;color:#8f827d">END OF FACTION DOSSIER · ${ESCAPE(n.short)}</span><button type="button" id="facToMap">동부대륙 지도에서 위치 확인 ↗</button></div>`;
+const mapBtn=$('facToMap');if(mapBtn)mapBtn.onclick=()=>{selectedIndex=activeFaction;showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})};
+ document.querySelectorAll('#factionCards [data-faction]').forEach(b=>{const on=Number(b.dataset.faction)===activeFaction;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
+}
+
+function renderFactionsAndFigures(){const factions=$('factionCards');if(factions){factions.innerHTML=NATIONS.map((n,i)=>`<button class="fac-select" style="--fac-color:${FACTION_COLORS[n.id]}" type="button" data-faction="${i}" aria-pressed="false"><span class="fs-num">${String(i+1).padStart(2,'0')}</span><span class="fs-icon" aria-hidden="true">${ESCAPE(n.icon)}</span><span class="fs-text"><strong>${ESCAPE(n.short)}</strong><small>${ESCAPE(n.kind)}</small></span></button>`).join('');factions.querySelectorAll('[data-faction]').forEach(b=>b.onclick=()=>{activeFaction=Number(b.dataset.faction);renderFactionDetail();$('factionDetail').scrollIntoView({behavior:'smooth',block:'start'})});renderFactionDetail()}
+const figures=$('figureCards');if(figures)figures.innerHTML=NATIONS.map((n,i)=>`<button class="archive-country" type="button" data-figure="${i}"><small>핵심 인물 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.leaders)}</p><span>해당 국가 지도 열기 ↗</span></button>`).join('');document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
 const PAGE_NAMES={command:'마왕군 최고 전략회의실',continent:'동부대륙 전략 지도',nations:'국가 기록',factions:'세력 분석',figures:'핵심 인물',archive:'세계관 기록보관실'};
 function showPage(page){if(!PAGE_NAMES[page])return;currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('#sideNav button').forEach(btn=>{let active=btn.dataset.page===page;btn.classList.toggle('active',active);active?btn.setAttribute('aria-current','page'):btn.removeAttribute('aria-current')});$('topTitle').textContent=PAGE_NAMES[page];closeSidebar();window.scrollTo({top:0,behavior:'instant'});}
 function closeSidebar(){$('sidebar').classList.remove('open');$('sidebarShade').classList.remove('show');}
