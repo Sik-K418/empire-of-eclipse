@@ -797,6 +797,51 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
 @media(max-width:630px){#page-factions .fac2-section-head{font-size:8px;letter-spacing:1px}#page-factions .fac2-classified{display:none}#page-factions .fac2-introduction{min-height:0;padding:27px 1px 22px}#page-factions .fac2-introduction h1{font-size:clamp(32px,8.3vw,52px);letter-spacing:-1.3px}#page-factions .fac2-introduction p{font-size:12px}#page-factions .fac2-index-head small{display:none}#page-factions .fac2-picker{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin-bottom:15px}#page-factions .fac2-picker .fac-select{min-height:89px;padding:9px 5px 10px;border-radius:5px}#page-factions .fac2-picker .fac-select .fs-icon{font-size:19px}#page-factions .fac2-picker .fac-select .fs-text strong{font-size:10px}#page-factions .fac2-detail .fac-hero{min-height:670px;border-radius:8px}#page-factions .fac2-detail .fac-hero-layout{padding:112px 20px 19px;gap:17px}#page-factions .fac2-detail .fac-ghost{top:13%;left:0;font-size:clamp(56px,13vw,88px);letter-spacing:-4px}#page-factions .fac2-detail .fac-hero-copy h2{font-size:clamp(32px,9vw,48px);letter-spacing:-1.5px}#page-factions .fac2-detail .fac-intro{font-size:12px;line-height:1.85}#page-factions .fac2-detail .fac-sidecards{gap:6px}#page-factions .fac2-detail .fac-sidecard{padding:10px 8px;border-radius:6px}#page-factions .fac2-detail .fac-sidecard small{font-size:8px;letter-spacing:0}#page-factions .fac2-detail .fac-sidecard strong{font-size:10px;line-height:1.5}#page-factions .fac2-detail .fac-sidecard .fac-sideglyph{font-size:17px;width:27px;height:27px}#page-factions .fac2-detail .fac-hero-buttons button{font-size:11px;padding:11px 15px}#page-factions .fac2-detail .fac2-chapter-head{align-items:start;display:block}#page-factions .fac2-detail .fac2-chapter-head p{margin-top:10px;text-align:left}#page-factions .fac2-detail .fac2-pillars,#page-factions .fac2-detail .fac2-grid,#page-factions .fac2-detail .fac2-conquest{grid-template-columns:1fr}#page-factions .fac2-detail .fac2-pillar{min-height:0;padding:19px 20px}#page-factions .fac2-detail .fac2-pillar h4{margin:12px 0 8px}#page-factions .fac2-detail .fac2-army-media{min-height:300px;padding:22px}#page-factions .fac2-detail .fac2-organizations{min-height:0;padding:20px}#page-factions .fac2-detail .fac2-widecard{grid-template-columns:1fr}#page-factions .fac2-detail .fac2-wide-media{min-height:250px}#page-factions .fac2-detail .fac2-wide-copy{padding:25px}#page-factions .fac2-detail .fac2-statband{padding:18px 6px}#page-factions .fac2-detail .fac2-statintro{padding:6px 16px 17px}#page-factions .fac2-detail .fac2-stat strong{font-size:31px}#page-factions .fac2-detail .fac2-stat span:last-child{font-size:10px}#page-factions .fac2-detail .fac2-person-photo{height:115px}#page-factions .fac2-detail .fac2-person-text{padding:12px 10px}#page-factions .fac2-detail .fac2-person-text h4{font-size:15px}#page-factions .fac2-detail .fac2-person-text p{font-size:10px}#page-factions .fac2-detail .fac2-person-grid{gap:6px}#page-factions .fac2-detail .fac2-footer{display:block}#page-factions .fac2-detail .fac2-footer button{margin-top:14px}#page-factions .fac2-detail .fac-hero-foot{font-size:9px;letter-spacing:.5px}}
 @media(prefers-reduced-motion:reduce){#page-factions .fac2-picker .fac-select,#page-factions .fac2-detail .fac-hero-buttons button{transition:none}}
 
+
+/* V1 · 핵심 인물 시네마틱 포스터 상세 보기 */
+#page-figures button.figure-person{display:block;width:100%;border:0;padding:0;background:none;text-align:left;cursor:pointer;transition:transform .2s,color .2s;font:inherit}
+#page-figures button.figure-person:hover{transform:translateY(-3px);color:#fff}
+#page-figures button.figure-person:hover .figure-portrait,#page-figures button.figure-person:focus-visible .figure-portrait{border-color:#e1b7a4;box-shadow:0 0 16px #c68e9750}
+#page-figures .figure-portrait{position:relative}
+#page-figures .figure-portrait::after{content:'＋';position:absolute;bottom:5px;right:5px;display:grid;place-items:center;width:22px;height:22px;background:#110c12c9;border:1px solid #b8998d80;color:#e9d3c3;font:15px/1 Georgia,serif;pointer-events:none}
+body.figure-dialog-open{overflow:hidden}
+#figureDialog{--poster-accent:#a28d83;position:fixed;inset:0;margin:auto;padding:0;width:min(94vw,calc(88vh * .5625),520px);width:min(94vw,calc(88dvh * .5625),520px);max-width:none;max-height:94dvh;overflow:auto;overscroll-behavior:contain;border:1px solid #b4a09580;background:#151216;color:#f2eae0;box-shadow:0 25px 110px #000d;scrollbar-width:thin}
+#figureDialog[open]{animation:figure-reveal .32s cubic-bezier(.2,.7,.2,1) both}
+#figureDialog::backdrop{background:#050407dc;backdrop-filter:blur(7px)}
+@keyframes figure-reveal{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.figure-poster{position:relative;aspect-ratio:9/16;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 43%,var(--poster-accent),#17161b 72%);font-family:var(--display)}
+.figure-poster::before{content:'';position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,#f8e6d30c 0 1px,transparent 1px 34px),repeating-linear-gradient(0deg,#f8e6d30c 0 1px,transparent 1px 34px),linear-gradient(180deg,#09080cb0,transparent 28%,transparent 65%,#09080ca0);pointer-events:none}
+.figure-poster-orbit{position:absolute;z-index:-1;left:50%;top:41%;width:93%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,#e6d9cb30 0%,#e7d7c519 70%);border:1px solid #f0ddc64a;box-shadow:0 0 0 13px #eedec20a,0 0 0 14px #eedec219,0 0 0 36px #eedec209}
+.figure-poster-orbit::after{content:'✦';position:absolute;top:-11px;left:50%;color:#f3ddbc;font-size:18px;transform:translateX(-50%)}
+.figure-poster-art{position:absolute;inset:6% 0 1%;display:grid;place-items:center;z-index:0;pointer-events:none}
+.figure-poster-art img{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 10px 17px #05040680)}
+.figure-poster-art img[hidden],.figure-poster-empty[hidden]{display:none}
+.figure-poster-empty{display:grid;place-items:center;text-align:center;gap:12px;color:#eee4d8a0;font:9px/1.5 ui-monospace,monospace;letter-spacing:1.3px;transform:translateY(-9%)}
+.figure-poster-empty b{font:clamp(54px,10vw,90px)/1 Georgia,serif;color:#eddfc958;text-shadow:0 0 30px #fff1}
+.figure-poster-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#0b090edb 0%,transparent 17%,transparent 53%,#0b090e2a 62%,#0b090edb 87%,#0b090ef8 100%);pointer-events:none}
+.figure-poster-header{position:absolute;z-index:2;top:4%;left:5%;right:5%;display:flex;justify-content:space-between;align-items:start;gap:12px}
+.figure-poster-brand{font:500 12px/1.35 Georgia,serif;letter-spacing:1.6px;color:#f3e7db;text-shadow:0 2px 8px #000}
+.figure-poster-brand small{display:block;font:8px/1.5 ui-monospace,monospace;letter-spacing:1.2px;color:#c5b4a9;margin-top:5px}
+.figure-poster-country{text-align:right;font-size:11px;line-height:1.5;max-width:38%;margin-right:33px;color:#f3e9db;text-shadow:0 2px 8px #000}
+.figure-poster-country span{display:block;font:22px/1 Georgia,serif;color:#e4c49c;margin-bottom:5px}
+.figure-poster-close{position:absolute;z-index:4;top:3%;right:3%;width:32px;height:32px;display:grid;place-items:center;border:1px solid #c7b3a580;background:#111016b8;color:#eee1d5;font:23px/1 system-ui,sans-serif;cursor:pointer}
+.figure-poster-close:hover{background:#5b414a}
+.figure-poster-caption{position:absolute;z-index:2;left:6%;right:6%;bottom:6.5%;text-align:center;text-shadow:0 2px 12px #000}
+.figure-poster-role{font-size:clamp(11px,2.3vw,15px);letter-spacing:2px;color:#f0d1a8;margin:0 0 7px}
+.figure-poster-name{font-weight:600;font-size:clamp(35px,8.8vw,64px);line-height:1.13;letter-spacing:-.06em;margin:0;color:#fff5e8;overflow-wrap:anywhere}
+.figure-poster-name.has-english{font-size:clamp(20px,4.5vw,33px);letter-spacing:.18em}
+.figure-poster-english{font:400 clamp(26px,6vw,54px)/1.04 Georgia,serif;letter-spacing:-.055em;overflow-wrap:anywhere;margin:6px 0 0;color:#f8eee2}
+.figure-poster-rule{display:flex;align-items:center;gap:9px;justify-content:center;margin:13px auto 10px;color:#dabd91;font-size:10px;width:86%}
+.figure-poster-rule::before,.figure-poster-rule::after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,#d8b98c8c,transparent)}
+.figure-poster-quote{font-size:12px;line-height:1.65;margin:0;color:#f0e5dc;white-space:pre-line;overflow-wrap:anywhere}
+.figure-poster-meta{font-size:10px;letter-spacing:.5px;line-height:1.5;color:#c8bbb4;margin:9px 0 0}
+.figure-poster-footer{position:absolute;z-index:2;bottom:2%;left:5%;right:5%;display:flex;justify-content:space-between;align-items:center;font:8px/1.4 ui-monospace,monospace;letter-spacing:1.1px;color:#d2c0ae}
+.figure-poster-footer span:last-child{border:1px solid #bfa9916b;padding:3px 6px}
+.figure-poster-description{padding:20px 24px;border-top:1px solid #89726780;background:#171219;color:#d6c8bd;font-size:13px;line-height:1.9;white-space:pre-line;overflow-wrap:anywhere}
+.figure-poster-description[hidden]{display:none}
+@media(max-width:600px){#figureDialog{width:min(94vw,calc(94dvh * .5625));max-height:96dvh}.figure-poster-header{gap:6px}.figure-poster-brand{font-size:10px}.figure-poster-brand small{font-size:7px}.figure-poster-country{font-size:10px}.figure-poster-name{font-size:clamp(28px,9vw,48px)}.figure-poster-quote{font-size:11px}.figure-poster-caption{bottom:7%}.figure-poster-description{padding:15px 18px}}
+@media(prefers-reduced-motion:reduce){#figureDialog[open]{animation:none}}
+
 </style>
 </head>
 <body>
@@ -889,12 +934,24 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
   <div id="factionDetail" class="fac-detail fac2-detail" aria-live="polite"></div>
   <p class="fac-bottom-note" id="factionSeasonText">시즌 1 · 동부대륙 8개 국가의 제도, 군사, 권력 구조에 대한 전략적 분석.</p>
 </section>
-      <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 주요 인물 24명을 국가별로 소개합니다. 국가를 선택하면 지도에서 소속 국가와 작전 정보를 확인할 수 있습니다.</p></div><div class="section-cover media-slot" data-image-slot="figuresHeader"><span class="slot-await">KEY PERSONNEL · 대표 이미지</span><small class="slot-await">IMAGE_URLS.figuresHeader</small></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">국가별 핵심 인물을 확인할 수 있습니다.</p></section>
+      <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 주요 인물 24명을 국가별로 소개합니다. 인물을 선택하면 상세 포스터를 열람할 수 있습니다.</p></div><div class="section-cover media-slot" data-image-slot="figuresHeader"><span class="slot-await">KEY PERSONNEL · 대표 이미지</span><small class="slot-await">IMAGE_URLS.figuresHeader</small></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">국가별 핵심 인물을 확인할 수 있습니다.</p></section>
       <section class="page" id="page-archive"><div class="page-head"><div class="eyebrow">LORE ARCHIVE / MIDDLE WORLD</div><h1 class="hero-title">중간계 <span>기록보관실</span></h1><p class="hero-desc">마왕 시뮬레이터의 세계관을 자연스럽게 소개하는 기록실입니다. 아래는 중간계 및 동부대륙 설정을 나중에 추가할 수 있도록 마련한 기본 구조입니다.</p></div><div class="section-cover media-slot" data-image-slot="archiveHeader"><span class="slot-await">WORLD LORE · 대표 이미지</span><small class="slot-await">IMAGE_URLS.archiveHeader</small></div><div class="quote">“세계를 이해하는 것은, 지도를 펼치는 일에서 시작된다.”</div><div class="archive-scroll"><div class="archive-item"><div class="archive-num">I</div><div><h3>중간계의 개요</h3><p>중간계가 어떤 세계인지, 그 역사와 주요 무대에 대한 소개가 들어갈 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">II</div><div><h3>동부대륙의 역사</h3><p>동부대륙의 형성과 시대별 사건, 국가 간 흐름을 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">III</div><div><h3>시즌 1 · 주요 사건</h3><p>시즌 1의 배경과 등장 국가 및 중요한 사건의 흐름을 소개합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">IV</div><div><h3>동부대륙 주요 세력</h3><p>8개국의 정치 세력, 군사 조직과 동맹 관계를 추후 보강할 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">V</div><div><h3>종족 · 문화 · 신앙</h3><p>세계관에 존재하는 종족과 문화권, 신앙과 생활 양식에 관한 자료를 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div></div></section>
       <footer class="page-footer"><span>EMPIRE OF ECLIPSE · EASTERN WAR COUNCIL</span><span><b>V1 · 동부대륙 8개국 반영</b> / 선택형 전략 지도 · 국경 도식은 임시</span></footer>
     </main>
   </div>
 </div>
+<dialog id="figureDialog" aria-labelledby="figurePosterName">
+  <article class="figure-poster">
+    <div class="figure-poster-orbit" aria-hidden="true"></div>
+    <div class="figure-poster-art"><img id="figurePosterImage" alt="" hidden><div class="figure-poster-empty" id="figurePosterEmpty"><b id="figurePosterEmblem" aria-hidden="true">✦</b><span>CHARACTER ARTWORK<br>전신 일러스트 등록 예정</span></div></div>
+    <div class="figure-poster-shade" aria-hidden="true"></div>
+    <header class="figure-poster-header"><div class="figure-poster-brand">EMPIRE OF<br>ECLIPSE<small>PERSONNEL ARCHIVE</small></div><div class="figure-poster-country"><span id="figurePosterIcon"></span><div id="figurePosterCountry"></div></div></header>
+    <button type="button" id="figurePosterClose" class="figure-poster-close" aria-label="인물 상세 닫기" autofocus>×</button>
+    <div class="figure-poster-caption"><p class="figure-poster-role" id="figurePosterRole"></p><h2 class="figure-poster-name" id="figurePosterName"></h2><p class="figure-poster-english" id="figurePosterEnglish" hidden></p><div class="figure-poster-rule" aria-hidden="true">◆</div><p class="figure-poster-quote" id="figurePosterQuote" hidden></p><p class="figure-poster-meta" id="figurePosterMeta"></p></div>
+    <footer class="figure-poster-footer"><span id="figurePosterSerial"></span><span>SEASON 01</span></footer>
+  </article>
+  <div class="figure-poster-description" id="figurePosterDescription" hidden></div>
+</dialog>
 <script>
 'use strict';
 // 제국 설정 원본.txt의 공개 가능한 지정학·역사·전력·인물 정보를 바탕으로 구성한 동부대륙 기록.
@@ -1020,6 +1077,36 @@ const IMAGE_URLS = {
     "설화": "",
     "미엘": ""
   }
+};
+// ================================================================
+// 인물 상세 포스터 전용 설정 · image는 전신 일러스트(세로형 또는 투명 PNG).
+// image가 비어 있으면 IMAGE_URLS.people의 기존 초상화를 사용합니다.
+// english / quote / description은 확정 설정 입력 시에만 표시됩니다.
+const FIGURE_DETAILS = {
+  "셀레스티아": {image:"", english:"", quote:"", description:""},
+  "발레리아": {image:"", english:"", quote:"", description:""},
+  "엘레오노라": {image:"", english:"", quote:"", description:""},
+  "이리나": {image:"", english:"", quote:"", description:""},
+  "레오나": {image:"", english:"", quote:"", description:""},
+  "세실리아": {image:"", english:"", quote:"", description:""},
+  "에밀리아": {image:"", english:"", quote:"", description:""},
+  "이졸데": {image:"", english:"", quote:"", description:""},
+  "클로에": {image:"", english:"", quote:"", description:""},
+  "아우렐리아": {image:"", english:"", quote:"", description:""},
+  "루시엘": {image:"", english:"", quote:"", description:""},
+  "세라피나": {image:"", english:"", quote:"", description:""},
+  "아르테미아": {image:"", english:"", quote:"", description:""},
+  "카엘라": {image:"", english:"", quote:"", description:""},
+  "미리엘": {image:"", english:"", quote:"", description:""},
+  "실피아": {image:"", english:"", quote:"", description:""},
+  "리아나": {image:"", english:"", quote:"", description:""},
+  "세레나": {image:"", english:"", quote:"", description:""},
+  "사피리아": {image:"", english:"", quote:"", description:""},
+  "밀레아": {image:"", english:"", quote:"", description:""},
+  "울리카": {image:"", english:"", quote:"", description:""},
+  "프리지아": {image:"", english:"", quote:"", description:""},
+  "설화": {image:"", english:"", quote:"", description:""},
+  "미엘": {image:"", english:"", quote:"", description:""}
 };
 function lookupImageSlot(key){const parts=key.split('.');let obj=IMAGE_URLS;for(const part of parts){if(!obj||typeof obj!=='object')return '';obj=obj[part]}return typeof obj==='string'?obj.trim():''}
 function applyImageSlots(root=document){root.querySelectorAll('[data-image-slot]').forEach(el=>{
@@ -1223,8 +1310,34 @@ function renderFactionDetail(){
  document.querySelectorAll('#factionCards [data-faction]').forEach(b=>{const on=Number(b.dataset.faction)===activeFaction;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
 }
 
+function openFigurePoster(i,j){
+ const n=NATIONS[i];if(!n)return;
+ const entry=n.leaders.split(' · ')[j];if(!entry)return;
+ const name=entry.split(' ').slice(-1)[0],role=entry.slice(0,entry.length-name.length).trim();
+ const profile=FIGURE_DETAILS[name]||{},dialog=$('figureDialog'),img=$('figurePosterImage'),empty=$('figurePosterEmpty');
+ dialog.style.setProperty('--poster-accent',FACTION_COLORS[n.id]||n.tone);
+ $('figurePosterName').textContent=name;$('figurePosterRole').textContent=role;
+ $('figurePosterCountry').textContent=n.name;$('figurePosterIcon').textContent=n.icon;$('figurePosterEmblem').textContent=n.icon;
+ $('figurePosterMeta').textContent=n.short+' · '+n.kind;
+ $('figurePosterSerial').textContent='PERSONNEL / '+String(i*3+j+1).padStart(2,'0');
+ for(const [id,key] of [['figurePosterEnglish','english'],['figurePosterQuote','quote'],['figurePosterDescription','description']]){
+  const el=$(id),value=String(profile[key]||'').trim();el.textContent=value;el.hidden=!value;
+ }
+ $('figurePosterName').classList.toggle('has-english',!$('figurePosterEnglish').hidden);
+ const valid=u=>typeof u==='string'&&/^(https?:\/\/|images\/|\.\/images\/|data:image\/)/i.test(u.trim());
+ const full=String(profile.image||'').trim(),thumb=lookupImageSlot('people.'+name),urls=[...new Set([full,thumb].filter(valid))];
+ img.hidden=true;empty.hidden=false;img.onload=null;img.onerror=null;img.removeAttribute('src');img.alt=name+' 일러스트';
+ let pos=0;function loadArt(){if(pos>=urls.length){img.hidden=true;empty.hidden=false;return}img.src=urls[pos++]}
+ img.onload=()=>{img.hidden=false;empty.hidden=true};img.onerror=loadArt;if(urls.length)loadArt();
+ if(!dialog.open){document.body.classList.add('figure-dialog-open');dialog.showModal()}
+ dialog.scrollTop=0;
+}
+$('figurePosterClose').onclick=()=>$('figureDialog').close();
+$('figureDialog').addEventListener('click',e=>{if(e.target===$('figureDialog'))$('figureDialog').close()});
+$('figureDialog').addEventListener('close',()=>document.body.classList.remove('figure-dialog-open'));
+
 function renderFactionsAndFigures(){const factions=$('factionCards');if(factions){factions.innerHTML=NATIONS.map((n,i)=>`<button class="fac-select" style="--fac-color:${FACTION_COLORS[n.id]}" type="button" data-faction="${i}" aria-pressed="false"><span class="fs-num">${String(i+1).padStart(2,'0')}</span><span class="fs-icon" aria-hidden="true">${ESCAPE(n.icon)}</span><span class="fs-text"><strong>${ESCAPE(n.short)}</strong><small>${ESCAPE(n.kind)}</small></span></button>`).join('');factions.querySelectorAll('[data-faction]').forEach(b=>b.onclick=()=>{activeFaction=Number(b.dataset.faction);renderFactionDetail();$('factionDetail').scrollIntoView({behavior:'smooth',block:'start'})});renderFactionDetail()}
-const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>국가별 주요 인물 03 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<div class="figure-person"><div class="figure-portrait media-slot" data-image-slot="people.${name}"><span class="slot-await">PORTRAIT 0${j+1}</span></div><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></div>`}).join('')}</div><button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures)}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
+const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>국가별 주요 인물 03 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<button class="figure-person" type="button" data-figure-person="${i}:${j}" aria-haspopup="dialog" aria-label="${ESCAPE(name)} 상세 보기"><span class="figure-portrait media-slot" data-image-slot="people.${ESCAPE(name)}"><span class="slot-await">PORTRAIT 0${j+1}</span></span><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></button>`}).join('')}</div><button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures);figures.querySelectorAll('[data-figure-person]').forEach(b=>b.onclick=()=>{const [i,j]=b.dataset.figurePerson.split(':').map(Number);openFigurePoster(i,j)})}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
 const PAGE_NAMES={command:'마왕군 최고 전략회의실',continent:'동부대륙 전략 지도',nations:'국가 기록',factions:'세력 분석',figures:'핵심 인물',archive:'세계관 기록보관실'};
 function showPage(page){if(!PAGE_NAMES[page])return;currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('#sideNav button').forEach(btn=>{let active=btn.dataset.page===page;btn.classList.toggle('active',active);active?btn.setAttribute('aria-current','page'):btn.removeAttribute('aria-current')});$('topTitle').textContent=PAGE_NAMES[page];closeSidebar();window.scrollTo({top:0,behavior:'instant'});}
 function closeSidebar(){$('sidebar').classList.remove('open');$('sidebarShade').classList.remove('show');}
