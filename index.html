@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="theme-color" content="#0a080d">
 <meta name="description" content="마왕군 중간계 동부대륙 8개 국가를 세로 이미지 패널에서 선택하면 국가 소개가 펼쳐지는 시즌 1 동부대륙 기록실.">
-<title>일식의 제국 | 동부대륙 8개국 펼침 갤러리 V1</title>
+<title>일식의 제국 | 동부대륙 8개국 선택 · 기록 연결 V1</title>
 <style>
 :root{--bg:#090a0e;--panel:#11141a;--panel2:#171a21;--panel3:#1d2026;--edge:#343137;--border:#37343a;--gold:#c7a572;--gold-light:#f1d8a1;--cream:#e9e0d0;--sub:#aaa5a1;--muted:#77777e;--red:#af4b4b;--red2:#692f35;--green:#799387;--shadow:0 18px 60px #0009;--display:Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 58% 35% at 72% 15%,#3d1a1d42,transparent),radial-gradient(ellipse 46% 60% at 0 100%,#6452381d,transparent),repeating-linear-gradient(90deg,#fff2 0 1px,transparent 1px 88px),#090a0e;opacity:.75;pointer-events:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}button:disabled{cursor:not-allowed}a{text-decoration:none;color:inherit}svg{display:block}::selection{background:#b8935a66;color:white}
@@ -650,6 +650,29 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
 @media (max-width:520px){.realm-cover-header{padding:17px 19px 30px}.realm-cover-title{padding-top:34px}.realm-cover-title h1{font-size:clamp(41px,9vw,55px)}.realm-cover-title p{font-size:12px}.realm-cover-meta{font-size:9px;letter-spacing:.06em}.realm-explore-heading{align-items:flex-start;flex-direction:column;gap:4px}.realm-expander{height:480px}.realm-strip{flex-basis:64px;min-width:64px}.realm-strip.is-active{flex-basis:min(77vw,345px)}.realm-strip .realm-strip-info h2{font-size:clamp(29px,8.2vw,39px)}.realm-strip .realm-strip-info .realm-strip-intro{-webkit-line-clamp:4}.realm-strip .realm-strip-number{font-size:11px}.realm-selected-ribbon{padding:14px 16px}.realm-selected-ribbon strong{font-size:17px}.realm-selected-ribbon>div{gap:7px}.realm-intel-head{margin-top:40px}}
 @media (prefers-reduced-motion:reduce){.realm-strip,.realm-strip:before,.realm-strip .realm-strip-info,.realm-map-chevron{transition:none!important}}
 
+
+/* V1: 동부대륙은 선택형 갤러리 + 상세 페이지 링크 역할만 담당합니다. */
+#page-continent .realm-nav-only{margin:0;gap:24px;padding:22px clamp(18px,3.1vw,38px);scroll-margin-top:30px}
+#page-continent .realm-selected-copy{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0;flex:1 1 300px}
+#page-continent .realm-selected-copy small{font:10px/1.5 ui-monospace,monospace;letter-spacing:.19em;color:#b49a84}
+#page-continent .realm-selected-copy strong{font:500 clamp(21px,2.5vw,30px)/1.4 Georgia,'Noto Serif KR',serif;color:#efe6dc;overflow-wrap:anywhere}
+#page-continent .realm-selected-tag{color:#ae9b8e;font-size:12px;line-height:1.6;word-break:keep-all}
+#page-continent .realm-direct-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#page-continent .realm-direct-actions button{display:flex;align-items:center;justify-content:space-between;gap:13px;min-height:50px;padding:13px 18px;border:1px solid #9674577d;background:#482b2b4d;color:#f4dfca;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
+#page-continent .realm-direct-actions button:nth-child(2){background:#1e2024;border-color:#7a625678}
+#page-continent .realm-direct-actions button:hover{transform:translateY(-2px);background:#6e37384d;border-color:#d0a387}
+#page-continent .realm-direct-actions button span{font:10px ui-monospace,monospace;color:#b6997f}
+#page-continent .realm-direct-actions button b{font-size:17px;font-weight:400;color:#dcbb9b}
+#page-continent .realm-map-optional{margin-top:26px}
+@media(max-width:650px){
+ #page-continent .realm-nav-only{padding:20px 17px;gap:17px}
+ #page-continent .realm-selected-copy{flex:1 1 100%;gap:6px}
+ #page-continent .realm-direct-actions{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px}
+ #page-continent .realm-direct-actions button{min-width:0;padding:11px 9px;gap:5px;font-size:11px;min-height:49px}
+ #page-continent .realm-direct-actions button span{font-size:9px}
+ #page-continent .realm-direct-actions button b{font-size:14px}
+}
+@media(max-width:380px){#page-continent .realm-direct-actions{grid-template-columns:1fr}#page-continent .realm-direct-actions button{font-size:12px;padding:12px 16px}}
 </style>
 </head>
 <body>
@@ -695,16 +718,23 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
       <section class="page" id="page-continent">
         <header class="realm-cover-header">
           <div class="realm-cover-meta"><span>EMPIRE OF ECLIPSE</span><span>SEASON I / THE EASTERN CONTINENT</span></div>
-          <div class="realm-cover-title"><span class="realm-cover-kicker">동부대륙 · 여덟 국가의 경계</span><h1>여덟 국가,<br><em>하나의 대륙.</em></h1><p>서로 다른 여덟 문명이 이 땅을 나누어 지배합니다. 한 국가의 기록을 선택하면 봉인된 풍경이 펼쳐지고, 그 아래에 왕국의 이야기가 나타납니다.</p></div>
+          <div class="realm-cover-title"><span class="realm-cover-kicker">동부대륙 · 여덟 국가의 경계</span><h1>여덟 국가,<br><em>하나의 대륙.</em></h1><p>여덟 국가의 풍경을 펼쳐보고 원하는 나라를 선택하십시오. 국가의 역사와 문화는 「국가 기록」에서, 전력과 전략은 「세력 분석」에서 확인할 수 있습니다.</p></div>
         </header>
         <div class="realm-explore-heading"><span><i></i> EXPLORE THE EIGHT REALMS <b>08</b></span><span>패널 선택 · 모바일은 좌우로 밀어보세요 <strong>↔</strong></span></div>
         <div class="realm-expander" id="realmExpander" aria-label="동부대륙 여덟 국가의 선택형 펼침 패널"></div>
-        <div class="realm-selected-ribbon"><div><small>SELECTED REALM / 선택된 국가</small><strong id="realmSelectedLabel">아스트리아 대제국</strong></div><button type="button" id="realmOpenIntel" aria-label="선택한 국가의 상세 브리핑으로 이동">국가 브리핑 보기 <span>↓</span></button></div>
-        <div class="realm-intel-head" id="realmIntelAnchor"><span>THE REALM / RECORD</span><h2>선택 국가 기록</h2><p>선택한 국가의 위치·수도·문명과 주요 정보를 펼쳐 보여드립니다.</p></div>
-        <div id="continentIntel" class="realm-intel-content" aria-live="polite"></div>
-        <details class="realm-map-optional" id="continentMapFold"><summary><span><b>✥</b> 지도로 위치 확인하기 <small>동부대륙의 여덟 영토를 지도에서도 선택할 수 있습니다</small></span><span class="realm-map-chevron">＋</span></summary><div id="continentMap"></div></details>
-        <div class="realm-content-end"><span>THE EIGHT REALMS · ARCHIVE COMPLETED</span><button type="button" data-go-nation-archive>국가 기록 상세 페이지로 이동 <b>↗</b></button></div>
-      </section>
+        <div class="realm-selected-ribbon realm-nav-only" id="continentIntel" aria-live="polite">
+  <div class="realm-selected-copy">
+    <small>SELECTED REALM / 선택된 국가</small>
+    <strong id="realmSelectedLabel">아스트리아 대제국</strong>
+    <span class="realm-selected-tag" id="realmSelectedTag">선택 국가의 안내</span>
+  </div>
+  <div class="realm-direct-actions" aria-label="선택한 국가의 상세 페이지">
+    <button id="realmReadNation" type="button"><span>01</span> 국가 기록 보기 <b aria-hidden="true">↗</b></button>
+    <button id="realmReadFaction" type="button"><span>02</span> 세력 분석 보기 <b aria-hidden="true">↗</b></button>
+  </div>
+</div>
+<details class="realm-map-optional" id="continentMapFold"><summary><span><b>✥</b> 지도로 위치 확인하기 <small>동부대륙의 여덟 영토를 지도에서도 선택할 수 있습니다</small></span><span class="realm-map-chevron">＋</span></summary><div id="continentMap"></div></details>
+        </section>
       <section class="page" id="page-nations">
   <div class="chronicle-topline"><span>THE MIDDLE WORLD · THE EASTERN CONTINENT</span><span>ARCHIVE / 01 — 08</span></div>
   <header class="chronicle-intro">
@@ -894,7 +924,7 @@ function renderRealmExpander(){
   return `<button type="button" class="realm-strip${on?' is-active':''}" data-realm-strip="${i}" data-image-slot="countries.${n.id}.card" style="--strip-accent:${n.tone};--strip-sky:${skies[i][0]};--strip-mid:${skies[i][1]};--strip-sun:${skies[i][2]}" aria-pressed="${on}" aria-label="${ESCAPE(n.name)} 선택하여 펼쳐보기">
  <span class="realm-strip-shadowart" aria-hidden="true"></span><span class="realm-strip-number">${num} / 08</span><span class="realm-strip-glyph" aria-hidden="true">${symbols[i]}</span>
  <span class="realm-strip-vertical" aria-hidden="true">${ESCAPE(n.short)}</span>
- <span class="realm-strip-info"><span class="realm-strip-small">REALM ${num} / EASTERN CONTINENT</span><h2>${ESCAPE(n.name)}</h2><span class="realm-strip-tag">${ESCAPE(n.tag)}</span><span class="realm-strip-intro">${ESCAPE(n.intro)}</span><span class="realm-strip-cta">SELECTED REALM · 아래에서 상세 브리핑 확인 ↓</span></span>
+ <span class="realm-strip-info"><span class="realm-strip-small">REALM ${num} / EASTERN CONTINENT</span><h2>${ESCAPE(n.name)}</h2><span class="realm-strip-tag">${ESCAPE(n.tag)}</span><span class="realm-strip-intro">${ESCAPE(n.intro)}</span><span class="realm-strip-cta">SELECTED REALM · 아래에서 기록 및 분석 열기 ↘</span></span>
  </button>`}).join('');
  host.innerHTML=strips;
  applyImageSlots(host);
@@ -914,21 +944,11 @@ function renderRealmExpanderSelection(){
 }
 
 function renderMaps(){for(const id of ['continentMap']){const host=$(id);host.querySelector('.mapSeason').textContent=String(currentSeason).padStart(2,'0');host.querySelectorAll('[data-nation]').forEach(g=>{const on=Number(g.dataset.nation)===selectedIndex;g.classList.toggle('selected',on);g.setAttribute('aria-pressed',String(on))});host.querySelectorAll('[data-nation-pick]').forEach(b=>{const on=Number(b.dataset.nationPick)===selectedIndex;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))})}}
-function renderIntel(){const n=NATIONS[selectedIndex];const html=`<article class="intel realm-dossier" id="dossier-${n.id}">
- <div class="dossier-head"><div><span class="intel-id">IMPERIAL INTELLIGENCE · NATION FILE ${String(selectedIndex+1).padStart(2,'0')}</span><h2>${ESCAPE(n.name)}</h2><p class="dossier-tagline">${ESCAPE(n.tag)}</p></div><div class="dossier-seal">${n.icon}<small>동부대륙</small></div></div>
- <p class="dossier-intro">${ESCAPE(n.intro)}</p>
- <div class="dossier-metrics"><div><small>위치</small><strong>${ESCAPE(n.zone)}</strong></div><div><small>수도</small><strong>${ESCAPE(n.capital)}</strong></div><div><small>정체</small><strong>${ESCAPE(n.kind)}</strong></div></div>
- <div class="dossier-grid">
-  <section><h3><span>Ⅰ.</span> 지리 · 자연환경</h3><p>${ESCAPE(n.geo)}</p></section>
-  <section><h3><span>Ⅱ.</span> 문명 · 통치 체계</h3><p>${ESCAPE(n.civ)}</p></section>
-  <section><h3><span>Ⅲ.</span> 군사 전력 · 방어선</h3><p>${ESCAPE(n.military)}</p></section>
-  <section><h3><span>Ⅳ.</span> 내부 균열 · 전략 평가</h3><p>${ESCAPE(n.weakness)}</p></section>
- </div>
- <div class="dossier-bottom"><div><small>핵심 인물</small><p>${ESCAPE(n.leaders)}</p></div><div><small>주요 시설 · 거점</small><p>${ESCAPE(n.places)}</p></div><div><small>자원 · 기술</small><p>${ESCAPE(n.resources)}</p></div><div><small>정복 이후의 전략적 가치</small><p>${ESCAPE(n.benefit)}</p></div></div>
- <div class="dossier-footer"><span>※ 이 지도는 시즌 1 동부대륙의 지역 방향을 기준으로 제작한 V1 시각화입니다. 국경선은 임시 도식입니다.</span><button class="intel-action" type="button" data-page-to="nations">8개 국가 기록 열기 ↗</button></div>
- </article>`;
- $('continentIntel').innerHTML=html;
- document.querySelectorAll('.intel-action').forEach(btn=>btn.onclick=()=>showPage('nations'));
+// 동부대륙에는 별도 전략·문화 브리핑을 중복 게재하지 않고, 선택 국가와 이동 링크만 노출합니다.
+function renderIntel(){
+ const n=NATIONS[selectedIndex];
+ const label=$('realmSelectedLabel');if(label)label.textContent=n.name;
+ const tag=$('realmSelectedTag');if(tag)tag.textContent=n.tag;
 }
 function selectSector(i,scroll=false){selectedIndex=i;renderMaps();renderRealmExpanderSelection();renderIntel();if(scroll){const target=$('continentIntel');target?.scrollIntoView({behavior:'smooth',block:'start'})}}
 let activeChronicle=0;
@@ -993,7 +1013,7 @@ sec.innerHTML=`
  <section class="fac-section"><div class="fac-sectiontag">02 — WAR ASSESSMENT / 전력 분석</div><div class="fac-army"><h3>그들의 힘,<br><em>그리고 균열.</em></h3><div class="fac-army-grid"><div class="fac-army-box"><div class="fac-num">I</div><strong>전장에 나서는 군대</strong><p>${ESCAPE(n.military)}</p></div><div class="fac-army-box"><div class="fac-num">II</div><strong>견고한 질서의 약점</strong><p>${ESCAPE(n.weakness)}</p></div></div><div class="fac-ranks">${factions.map(f=>`<span>${ESCAPE(f)}</span>`).join('')}</div></div></section>
  <section class="fac-section"><div class="fac-sectiontag">03 — SPOILS OF CONQUEST / 정복 이후의 세계</div><div class="fac-two-col" style="margin-bottom:30px"><div><h3>무너진 왕국에서<br><em>얻게 될 것들.</em></h3></div><div><p>정복 후의 변화를 세 가지 관점으로 정리한 전망 보고서입니다. 원본 세계관의 전략적 효과와 성인향 분위기를 참고하되, 이 공개 사이트에서는 노골적인 장면 대신 제도·세력·거점의 변화를 중심으로 소개합니다.</p></div></div><div class="fac-results"><article class="fac-result"><div class="fac-num">01</div><h4>전력 · 전략적 이점</h4><p>${ESCAPE(n.benefit)}</p></article><article class="fac-result"><div class="fac-num">02</div><h4>접수 가능한 거점 · 자원</h4><p>${ESCAPE(n.places)}<br><span style="color:var(--fac-color)">+</span> ${ESCAPE(n.resources)}</p></article><article class="fac-result"><div class="fac-num">03</div><h4>성인향 서사 · 지배 질서의 변화</h4><p>${ESCAPE(FACTION_STORIES[n.id])}</p></article></div></section>
  <section class="fac-section"><div class="fac-sectiontag">04 — KEY PERSONNEL / 핵심 인물</div><div class="fac-two-col" style="margin-bottom:26px"><div><h3>그 나라를 움직이는<br><em>세 명의 인물.</em></h3></div><p>정치와 군사의 중추를 이루는 인물들입니다. 개인의 상세 프로필과 일러스트는 후속 작업에서 확장할 수 있도록 이름과 직책을 기준으로 정리했습니다.</p></div><div class="fac-character-grid">${people.map((p,i)=>{const t=p.split(' ');return `<article class="fac-character"><div class="fac-person-photo media-slot" data-image-slot="people.${t[t.length-1]}"><span class="slot-await">인물 일러스트</span></div><small>TARGET 0${i+1}</small><strong>${ESCAPE(t[t.length-1])}</strong><em>${ESCAPE(t.slice(0,-1).join(' ')||'주요 인물')}</em></article>`}).join('')}</div></section>
- <div class="fac-return"><span style="font:11px ui-monospace,monospace;letter-spacing:1px;color:#8f827d">END OF FACTION DOSSIER · ${ESCAPE(n.short)}</span><button type="button" id="facToMap">동부대륙 지도에서 위치 확인 ↗</button></div>`;
+ <div class="fac-return"><span style="font:11px ui-monospace,monospace;letter-spacing:1px;color:#8f827d">END OF FACTION DOSSIER · ${ESCAPE(n.short)}</span><button type="button" id="facToMap">동부대륙에서 국가 선택 ↗</button></div>`;
 applyImageSlots(sec);const mapBtn=$('facToMap');if(mapBtn)mapBtn.onclick=()=>{selectedIndex=activeFaction;showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})};
  document.querySelectorAll('#factionCards [data-faction]').forEach(b=>{const on=Number(b.dataset.faction)===activeFaction;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
 }
@@ -1008,7 +1028,8 @@ function toggleSidebar(){const open=$('sidebar').classList.toggle('open');$('sid
 $('sideNav').querySelectorAll('button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-council-nav]').forEach(b=>b.onclick=()=>showPage(b.dataset.councilNav));$('mobileMenu').onclick=toggleSidebar;$('sidebarShade').onclick=closeSidebar;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar()});
 makeMap('continentMap');applyImageSlots($('continentMap'));
 renderRealmExpander();renderMaps();renderIntel();
-$('realmOpenIntel').onclick=()=>$('realmIntelAnchor').scrollIntoView({behavior:'smooth',block:'start'});
+$('realmReadNation').onclick=()=>{activeChronicle=selectedIndex;renderNationSlots();showPage('nations')};
+$('realmReadFaction').onclick=()=>{activeFaction=selectedIndex;renderFactionDetail();showPage('factions')};
 document.querySelectorAll('[data-go-nation-archive]').forEach(b=>b.onclick=()=>{activeChronicle=selectedIndex;renderNationSlots();showPage('nations')});renderNationSlots();renderFactionsAndFigures();applyImageSlots();
 // 로딩이 완료되거나 스킵 버튼 클릭 시 중복 타이머 없이 즉시 화면을 전환합니다.
 const intro=$('intro'),app=$('app');let ended=false,opened=false,frame=0,finishTimer=null,fadeTimer=null;
