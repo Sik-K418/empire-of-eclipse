@@ -868,6 +868,55 @@ body.has-image::before{background:linear-gradient(#08060bbd,#08060bd9),var(--upl
 .poster-title-layer{display:block;width:100%;height:clamp(44px,10dvh,110px);object-fit:contain;margin:0 auto}.custom-title .figure-poster-name,.custom-title .figure-poster-english{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 .poster-scene-layer{display:block;width:100%;height:auto;border-top:1px solid #89726780}
 
+
+/* V1 · 대형 인물 기록실 / 핵심 인물과 서브 조연 분리 */
+#figureDialog{width:min(96vw,1280px);height:94dvh;max-height:94dvh;overflow:hidden;border-color:#9b7a8580}
+.figure-dialog-shell{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);height:100%;min-height:0}
+#figureDialog .figure-poster{aspect-ratio:auto;height:100%;min-height:0;align-self:stretch}
+#figureDialog .figure-poster-art{inset:2% 0 0}
+#figureDialog .figure-poster-header{right:5%;top:3%}
+#figureDialog .figure-poster-country{margin-right:0}
+#figureDialog .figure-poster-caption{bottom:6%;left:5%;right:5%}
+#figureDialog .figure-poster-name{font-size:clamp(38px,5vw,76px)}
+#figureDialog .figure-poster-name.has-english{font-size:clamp(24px,3vw,40px)}
+#figureDialog .figure-poster-english{font-size:clamp(32px,4.2vw,65px)}
+.figure-profile-pane{min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;background:radial-gradient(ellipse at 100% 0%,#42253660,transparent 55%),#151117;border-left:1px solid #9b7a8555;scrollbar-width:thin}
+.figure-profile-toolbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;background:#181219f5;border-bottom:1px solid #94717f55;backdrop-filter:blur(12px)}
+.figure-profile-toolbar span{font:10px/1.5 ui-monospace,monospace;letter-spacing:1.4px;color:#c6a8a8}
+.figure-profile-toolbar .figure-poster-close{position:static;flex:none;width:37px;height:37px}
+.figure-profile-content{padding:clamp(20px,3vw,38px)}
+.figure-profile-kicker{font:10px/1.5 ui-monospace,monospace;color:#c5a0a9;letter-spacing:2px}
+#figureProfileName{font-size:clamp(30px,3.5vw,48px);line-height:1.2;margin:14px 0 8px;color:#fff0e9;overflow-wrap:anywhere}
+#figureProfileRole{font-size:14px;color:#e1b6a1;margin:0 0 9px;line-height:1.65}
+#figureProfileCountry{font-size:12px;color:#a99a9d;margin:0 0 26px}
+.figure-profile-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 24px}
+.figure-profile-data[hidden]{display:none}.figure-profile-data>div{padding:12px;background:#241a23;border:1px solid #8b65773d;min-width:0}
+.figure-profile-data dt{font-size:10px;color:#b9a0a9;letter-spacing:.4px;margin-bottom:6px}
+.figure-profile-data dd{margin:0;font-size:14px;color:#f2e5df;overflow-wrap:anywhere;white-space:pre-line}
+.figure-profile-section{border-top:1px solid #8a647650;padding:20px 0 5px}
+.figure-profile-section h3{font-size:15px;color:#e9c2b1;margin:0 0 10px}
+.figure-profile-section p{margin:0 0 14px;color:#cfc2c7;font-size:13px;line-height:1.9;white-space:pre-line;overflow-wrap:anywhere}
+#figureProfilePending{padding:16px;border:1px dashed #88677960;color:#ac98a0;font-size:12px;line-height:1.8}
+.figure-profile-content .figure-poster-description{padding:0;border:0;background:none}
+.figure-profile-content .poster-scene-layer{border:1px solid #8b657750;margin-top:18px}
+.figure-profile-nav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:26px;padding-top:16px;border-top:1px solid #8a647650}
+.figure-profile-nav button,.figure-mobile-close{border:1px solid #9b758b75;background:#2b1b2a;color:#ead1d5;padding:9px 13px;font-size:12px;cursor:pointer}
+.figure-profile-nav button:hover,.figure-mobile-close:hover{background:#533044}
+.figure-mobile-close{display:none}
+.figure-secondary{margin:19px 0 13px;padding-top:14px;border-top:1px solid #8a647650}
+.figure-secondary-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:11px}
+.figure-secondary-head strong{font-size:12px;color:#d6bdc0;letter-spacing:.4px}
+.figure-secondary-head small{font:9px ui-monospace,monospace;color:#a38c99}
+.figure-secondary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.figure-secondary-card{min-width:0;padding:6px;background:#181219;border:1px solid #78596c50;text-align:left}
+.figure-secondary-photo{position:relative;aspect-ratio:4/3;background:radial-gradient(ellipse at center,#53334250,#171119);display:grid;place-items:center;color:#b998aa;overflow:hidden;background-size:cover;background-position:center 27%}
+.figure-secondary-card b{display:block;font-size:12px;color:#e8d7d9;line-height:1.5;margin:8px 0 2px;overflow-wrap:anywhere}
+.figure-secondary-card small{display:block;font-size:10px;color:#baa8b0;line-height:1.5;overflow-wrap:anywhere}
+.figure-secondary-card p{font-size:10px;color:#ad9ba4;margin:5px 0 0;line-height:1.6;overflow-wrap:anywhere;white-space:pre-line}
+.figure-secondary-card.is-empty{opacity:.65;border-style:dashed}
+.figure-secondary-photo.has-image .slot-await{display:none}
+@media(max-width:780px){#figureDialog{width:96vw;height:auto;max-height:96dvh;overflow:auto}.figure-dialog-shell{display:block;height:auto}.figure-profile-pane{overflow:visible;border-left:0;border-top:1px solid #9b7a8566}.figure-profile-toolbar{position:static}.figure-dialog-shell .figure-poster{width:100%;height:auto!important;aspect-ratio:9/16!important;min-height:0!important}.figure-mobile-close{display:grid;place-items:center;position:sticky;top:0;z-index:7;float:right;margin:10px 10px -47px 0;width:37px;height:37px;padding:0;font-size:23px;background:#141018dd}.figure-poster-header{padding-right:40px}.figure-profile-content{padding:22px 18px}#figureDialog .figure-poster-name{font-size:clamp(35px,10vw,62px)}#figureDialog .figure-poster-name.has-english{font-size:clamp(24px,6vw,34px)}#figureDialog .figure-poster-english{font-size:clamp(30px,8vw,50px)}}
+
 </style>
 </head>
 <body data-image-slot="siteBackground">
@@ -960,13 +1009,15 @@ body.has-image::before{background:linear-gradient(#08060bbd,#08060bd9),var(--upl
   <div id="factionDetail" class="fac-detail fac2-detail" aria-live="polite"></div>
   <p class="fac-bottom-note" id="factionSeasonText">시즌 1 · 동부대륙 8개 국가의 제도, 군사, 권력 구조에 대한 전략적 분석.</p>
 </section>
-      <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 주요 인물 24명을 국가별로 소개합니다. 인물을 선택하면 상세 포스터를 열람할 수 있습니다.</p></div><div class="section-cover media-slot" data-image-slot="figuresHeader"><span class="slot-await">KEY PERSONNEL · 대표 이미지</span><small class="slot-await">IMAGE_URLS.figuresHeader</small></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">국가별 핵심 인물을 확인할 수 있습니다.</p></section>
+      <section class="page" id="page-figures"><div class="page-head"><div class="eyebrow">HIGH-VALUE PERSONNEL</div><h1 class="hero-title">핵심 <span>인물</span></h1><p class="hero-desc">동부대륙 8개국의 핵심 인물과 서브 조연을 국가별로 소개합니다. 핵심 인물을 선택하면 전신 포스터와 상세 기록을 열람할 수 있습니다.</p></div><div class="section-cover media-slot" data-image-slot="figuresHeader"><span class="slot-await">KEY PERSONNEL · 대표 이미지</span><small class="slot-await">IMAGE_URLS.figuresHeader</small></div><div class="archive-grid" id="figureCards"></div><p class="section-explain" id="figureSeasonText">핵심 인물은 상세 열람이 가능하며, 기타 주요 인물은 목록에서 확인할 수 있습니다.</p></section>
       <section class="page" id="page-archive"><div class="page-head"><div class="eyebrow">LORE ARCHIVE / MIDDLE WORLD</div><h1 class="hero-title">중간계 <span>기록보관실</span></h1><p class="hero-desc">마왕 시뮬레이터의 세계관을 자연스럽게 소개하는 기록실입니다. 아래는 중간계 및 동부대륙 설정을 나중에 추가할 수 있도록 마련한 기본 구조입니다.</p></div><div class="section-cover media-slot" data-image-slot="archiveHeader"><span class="slot-await">WORLD LORE · 대표 이미지</span><small class="slot-await">IMAGE_URLS.archiveHeader</small></div><div class="quote">“세계를 이해하는 것은, 지도를 펼치는 일에서 시작된다.”</div><div class="archive-scroll"><div class="archive-item"><div class="archive-num">I</div><div><h3>중간계의 개요</h3><p>중간계가 어떤 세계인지, 그 역사와 주요 무대에 대한 소개가 들어갈 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">II</div><div><h3>동부대륙의 역사</h3><p>동부대륙의 형성과 시대별 사건, 국가 간 흐름을 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">III</div><div><h3>시즌 1 · 주요 사건</h3><p>시즌 1의 배경과 등장 국가 및 중요한 사건의 흐름을 소개합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">IV</div><div><h3>동부대륙 주요 세력</h3><p>8개국의 정치 세력, 군사 조직과 동맹 관계를 추후 보강할 자리입니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div><div class="archive-item"><div class="archive-num">V</div><div><h3>종족 · 문화 · 신앙</h3><p>세계관에 존재하는 종족과 문화권, 신앙과 생활 양식에 관한 자료를 정리합니다.</p></div><span class="ch-tag dim" style="margin-left:auto;flex:none">미등록</span></div></div></section>
       <footer class="page-footer"><span>EMPIRE OF ECLIPSE · EASTERN WAR COUNCIL</span><span><b>V1 · 동부대륙 8개국 반영</b> / 선택형 전략 지도 · 국경 도식은 임시</span></footer>
     </main>
   </div>
 </div>
-<dialog id="figureDialog" aria-labelledby="figurePosterName">
+<dialog id="figureDialog" aria-labelledby="figureProfileName">
+  <button type="button" class="figure-mobile-close" id="figureMobileClose" aria-label="인물 상세 닫기">×</button>
+  <div class="figure-dialog-shell">
   <article class="figure-poster">
     <img class="poster-background-layer" id="posterBackgroundLayer" alt="" hidden>
     <div class="figure-poster-orbit" aria-hidden="true"></div>
@@ -976,11 +1027,23 @@ body.has-image::before{background:linear-gradient(#08060bbd,#08060bd9),var(--upl
     <div class="figure-poster-shade" aria-hidden="true"></div>
     <img class="poster-complete-layer" id="posterCompleteLayer" alt="" hidden>
     <header class="figure-poster-header"><div class="figure-poster-brand"><img id="posterBrandLayer" alt="일식의 제국" hidden><div class="poster-brand-text">EMPIRE OF<br>ECLIPSE<small>PERSONNEL ARCHIVE</small></div></div><div class="figure-poster-country"><span id="figurePosterIcon"></span><img id="posterEmblemLayer" alt="" hidden><div id="figurePosterCountry"></div></div></header>
-    <button type="button" id="figurePosterClose" class="figure-poster-close" aria-label="인물 상세 닫기" autofocus>×</button>
+
     <div class="figure-poster-caption"><p class="figure-poster-role" id="figurePosterRole"></p><h2 class="figure-poster-name" id="figurePosterName"></h2><p class="figure-poster-english" id="figurePosterEnglish" hidden></p><img id="posterTitleLayer" class="poster-title-layer" alt="" hidden><div class="figure-poster-rule" aria-hidden="true">◆</div><p class="figure-poster-quote" id="figurePosterQuote" hidden></p><p class="figure-poster-meta" id="figurePosterMeta"></p></div>
     <footer class="figure-poster-footer"><span id="figurePosterSerial"></span><span>SEASON 01</span></footer>
   </article>
-  <div class="figure-poster-description" id="figurePosterDescription" hidden></div><img id="posterSceneLayer" class="poster-scene-layer" alt="" hidden>
+  <section class="figure-profile-pane" id="figureProfilePane">
+    <header class="figure-profile-toolbar"><span>IMPERIAL DOSSIER / 인물 상세 기록</span><button type="button" id="figurePosterClose" class="figure-poster-close" aria-label="인물 상세 닫기" autofocus>×</button></header>
+    <div class="figure-profile-content">
+      <div class="figure-profile-kicker">HIGH-VALUE PERSONNEL · SEASON 01</div>
+      <h2 id="figureProfileName"></h2><p id="figureProfileRole"></p><p id="figureProfileCountry"></p>
+      <dl class="figure-profile-data" id="figureProfileData" hidden></dl>
+      <div id="figureProfileSections"></div>
+      <div class="figure-poster-description" id="figurePosterDescription" hidden></div>
+      <div id="figureProfilePending">상세 인물 기록 등록 예정</div>
+      <img id="posterSceneLayer" class="poster-scene-layer" alt="캐릭터 추가 일러스트" hidden>
+      <div class="figure-profile-nav"><button type="button" id="figurePrev">← 이전 인물</button><span id="figureProfilePosition" class="tiny muted"></span><button type="button" id="figureNext">다음 인물 →</button></div>
+    </div>
+  </section></div>
 </dialog>
 <script>
 'use strict';
@@ -1164,30 +1227,74 @@ const IMAGE_URLS = {
 // scene=포스터 아래 추가 장면 / english, quote, description=선택 입력
 // 개인 background/ornament 미등록 시 국가 공통 posterBackground/posterOrnament 사용.
 const FIGURE_DETAILS = {
-  "셀레스티아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "발레리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "엘레오노라": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "이리나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "레오나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "세실리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "에밀리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "이졸데": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "클로에": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "아우렐리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "루시엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "세라피나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "아르테미아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "카엘라": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "미리엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "실피아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "리아나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "세레나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "사피리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "밀레아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "울리카": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "프리지아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "설화": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
-  "미엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""}
+  "셀레스티아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "발레리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "엘레오노라": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "이리나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "레오나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "세실리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "에밀리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "이졸데": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "클로에": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "아우렐리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "루시엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "세라피나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "아르테미아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "카엘라": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "미리엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "실피아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "리아나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "세레나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "사피리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "밀레아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "울리카": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "프리지아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "설화": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""},
+  "미엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:"", age:"", gender:"", race:"", height:"", affiliation:"", title:"", birthday:"", weight:"", appearance:"", personality:"", abilities:"", history:"", relationships:"", likes:"", dislikes:"", extra:""}
+};
+// 서브 조연: 국가별 3개는 임시 입력 슬롯이며 실제 배치는 자유롭게 변경 가능.
+// name / role / image / summary 입력. 카드 클릭 상세 없음. 배열 항목 추가·삭제 가능.
+const SUPPORTING_FIGURES = {
+  luminus: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  astria: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  etheria: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  silvarion: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  selenia: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  verdia: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  azulon: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ],
+  frijia: [
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""},
+    {name:"", role:"", image:"", summary:""}
+  ]
 };
 function lookupImageSlot(key){const parts=key.split('.');let obj=IMAGE_URLS;for(const part of parts){if(!obj||typeof obj!=='object')return '';obj=obj[part]}return typeof obj==='string'?obj.trim():''}
 function applyImageSlots(root=document){root.querySelectorAll('[data-image-slot]').forEach(el=>{
@@ -1391,6 +1498,7 @@ function renderFactionDetail(){
  document.querySelectorAll('#factionCards [data-faction]').forEach(b=>{const on=Number(b.dataset.faction)===activeFaction;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
 }
 
+let activeFigure=[0,0];
 function openFigurePoster(i,j){
  const n=NATIONS[i];if(!n)return;
  const entry=n.leaders.split(' · ')[j];if(!entry)return;
@@ -1405,6 +1513,24 @@ function openFigurePoster(i,j){
   const el=$(id),value=String(profile[key]||'').trim();el.textContent=value;el.hidden=!value;
  }
  $('figurePosterName').classList.toggle('has-english',!$('figurePosterEnglish').hidden);
+ activeFigure=[i,j];
+ $('figureProfileName').textContent=name+(profile.english?' / '+profile.english:'');
+ $('figureProfileRole').textContent=role;
+ $('figureProfileCountry').textContent=n.name+' · '+n.kind;
+ const basic=[['age','나이'],['gender','성별'],['race','종족'],['height','신장'],['weight','체중'],['birthday','생일'],['affiliation','소속'],['title','칭호']];
+ const sections=[['appearance','외형 및 특징'],['personality','성격'],['abilities','능력 및 특기'],['history','배경 및 개인 서사'],['relationships','인물 관계'],['likes','선호하는 것'],['dislikes','싫어하는 것'],['extra','기타 설정']];
+ const filled=([key])=>String(profile[key]??'').trim()!=='';
+ const basics=basic.filter(filled),details=sections.filter(filled);
+ $('figureProfileData').innerHTML=basics.map(([key,label])=>`<div><dt>${label}</dt><dd>${ESCAPE(profile[key])}</dd></div>`).join('');
+ $('figureProfileData').hidden=!basics.length;
+ $('figureProfileSections').innerHTML=details.map(([key,label])=>`<section class="figure-profile-section"><h3>${label}</h3><p>${ESCAPE(profile[key])}</p></section>`).join('');
+ $('figureProfilePending').hidden=!!(basics.length||details.length||String(profile.description||'').trim());
+ const all=NATIONS.flatMap((nation,ni)=>nation.leaders.split(' · ').map((_,nj)=>[ni,nj]));
+ const index=all.findIndex(([ni,nj])=>ni===i&&nj===j);
+ $('figureProfilePosition').textContent=String(index+1).padStart(2,'0')+' / '+String(all.length).padStart(2,'0');
+ $('figurePrev').onclick=()=>openFigurePoster(...all[(index-1+all.length)%all.length]);
+ $('figureNext').onclick=()=>openFigurePoster(...all[(index+1)%all.length]);
+
  const valid=u=>typeof u==='string'&&/^(https?:\/\/|images\/|\.\/images\/|data:image\/)/i.test(u.trim());
  const art=$('figureDialog').querySelector('.figure-poster');
  function layer(id, candidates, cls){
@@ -1428,14 +1554,20 @@ function openFigurePoster(i,j){
  let pos=0;function loadArt(){if(pos>=urls.length){img.hidden=true;empty.hidden=false;return}img.src=urls[pos++]}
  img.onload=()=>{img.hidden=false;empty.hidden=true};img.onerror=loadArt;if(urls.length)loadArt();
  if(!dialog.open){document.body.classList.add('figure-dialog-open');dialog.showModal()}
- dialog.scrollTop=0;
+ dialog.scrollTop=0;$('figureProfilePane').scrollTop=0;
 }
-$('figurePosterClose').onclick=()=>$('figureDialog').close();
+$('figurePosterClose').onclick=$('figureMobileClose').onclick=()=>$('figureDialog').close();
 $('figureDialog').addEventListener('click',e=>{if(e.target===$('figureDialog'))$('figureDialog').close()});
 $('figureDialog').addEventListener('close',()=>document.body.classList.remove('figure-dialog-open'));
 
+function renderSupporting(n){
+ const people=SUPPORTING_FIGURES[n.id]||[];
+ if(!people.length)return '';
+ return `<section class="figure-secondary"><header class="figure-secondary-head"><strong>기타 주요 인물</strong><small>SUPPORTING CAST · ${String(people.length).padStart(2,'0')}</small></header><div class="figure-secondary-grid">${people.map((p,j)=>`<article class="figure-secondary-card${p.name?'':' is-empty'}"><div class="figure-secondary-photo media-slot" data-support-image="${n.id}:${j}"><span class="slot-await">SUB ${String(j+1).padStart(2,'0')}</span></div><b>${ESCAPE(p.name||'인물 미등록')}</b><small>${ESCAPE(p.role||'직위 미등록')}</small>${p.summary?`<p>${ESCAPE(p.summary)}</p>`:''}</article>`).join('')}</div></section>`;
+}
+function applySupportingImages(root){root.querySelectorAll('[data-support-image]').forEach(el=>{const [country,index]=el.dataset.supportImage.split(':');const url=String(SUPPORTING_FIGURES[country]?.[Number(index)]?.image||'').trim();if(/^(https?:\/\/|images\/|\.\/images\/|data:image\/)/i.test(url)){el.style.setProperty('--uploaded-image','url('+JSON.stringify(url)+')');el.classList.add('has-image')}})}
 function renderFactionsAndFigures(){const factions=$('factionCards');if(factions){factions.innerHTML=NATIONS.map((n,i)=>`<button class="fac-select" style="--fac-color:${FACTION_COLORS[n.id]}" type="button" data-faction="${i}" aria-pressed="false"><span class="fs-num">${String(i+1).padStart(2,'0')}</span><span class="fs-icon" aria-hidden="true">${ESCAPE(n.icon)}</span><span class="fs-text"><strong>${ESCAPE(n.short)}</strong><small>${ESCAPE(n.kind)}</small></span></button>`).join('');factions.querySelectorAll('[data-faction]').forEach(b=>b.onclick=()=>{activeFaction=Number(b.dataset.faction);renderFactionDetail();$('factionDetail').scrollIntoView({behavior:'smooth',block:'start'})});renderFactionDetail()}
-const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>국가별 주요 인물 03 · ${ESCAPE(n.short)}</small><h3><span class="figure-group-emblem asset-symbol" data-image-slot="countries.${n.id}.emblem" aria-hidden="true">${ESCAPE(n.icon)}</span>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<button class="figure-person" type="button" data-figure-person="${i}:${j}" aria-haspopup="dialog" aria-label="${ESCAPE(name)} 상세 보기"><span class="figure-portrait media-slot" data-image-slot="people.${ESCAPE(name)}"><span class="slot-await">PORTRAIT 0${j+1}</span></span><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></button>`}).join('')}</div><button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures);figures.querySelectorAll('[data-figure-person]').forEach(b=>b.onclick=()=>{const [i,j]=b.dataset.figurePerson.split(':').map(Number);openFigurePoster(i,j)})}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
+const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>핵심 인물 ${String(n.leaders.split(' · ').length).padStart(2,'0')} · ${ESCAPE(n.short)}</small><h3><span class="figure-group-emblem asset-symbol" data-image-slot="countries.${n.id}.emblem" aria-hidden="true">${ESCAPE(n.icon)}</span>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<button class="figure-person" type="button" data-figure-person="${i}:${j}" aria-haspopup="dialog" aria-label="${ESCAPE(name)} 상세 보기"><span class="figure-portrait media-slot" data-image-slot="people.${ESCAPE(name)}"><span class="slot-await">PORTRAIT 0${j+1}</span></span><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></button>`}).join('')}</div>${renderSupporting(n)}<button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures);applySupportingImages(figures);figures.querySelectorAll('[data-figure-person]').forEach(b=>b.onclick=()=>{const [i,j]=b.dataset.figurePerson.split(':').map(Number);openFigurePoster(i,j)})}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
 const PAGE_NAMES={command:'마왕군 최고 전략회의실',continent:'동부대륙 전략 지도',nations:'국가 기록',factions:'세력 분석',figures:'핵심 인물',archive:'세계관 기록보관실'};
 function showPage(page){if(!PAGE_NAMES[page])return;currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('#sideNav button').forEach(btn=>{let active=btn.dataset.page===page;btn.classList.toggle('active',active);active?btn.setAttribute('aria-current','page'):btn.removeAttribute('aria-current')});$('topTitle').textContent=PAGE_NAMES[page];closeSidebar();window.scrollTo({top:0,behavior:'instant'});}
 function closeSidebar(){$('sidebar').classList.remove('open');$('sidebarShade').classList.remove('show');}
