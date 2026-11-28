@@ -842,21 +842,47 @@ body.figure-dialog-open{overflow:hidden}
 @media(max-width:600px){#figureDialog{width:min(94vw,calc(94dvh * .5625));max-height:96dvh}.figure-poster-header{gap:6px}.figure-poster-brand{font-size:10px}.figure-poster-brand small{font-size:7px}.figure-poster-country{font-size:10px}.figure-poster-name{font-size:clamp(28px,9vw,48px)}.figure-poster-quote{font-size:11px}.figure-poster-caption{bottom:7%}.figure-poster-description{padding:15px 18px}}
 @media(prefers-reduced-motion:reduce){#figureDialog[open]{animation:none}}
 
+
+/* V1 · 선택형 이미지 에셋 확장: 미등록 시 기존 디자인 그대로 */
+body.has-image::before{background:linear-gradient(#08060bbd,#08060bd9),var(--uploaded-image) center/cover no-repeat}
+.sidebar.has-image{background:linear-gradient(90deg,#100a11b8,#100a11d9),var(--uploaded-image) center/cover}
+#intro .door.has-image{background:var(--uploaded-image) center/100% 100% no-repeat}
+#intro .door.has-image::before,#intro .door.has-image::after{display:none}
+#intro .door-crest.has-image,.emblem-icon.has-image{background:var(--uploaded-image) center/contain no-repeat;border-color:transparent;box-shadow:none}
+#intro .door-crest.has-image svg,.emblem-icon.has-image svg{visibility:hidden}
+.emblem-icon.has-image{clip-path:none}
+.council-destination.has-image,.council-destination.has-image:hover{background:linear-gradient(180deg,#100a1245,#100a12d9 65%,#100a12f5),var(--uploaded-image) center/cover}
+.realm-cover-header.has-image,#page-nations .chronicle-intro.has-image,#page-factions .fac2-introduction.has-image{background:linear-gradient(90deg,#0a080dd9,#0a080d4a),var(--uploaded-image) center/cover no-repeat}
+#page-nations .chronicle-intro.has-image,#page-factions .fac2-introduction.has-image{padding-left:clamp(14px,3vw,36px);padding-right:clamp(14px,3vw,36px)}
+.asset-symbol.has-image{background:var(--uploaded-image) center/contain no-repeat!important;color:transparent!important;text-shadow:none!important}
+.figure-group-emblem{display:none;width:30px;height:30px;vertical-align:middle;margin-right:8px}.figure-group-emblem.has-image{display:inline-block}
+.extra-landmark{display:none;aspect-ratio:16/9;margin:0 0 12px}.extra-landmark.has-image{display:block;background-image:var(--uploaded-image)}
+#figureDialog img[hidden]{display:none!important}
+.poster-background-layer,.poster-ornament-layer,.poster-foreground-layer,.poster-complete-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.poster-background-layer{z-index:-2}.figure-poster.custom-background::before{opacity:.18}.figure-poster.custom-background:not(.custom-ornament) .figure-poster-orbit{opacity:.35}
+.poster-ornament-layer{z-index:-1;object-fit:contain}.custom-ornament .figure-poster-orbit{visibility:hidden}
+.poster-foreground-layer{z-index:1;object-fit:contain}.figure-poster-shade{z-index:1}
+.poster-complete-layer{z-index:3;object-fit:contain;background:#0b090e}.custom-complete .figure-poster-header,.custom-complete .figure-poster-caption,.custom-complete .figure-poster-footer{opacity:0;pointer-events:none}
+#posterBrandLayer{width:100%;max-width:125px;height:54px;object-fit:contain;object-position:left top}.custom-brand .poster-brand-text{display:none}
+#posterEmblemLayer{width:37px;height:37px;object-fit:contain;margin:0 0 6px auto}.custom-emblem #figurePosterIcon{display:none}
+.poster-title-layer{display:block;width:100%;height:clamp(44px,10dvh,110px);object-fit:contain;margin:0 auto}.custom-title .figure-poster-name,.custom-title .figure-poster-english{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.poster-scene-layer{display:block;width:100%;height:auto;border-top:1px solid #89726780}
+
 </style>
 </head>
-<body>
+<body data-image-slot="siteBackground">
 <!-- 첫 진입: 마왕성의 흑철 관문 -->
 <div id="intro" role="dialog" aria-label="마왕군 전략실 입장 연출">
   <div class="intro-back" data-image-slot="introBackdrop"></div><div class="arch"></div>
-  <div class="door left"></div><div class="door right"></div>
-  <div class="door-crest" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 19 27 29 40 8 53 29 63 19 58 54 40 67 22 54Z"/><path d="m27 38 13-13 13 13-13 16Z"/><path d="M40 8v59M20 52h40"/></svg></div>
+  <div class="door left" data-image-slot="introGateLeft"></div><div class="door right" data-image-slot="introGateRight"></div>
+  <div class="door-crest" data-image-slot="siteLogo" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 19 27 29 40 8 53 29 63 19 58 54 40 67 22 54Z"/><path d="m27 38 13-13 13 13-13 16Z"/><path d="M40 8v59M20 52h40"/></svg></div>
   <div class="intro-content"><div class="intro-kicker">EMPIRE OF ECLIPSE · WAR COUNCIL</div><h1 class="intro-title">일식의 제국</h1><div class="intro-desc">봉인된 흑철문 너머, 중간계의 전략회의실이 열립니다.</div><div class="progress-track"><div id="introProgress" class="progress-fill"></div></div><div class="loading-label"><span id="progressText">왕성의 관문을 개방하는 중</span><span id="progressNumber">000%</span></div></div>
   <button class="skip" id="skipIntro" type="button">SKIP · 바로 입장 ↗</button>
 </div>
 <div class="sidebar-shade" id="sidebarShade"></div>
 <div class="app" id="app">
-  <aside class="sidebar" id="sidebar" aria-label="사이트 메뉴">
-    <div class="emblem"><div class="emblem-icon"><svg width="28" height="28" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 9 13 15 17 3 21 15 27 9 25 26 17 31 9 26Z"/><path d="M10 20h14M17 15v16"/></svg></div><div><strong>일식의 제국</strong><small>마왕군 전략회의실</small></div></div>
+  <aside class="sidebar" id="sidebar" data-image-slot="sidebarBackground" aria-label="사이트 메뉴">
+    <div class="emblem"><div class="emblem-icon" data-image-slot="siteLogo"><svg width="28" height="28" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 9 13 15 17 3 21 15 27 9 25 26 17 31 9 26Z"/><path d="M10 20h14M17 15v16"/></svg></div><div><strong>일식의 제국</strong><small>마왕군 전략회의실</small></div></div>
     <div class="nav-label">❦ &nbsp;왕성 작전 기록</div>
     <nav class="nav" id="sideNav">
       <button type="button" data-page="command" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 7 9-5 9 5v12l-9 4-9-4Z"/><path d="m3 7 9 5 9-5M12 12v11"/></svg>전략회의실</button>
@@ -877,15 +903,15 @@ body.figure-dialog-open{overflow:hidden}
         <div class="overview-stats council-stats"><div class="stat"><div class="stat-top">CURRENT CAMPAIGN</div><div class="stat-main">시즌 <b>01</b></div><div class="stat-foot">동부대륙 전선 · 독립 기록</div></div><div class="stat"><div class="stat-top">INTELLIGENCE FILES</div><div class="stat-main"><b>08</b>개 국가</div><div class="stat-foot">동부대륙 국가 자료 확보</div></div><div class="stat"><div class="stat-top">KEY PERSONNEL</div><div class="stat-main"><b>24</b>명</div><div class="stat-foot">각국 핵심 인물 · 3명씩</div></div></div>
         <div class="section-head"><strong>사령부 작전 자료실</strong><small>SELECT AN ARCHIVE / 작전 항목을 선택하십시오</small></div>
         <div class="council-destinations">
-          <button type="button" class="council-destination" data-council-nav="continent"><small>01 / TERRITORIAL ATLAS</small><span class="dest-glyph">✥</span><h3>동부대륙 지도</h3><p>여덟 국가의 영토를 눌러 위치와 국가별 브리핑을 확인합니다.</p><strong>전략 지도 열람 ↗</strong></button>
-          <button type="button" class="council-destination" data-council-nav="nations"><small>02 / COUNTRY CHRONICLES</small><span class="dest-glyph">♜</span><h3>국가 기록</h3><p>각 국가의 수도, 문명과 지리, 기본 설정을 살펴봅니다.</p><strong>국가 기록 열람 ↗</strong></button>
-          <button type="button" class="council-destination" data-council-nav="factions"><small>03 / MILITARY DOSSIER</small><span class="dest-glyph">⚔</span><h3>세력 분석</h3><p>군사력, 내부 균열과 정복 이후 전략적 변화를 분석합니다.</p><strong>세력 분석 열람 ↗</strong></button>
-          <button type="button" class="council-destination" data-council-nav="figures"><small>04 / PERSONNEL ARCHIVE</small><span class="dest-glyph">♛</span><h3>핵심 인물</h3><p>동부대륙 각국의 핵심 인물과 소속 세력을 확인합니다.</p><strong>핵심 인물 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-image-slot="councilMenu.continent" data-council-nav="continent"><small>01 / TERRITORIAL ATLAS</small><span class="dest-glyph">✥</span><h3>동부대륙 지도</h3><p>여덟 국가의 영토를 눌러 위치와 국가별 브리핑을 확인합니다.</p><strong>전략 지도 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-image-slot="councilMenu.nations" data-council-nav="nations"><small>02 / COUNTRY CHRONICLES</small><span class="dest-glyph">♜</span><h3>국가 기록</h3><p>각 국가의 수도, 문명과 지리, 기본 설정을 살펴봅니다.</p><strong>국가 기록 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-image-slot="councilMenu.factions" data-council-nav="factions"><small>03 / MILITARY DOSSIER</small><span class="dest-glyph">⚔</span><h3>세력 분석</h3><p>군사력, 내부 균열과 정복 이후 전략적 변화를 분석합니다.</p><strong>세력 분석 열람 ↗</strong></button>
+          <button type="button" class="council-destination" data-image-slot="councilMenu.figures" data-council-nav="figures"><small>04 / PERSONNEL ARCHIVE</small><span class="dest-glyph">♛</span><h3>핵심 인물</h3><p>동부대륙 각국의 핵심 인물과 소속 세력을 확인합니다.</p><strong>핵심 인물 열람 ↗</strong></button>
         </div>
         <div class="council-bottom"><div class="council-notice"><small>WAR DESK / 전선 현황</small><h3>시즌 1 — 동부대륙</h3><p>현재 등록된 국가는 여덟 개입니다. 지도상의 국경은 임시 작전 도식으로, 실제 지리와 설정에 맞춰 향후 보완할 수 있습니다. 서부대륙과 시즌 2는 본 사이트에서 다루지 않습니다.</p><button type="button" data-council-nav="archive">중간계 기록보관실 열기 ↗</button></div><div class="council-notice-media media-slot" data-image-slot="councilOrders"><span class="slot-await">IMAGE SLOT 02</span><strong class="slot-await">회의실 보조 일러스트 / 작전 문서</strong><small class="slot-await">IMAGE_URLS.councilOrders</small></div></div>
       </section>
       <section class="page" id="page-continent">
-        <header class="realm-cover-header">
+        <header class="realm-cover-header" data-image-slot="continentHeader">
           <div class="realm-cover-meta"><span>EMPIRE OF ECLIPSE</span><span>SEASON I / THE EASTERN CONTINENT</span></div>
           <div class="realm-cover-title"><span class="realm-cover-kicker">동부대륙 · 여덟 국가의 경계</span><h1>여덟 국가,<br><em>하나의 대륙.</em></h1><p>여덟 국가의 풍경을 펼쳐보고 원하는 나라를 선택하십시오. 국가의 역사와 문화는 「국가 기록」에서, 전력과 전략은 「세력 분석」에서 확인할 수 있습니다.</p></div>
         </header>
@@ -906,7 +932,7 @@ body.figure-dialog-open{overflow:hidden}
         </section>
       <section class="page" id="page-nations">
   <div class="chronicle-topline"><span>THE MIDDLE WORLD · THE EASTERN CONTINENT</span><span>ARCHIVE / 01 — 08</span></div>
-  <header class="chronicle-intro">
+  <header class="chronicle-intro" data-image-slot="nationsHeader">
     <span class="chronicle-issue">동부대륙을 여행하는 여덟 개의 기록</span>
     <h1>여덟 나라,<br><em>서로 다른 세계.</em></h1>
     <p>신성 제국의 백색 성도부터 태고의 세계수, 구름 위의 용인과 하늘을 떠도는 엘프의 궁전까지. 국토와 문명, 도시와 사람들의 삶을 소개하는 기록집입니다.</p>
@@ -921,7 +947,7 @@ body.figure-dialog-open{overflow:hidden}
     <span class="fac2-eyebrow">EMPIRE OF ECLIPSE <b>✦</b> FACTION INTELLIGENCE / EASTERN CONTINENT</span>
     <span class="fac2-classified">마왕군 전략 분석 기록 · 시즌 1</span>
   </div>
-  <header class="fac2-introduction">
+  <header class="fac2-introduction" data-image-slot="factionsHeader">
     <div class="fac2-intro-copy">
       <div class="fac2-overline">INTELLIGENCE ARCHIVE — 08 KINGDOMS</div>
       <h1>왕좌 뒤의 <em>권력</em>을 읽다.</h1>
@@ -942,15 +968,19 @@ body.figure-dialog-open{overflow:hidden}
 </div>
 <dialog id="figureDialog" aria-labelledby="figurePosterName">
   <article class="figure-poster">
+    <img class="poster-background-layer" id="posterBackgroundLayer" alt="" hidden>
     <div class="figure-poster-orbit" aria-hidden="true"></div>
+    <img class="poster-ornament-layer" id="posterOrnamentLayer" alt="" hidden>
     <div class="figure-poster-art"><img id="figurePosterImage" alt="" hidden><div class="figure-poster-empty" id="figurePosterEmpty"><b id="figurePosterEmblem" aria-hidden="true">✦</b><span>CHARACTER ARTWORK<br>전신 일러스트 등록 예정</span></div></div>
+    <img class="poster-foreground-layer" id="posterForegroundLayer" alt="" hidden>
     <div class="figure-poster-shade" aria-hidden="true"></div>
-    <header class="figure-poster-header"><div class="figure-poster-brand">EMPIRE OF<br>ECLIPSE<small>PERSONNEL ARCHIVE</small></div><div class="figure-poster-country"><span id="figurePosterIcon"></span><div id="figurePosterCountry"></div></div></header>
+    <img class="poster-complete-layer" id="posterCompleteLayer" alt="" hidden>
+    <header class="figure-poster-header"><div class="figure-poster-brand"><img id="posterBrandLayer" alt="일식의 제국" hidden><div class="poster-brand-text">EMPIRE OF<br>ECLIPSE<small>PERSONNEL ARCHIVE</small></div></div><div class="figure-poster-country"><span id="figurePosterIcon"></span><img id="posterEmblemLayer" alt="" hidden><div id="figurePosterCountry"></div></div></header>
     <button type="button" id="figurePosterClose" class="figure-poster-close" aria-label="인물 상세 닫기" autofocus>×</button>
-    <div class="figure-poster-caption"><p class="figure-poster-role" id="figurePosterRole"></p><h2 class="figure-poster-name" id="figurePosterName"></h2><p class="figure-poster-english" id="figurePosterEnglish" hidden></p><div class="figure-poster-rule" aria-hidden="true">◆</div><p class="figure-poster-quote" id="figurePosterQuote" hidden></p><p class="figure-poster-meta" id="figurePosterMeta"></p></div>
+    <div class="figure-poster-caption"><p class="figure-poster-role" id="figurePosterRole"></p><h2 class="figure-poster-name" id="figurePosterName"></h2><p class="figure-poster-english" id="figurePosterEnglish" hidden></p><img id="posterTitleLayer" class="poster-title-layer" alt="" hidden><div class="figure-poster-rule" aria-hidden="true">◆</div><p class="figure-poster-quote" id="figurePosterQuote" hidden></p><p class="figure-poster-meta" id="figurePosterMeta"></p></div>
     <footer class="figure-poster-footer"><span id="figurePosterSerial"></span><span>SEASON 01</span></footer>
   </article>
-  <div class="figure-poster-description" id="figurePosterDescription" hidden></div>
+  <div class="figure-poster-description" id="figurePosterDescription" hidden></div><img id="posterSceneLayer" class="poster-scene-layer" alt="" hidden>
 </dialog>
 <script>
 'use strict';
@@ -968,7 +998,15 @@ const NATIONS=[{"id":"luminus","name":"루미나스 신성제국","short":"루�
 // people.인물이름 : 24명 초상화
 // ================================================================
 const IMAGE_URLS = {
+  // 공통 이미지 (빈 칸은 기존 CSS 디자인 유지)
+  "siteBackground": "",
+  "siteLogo": "",
+  "sidebarBackground": "",
+  "introGateLeft": "",
+  "introGateRight": "",
   "introBackdrop": "",
+  "councilMenu": {"continent":"", "nations":"", "factions":"", "figures":""},
+  "posterBrand": "",
   "councilHero": "",
   "councilOrders": "",
   "continentHeader": "",
@@ -980,6 +1018,11 @@ const IMAGE_URLS = {
   "countries": {
     "luminus": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -989,6 +1032,11 @@ const IMAGE_URLS = {
     },
     "astria": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -998,6 +1046,11 @@ const IMAGE_URLS = {
     },
     "etheria": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -1007,6 +1060,11 @@ const IMAGE_URLS = {
     },
     "silvarion": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -1016,6 +1074,11 @@ const IMAGE_URLS = {
     },
     "selenia": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -1025,6 +1088,11 @@ const IMAGE_URLS = {
     },
     "verdia": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -1034,6 +1102,11 @@ const IMAGE_URLS = {
     },
     "azulon": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -1043,6 +1116,11 @@ const IMAGE_URLS = {
     },
     "frijia": {
       "card": "",
+      "culture": "",
+      "factionHero": "",
+      "posterBackground": "",
+      "posterOrnament": "",
+      "landmarks": {"1":"", "2":"", "3":""},
       "hero": "",
       "capital": "",
       "landscape": "",
@@ -1081,36 +1159,39 @@ const IMAGE_URLS = {
 // ================================================================
 // 인물 상세 포스터 전용 설정 · image는 전신 일러스트(세로형 또는 투명 PNG).
 // image가 비어 있으면 IMAGE_URLS.people의 기존 초상화를 사용합니다.
-// english / quote / description은 확정 설정 입력 시에만 표시됩니다.
+// background=9:16 배경 / ornament=투명 원형 문양 / foreground=투명 전경 소품
+// titleArt=투명 이름 타이포 / completePoster=문구까지 포함한 완성 포스터(다른 레이어 대체)
+// scene=포스터 아래 추가 장면 / english, quote, description=선택 입력
+// 개인 background/ornament 미등록 시 국가 공통 posterBackground/posterOrnament 사용.
 const FIGURE_DETAILS = {
-  "셀레스티아": {image:"", english:"", quote:"", description:""},
-  "발레리아": {image:"", english:"", quote:"", description:""},
-  "엘레오노라": {image:"", english:"", quote:"", description:""},
-  "이리나": {image:"", english:"", quote:"", description:""},
-  "레오나": {image:"", english:"", quote:"", description:""},
-  "세실리아": {image:"", english:"", quote:"", description:""},
-  "에밀리아": {image:"", english:"", quote:"", description:""},
-  "이졸데": {image:"", english:"", quote:"", description:""},
-  "클로에": {image:"", english:"", quote:"", description:""},
-  "아우렐리아": {image:"", english:"", quote:"", description:""},
-  "루시엘": {image:"", english:"", quote:"", description:""},
-  "세라피나": {image:"", english:"", quote:"", description:""},
-  "아르테미아": {image:"", english:"", quote:"", description:""},
-  "카엘라": {image:"", english:"", quote:"", description:""},
-  "미리엘": {image:"", english:"", quote:"", description:""},
-  "실피아": {image:"", english:"", quote:"", description:""},
-  "리아나": {image:"", english:"", quote:"", description:""},
-  "세레나": {image:"", english:"", quote:"", description:""},
-  "사피리아": {image:"", english:"", quote:"", description:""},
-  "밀레아": {image:"", english:"", quote:"", description:""},
-  "울리카": {image:"", english:"", quote:"", description:""},
-  "프리지아": {image:"", english:"", quote:"", description:""},
-  "설화": {image:"", english:"", quote:"", description:""},
-  "미엘": {image:"", english:"", quote:"", description:""}
+  "셀레스티아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "발레리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "엘레오노라": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "이리나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "레오나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "세실리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "에밀리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "이졸데": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "클로에": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "아우렐리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "루시엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "세라피나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "아르테미아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "카엘라": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "미리엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "실피아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "리아나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "세레나": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "사피리아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "밀레아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "울리카": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "프리지아": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "설화": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""},
+  "미엘": {image:"", background:"", ornament:"", foreground:"", titleArt:"", completePoster:"", scene:"", english:"", quote:"", description:""}
 };
 function lookupImageSlot(key){const parts=key.split('.');let obj=IMAGE_URLS;for(const part of parts){if(!obj||typeof obj!=='object')return '';obj=obj[part]}return typeof obj==='string'?obj.trim():''}
 function applyImageSlots(root=document){root.querySelectorAll('[data-image-slot]').forEach(el=>{
-  const url=lookupImageSlot(el.dataset.imageSlot);if(!url)return;
+  const url=lookupImageSlot(el.dataset.imageSlot)||lookupImageSlot(el.dataset.imageFallback||'');if(!url)return;
   if(!/^(https?:\/\/|images\/|\.\/images\/|data:image\/)/i.test(url))return;
   el.style.setProperty('--uploaded-image','url('+JSON.stringify(url)+')');el.classList.add('has-image');
 });}
@@ -1159,7 +1240,7 @@ function renderRealmExpander(){
  const skies=[['#6c777b','#866a52','#e8d4ad78'],['#6b5f64','#90674f','#f2b97e77'],['#3b466c','#605b88','#b4b9ff80'],['#44646a','#647d70','#cbe5d17d'],['#35465d','#637899','#c8dcff70'],['#3c5d4c','#57775f','#b0f6bb70'],['#2d4d68','#416f8c','#8cc8f58a'],['#7c90a0','#8794a3','#eef6ff90']];
  const strips=NATIONS.map((n,i)=>{const on=i===selectedIndex;const num=String(i+1).padStart(2,'0');
   return `<button type="button" class="realm-strip${on?' is-active':''}" data-realm-strip="${i}" data-image-slot="countries.${n.id}.card" style="--strip-accent:${n.tone};--strip-sky:${skies[i][0]};--strip-mid:${skies[i][1]};--strip-sun:${skies[i][2]}" aria-pressed="${on}" aria-label="${ESCAPE(n.name)} 선택하여 펼쳐보기">
- <span class="realm-strip-shadowart" aria-hidden="true"></span><span class="realm-strip-number">${num} / 08</span><span class="realm-strip-glyph" aria-hidden="true">${symbols[i]}</span>
+ <span class="realm-strip-shadowart" aria-hidden="true"></span><span class="realm-strip-number">${num} / 08</span><span class="realm-strip-glyph asset-symbol" data-image-slot="countries.${n.id}.emblem" aria-hidden="true">${symbols[i]}</span>
  <span class="realm-strip-vertical" aria-hidden="true">${ESCAPE(n.short)}</span>
  <span class="realm-strip-info"><span class="realm-strip-small">REALM ${num} / EASTERN CONTINENT</span><h2>${ESCAPE(n.name)}</h2><span class="realm-strip-tag">${ESCAPE(n.tag)}</span><span class="realm-strip-intro">${ESCAPE(n.intro)}</span><span class="realm-strip-cta">SELECTED REALM · 아래에서 기록 및 분석 열기 ↘</span></span>
  </button>`}).join('');
@@ -1210,10 +1291,10 @@ root.innerHTML=`
 <div class="chrono-photo media-slot" data-image-slot="countries.${n.id}.landscape"><div><small>LANDSCAPE ARCHIVE</small><strong>이 나라의 풍경</strong></div><span class="chrono-empty">LANDSCAPE IMAGE · 링크 입력 예정</span></div>
 <div class="chrono-feature-points"><div><b>위치</b><p>${ESCAPE(n.zone)}</p></div><div><b>환경과 기후</b><p>${ESCAPE(n.geo.split(/[.,。]/)[0])}</p></div><div><b>지역의 산물</b><p>${ESCAPE(res.join(' · ')||n.resources)}</p></div></div></section>
 <section class="chrono-section"><div class="chrono-section-heading"><div><span class="chrono-section-no">02 / HISTORY & CULTURE</span><h3>문명과 삶</h3></div><p>${ESCAPE(n.civ)}</p></div>
-<div class="chrono-spotlight"><div class="chrono-spotlight-photo media-slot" data-image-slot="countries.${n.id}.card"><span class="slot-await">문명·생활 배경 이미지</span></div><div class="chrono-spotlight-copy"><span class="chrono-section-no">CULTURAL IDENTITY</span><h3>${ESCAPE(n.tag)}</h3><p>${ESCAPE(n.civ)}</p><span class="chrono-section-no">문화의 정체성을 기록한 문명 아카이브</span></div></div></section>
+<div class="chrono-spotlight"><div class="chrono-spotlight-photo media-slot" data-image-slot="countries.${n.id}.culture" data-image-fallback="countries.${n.id}.card"><span class="slot-await">문명·생활 배경 이미지</span></div><div class="chrono-spotlight-copy"><span class="chrono-section-no">CULTURAL IDENTITY</span><h3>${ESCAPE(n.tag)}</h3><p>${ESCAPE(n.civ)}</p><span class="chrono-section-no">문화의 정체성을 기록한 문명 아카이브</span></div></div></section>
 <section class="chrono-section"><div class="chrono-section-heading"><div><span class="chrono-section-no">03 / CAPITAL & LANDMARKS</span><h3>수도와 명소</h3></div><p>수도 <strong style="color:#f3dfc2;font-weight:500">${ESCAPE(n.capital)}</strong>를 중심으로 형성된 주요 시설과 국가의 상징을 살펴봅니다.</p></div>
 <div class="chrono-photo media-slot" data-image-slot="countries.${n.id}.capital"><div><small>CAPITAL CITY</small><strong>${ESCAPE(n.capital)}</strong></div><span class="chrono-empty">CAPITAL IMAGE · 링크 입력 예정</span></div>
-<div class="chrono-feature-points">${cityPlaces.slice(0,3).map((place,i)=>`<div><b>LANDMARK ${String(i+1).padStart(2,'0')}</b><p>${ESCAPE(place)}</p></div>`).join('')}</div></section>
+<div class="chrono-feature-points">${cityPlaces.slice(0,3).map((place,i)=>`<div><div class="extra-landmark media-slot" data-image-slot="countries.${n.id}.landmarks.${i+1}"></div><b>LANDMARK ${String(i+1).padStart(2,'0')}</b><p>${ESCAPE(place)}</p></div>`).join('')}</div></section>
 `;
 applyImageSlots(root);
 }
@@ -1253,12 +1334,12 @@ function renderFactionDetail(){
  sec.innerHTML=`
   <section class="fac-hero" aria-label="${ESCAPE(n.name)} 세력 정보">
    ${factionScene(n)}
-   <div class="fac-hero-upload media-slot" data-image-slot="countries.${n.id}.hero" aria-hidden="true"></div>
+   <div class="fac-hero-upload media-slot" data-image-slot="countries.${n.id}.factionHero" data-image-fallback="countries.${n.id}.hero" aria-hidden="true"></div>
    <div class="fac-ghost" aria-hidden="true">${ESCAPE(n.short)}</div>
    <div class="fac-hero-layout">
     <div class="fac-hero-copy">
      <span class="fac-serial">INTELLIGENCE REPORT — ${fileNo} / 08</span>
-     <span class="fac-glyph" aria-hidden="true">${ESCAPE(n.icon)}</span>
+     <span class="fac-glyph asset-symbol" data-image-slot="countries.${n.id}.emblem" aria-hidden="true">${ESCAPE(n.icon)}</span>
      <h2>${ESCAPE(n.name)}</h2>
      <div class="fac-tag">${ESCAPE(n.zone)} <span style="opacity:.5;padding:0 8px">✦</span> ${ESCAPE(n.tag)}</div>
      <p class="fac-intro">${ESCAPE(n.intro)}</p>
@@ -1325,6 +1406,23 @@ function openFigurePoster(i,j){
  }
  $('figurePosterName').classList.toggle('has-english',!$('figurePosterEnglish').hidden);
  const valid=u=>typeof u==='string'&&/^(https?:\/\/|images\/|\.\/images\/|data:image\/)/i.test(u.trim());
+ const art=$('figureDialog').querySelector('.figure-poster');
+ function layer(id, candidates, cls){
+   const el=$(id);el.onload=null;el.onerror=null;el.hidden=true;el.removeAttribute('src');if(cls)art.classList.remove(cls);
+   const list=[...new Set(candidates.filter(valid).map(u=>u.trim()))];let next=0;
+   el.onload=()=>{el.hidden=false;if(cls)art.classList.add(cls)};
+   el.onerror=()=>{if(next<list.length)el.src=list[next++];else{el.hidden=true;if(cls)art.classList.remove(cls)}};
+   if(list.length)el.src=list[next++];
+ }
+ const nationKey='countries.'+n.id+'.';
+ layer('posterBackgroundLayer',[profile.background,lookupImageSlot(nationKey+'posterBackground')],'custom-background');
+ layer('posterOrnamentLayer',[profile.ornament,lookupImageSlot(nationKey+'posterOrnament')],'custom-ornament');
+ layer('posterForegroundLayer',[profile.foreground]);
+ layer('posterTitleLayer',[profile.titleArt],'custom-title');
+ layer('posterCompleteLayer',[profile.completePoster],'custom-complete');
+ layer('posterBrandLayer',[lookupImageSlot('posterBrand'),lookupImageSlot('siteLogo')],'custom-brand');
+ layer('posterEmblemLayer',[lookupImageSlot(nationKey+'emblem')],'custom-emblem');
+ layer('posterSceneLayer',[profile.scene]);
  const full=String(profile.image||'').trim(),thumb=lookupImageSlot('people.'+name),urls=[...new Set([full,thumb].filter(valid))];
  img.hidden=true;empty.hidden=false;img.onload=null;img.onerror=null;img.removeAttribute('src');img.alt=name+' 일러스트';
  let pos=0;function loadArt(){if(pos>=urls.length){img.hidden=true;empty.hidden=false;return}img.src=urls[pos++]}
@@ -1337,7 +1435,7 @@ $('figureDialog').addEventListener('click',e=>{if(e.target===$('figureDialog'))$
 $('figureDialog').addEventListener('close',()=>document.body.classList.remove('figure-dialog-open'));
 
 function renderFactionsAndFigures(){const factions=$('factionCards');if(factions){factions.innerHTML=NATIONS.map((n,i)=>`<button class="fac-select" style="--fac-color:${FACTION_COLORS[n.id]}" type="button" data-faction="${i}" aria-pressed="false"><span class="fs-num">${String(i+1).padStart(2,'0')}</span><span class="fs-icon" aria-hidden="true">${ESCAPE(n.icon)}</span><span class="fs-text"><strong>${ESCAPE(n.short)}</strong><small>${ESCAPE(n.kind)}</small></span></button>`).join('');factions.querySelectorAll('[data-faction]').forEach(b=>b.onclick=()=>{activeFaction=Number(b.dataset.faction);renderFactionDetail();$('factionDetail').scrollIntoView({behavior:'smooth',block:'start'})});renderFactionDetail()}
-const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>국가별 주요 인물 03 · ${ESCAPE(n.short)}</small><h3>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<button class="figure-person" type="button" data-figure-person="${i}:${j}" aria-haspopup="dialog" aria-label="${ESCAPE(name)} 상세 보기"><span class="figure-portrait media-slot" data-image-slot="people.${ESCAPE(name)}"><span class="slot-await">PORTRAIT 0${j+1}</span></span><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></button>`}).join('')}</div><button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures);figures.querySelectorAll('[data-figure-person]').forEach(b=>b.onclick=()=>{const [i,j]=b.dataset.figurePerson.split(':').map(Number);openFigurePoster(i,j)})}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
+const figures=$('figureCards');if(figures){figures.innerHTML=NATIONS.map((n,i)=>`<article class="archive-country figure-group"><small>국가별 주요 인물 03 · ${ESCAPE(n.short)}</small><h3><span class="figure-group-emblem asset-symbol" data-image-slot="countries.${n.id}.emblem" aria-hidden="true">${ESCAPE(n.icon)}</span>${ESCAPE(n.name)}</h3><div class="figure-portraits">${n.leaders.split(' · ').map((p,j)=>{const name=p.split(' ').slice(-1)[0];return `<button class="figure-person" type="button" data-figure-person="${i}:${j}" aria-haspopup="dialog" aria-label="${ESCAPE(name)} 상세 보기"><span class="figure-portrait media-slot" data-image-slot="people.${ESCAPE(name)}"><span class="slot-await">PORTRAIT 0${j+1}</span></span><b>${ESCAPE(name)}</b><small>${ESCAPE(p.slice(0,p.length-name.length).trim())}</small></button>`}).join('')}</div><button class="figure-map-link" type="button" data-figure="${i}">동부대륙에서 이 국가 확인 ↗</button></article>`).join('');applyImageSlots(figures);figures.querySelectorAll('[data-figure-person]').forEach(b=>b.onclick=()=>{const [i,j]=b.dataset.figurePerson.split(':').map(Number);openFigurePoster(i,j)})}document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.figure);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})} 
 const PAGE_NAMES={command:'마왕군 최고 전략회의실',continent:'동부대륙 전략 지도',nations:'국가 기록',factions:'세력 분석',figures:'핵심 인물',archive:'세계관 기록보관실'};
 function showPage(page){if(!PAGE_NAMES[page])return;currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('#sideNav button').forEach(btn=>{let active=btn.dataset.page===page;btn.classList.toggle('active',active);active?btn.setAttribute('aria-current','page'):btn.removeAttribute('aria-current')});$('topTitle').textContent=PAGE_NAMES[page];closeSidebar();window.scrollTo({top:0,behavior:'instant'});}
 function closeSidebar(){$('sidebar').classList.remove('open');$('sidebarShade').classList.remove('show');}
