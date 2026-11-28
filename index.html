@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="theme-color" content="#0a080d">
-<meta name="description" content="마왕군 중간계 동부대륙 8개 국가의 영토를 선택하고 지도 아래 상세 브리핑을 읽을 수 있는 마왕군 전략회의실.">
-<title>일식의 제국 | 동부대륙 8개국 전략회의실 V1</title>
+<meta name="description" content="마왕군 중간계 동부대륙 8개 국가를 세로 이미지 패널에서 선택하면 국가 소개가 펼쳐지는 시즌 1 동부대륙 기록실.">
+<title>일식의 제국 | 동부대륙 8개국 펼침 갤러리 V1</title>
 <style>
 :root{--bg:#090a0e;--panel:#11141a;--panel2:#171a21;--panel3:#1d2026;--edge:#343137;--border:#37343a;--gold:#c7a572;--gold-light:#f1d8a1;--cream:#e9e0d0;--sub:#aaa5a1;--muted:#77777e;--red:#af4b4b;--red2:#692f35;--green:#799387;--shadow:0 18px 60px #0009;--display:Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 58% 35% at 72% 15%,#3d1a1d42,transparent),radial-gradient(ellipse 46% 60% at 0 100%,#6452381d,transparent),repeating-linear-gradient(90deg,#fff2 0 1px,transparent 1px 88px),#090a0e;opacity:.75;pointer-events:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}button:disabled{cursor:not-allowed}a{text-decoration:none;color:inherit}svg{display:block}::selection{background:#b8935a66;color:white}
@@ -536,6 +536,120 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
 @media(max-width:760px){.council-hero{grid-template-columns:1fr}.council-hero-media{min-height:270px}.council-hero-text{padding:26px 23px 31px}.council-bottom{grid-template-columns:1fr}.council-notice-media{min-height:180px}#page-continent .atlas-only .map-wrap{aspect-ratio:1.32}}
 @media(max-width:530px){.council-destinations{grid-template-columns:1fr 1fr;gap:8px}.council-destination{padding:16px 13px;min-height:255px}.council-destination h3{font-size:18px}.council-destination .dest-glyph{margin:14px 0 10px;font-size:29px}.council-destination p{font-size:11px}.council-hero-media{min-height:210px}.council-hero-media:not(.has-image)::after{font-size:150px}#page-continent .atlas-masthead{min-height:120px}#page-factions .fac-scenery{grid-template-columns:1fr}#page-factions .fac-scene-photo{height:200px}#page-factions .fac-person-photo{height:130px}.figure-portrait{height:100px}.nation-card-image{height:130px}}
 
+
+/* V1 NATIONAL CHRONICLES · editorial world atlas (reference: large photography, bold typographic composition) */
+#page-nations{color:#efe8dd;--chrono-ink:#eae2d5;--chrono-dim:#a99b90;--chrono-line:#79655261}
+#page-nations .chronicle-topline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--chrono-line);padding:0 0 17px;font:10px/1.4 ui-monospace,monospace;letter-spacing:2px;color:#ad9a86}
+#page-nations .chronicle-intro{padding:38px 0 43px}
+#page-nations .chronicle-issue{font:11px/1.6 ui-monospace,monospace;letter-spacing:2px;color:#cbb998}
+#page-nations .chronicle-intro h1{font-family:Georgia,'Noto Serif KR',serif;font-size:clamp(48px,7.5vw,112px);line-height:1.08;font-weight:400;letter-spacing:-4px;margin:16px 0 22px}
+#page-nations .chronicle-intro h1 em{font-style:normal;color:#bba589}
+#page-nations .chronicle-intro p{max-width:660px;color:#b1aaa4;line-height:2;font-size:14px;margin:0}
+#page-nations .chronicle-picker-head{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--chrono-line);padding:17px 0;color:#aaa094;font:10px/1.5 ui-monospace,monospace;letter-spacing:2px}
+#page-nations .chronicle-picker-head b{font-size:18px;color:#d0ae85;font-weight:400;margin-left:8px}
+#page-nations .chronicle-picker-head span:last-child{font:11px system-ui,sans-serif;letter-spacing:0}
+#page-nations .chronicle-country-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #60514b;gap:1px;background:#60514b;margin-bottom:26px}
+#page-nations .chrono-pick{border:0;background:#181618;color:#a99e97;padding:15px 13px;display:flex;align-items:center;gap:10px;text-align:left;min-width:0;transition:background .2s,color .2s}
+#page-nations .chrono-pick:hover{background:#272023;color:#f5e6d0}
+#page-nations .chrono-pick[aria-pressed="true"]{background:linear-gradient(130deg,#5c3335,#302024);color:#f9e6d1;box-shadow:inset 0 3px #ce9f83}
+#page-nations .chrono-pick b{font:500 18px/1 Georgia,serif;opacity:.7;color:#d8b68a}
+#page-nations .chrono-pick span{display:block;min-width:0;font-size:12px;line-height:1.5}
+#page-nations .chrono-pick small{display:block;margin-top:3px;font:9px ui-monospace,monospace;letter-spacing:1px;opacity:.72}
+#page-nations .chronicle-content{animation:chrono-reveal .33s ease}
+@keyframes chrono-reveal{from{opacity:.6;transform:translateY(7px)}to{opacity:1;transform:none}}
+#page-nations .chrono-hero{height:clamp(440px,57vw,710px);position:relative;overflow:hidden;border:1px solid #7d686071;background:radial-gradient(ellipse at 53% 43%,#9c726052,transparent 45%),radial-gradient(ellipse at 55% 80%,#58393b8d,transparent 50%),linear-gradient(155deg,#4a4440,#171416 75%)}
+#page-nations .chrono-hero::before{content:'';position:absolute;inset:12px;border:1px solid #d9bd9352;pointer-events:none;z-index:4}
+#page-nations .chrono-hero-media{position:absolute;inset:0;z-index:0;display:block;border:0;background-color:transparent}
+#page-nations .chrono-hero-media::before{display:none}
+#page-nations .chrono-hero-media.has-image{background-image:linear-gradient(180deg,#0a080b33,#05030624 45%,#070406cf 100%),var(--uploaded-image)}
+#page-nations .chrono-hero-ornament{position:absolute;inset:0;z-index:1;opacity:.45;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 142px,#d9b58920 142px 143px),linear-gradient(180deg,transparent 50%,#0009)}
+#page-nations .chrono-hero:has(.chrono-hero-media.has-image) .chrono-hero-ornament{opacity:.17}
+#page-nations .chrono-hero-top{position:absolute;top:35px;left:clamp(22px,4vw,58px);right:clamp(22px,4vw,58px);z-index:3;display:flex;justify-content:space-between;gap:20px;color:#eee1cf;font:10px ui-monospace,monospace;letter-spacing:2.2px}
+#page-nations .chrono-hero-copy{position:absolute;bottom:clamp(28px,5vw,70px);left:clamp(22px,5vw,72px);right:clamp(22px,5vw,72px);z-index:3;text-shadow:0 3px 16px #0905079c}
+#page-nations .chrono-hero-copy small{font:11px ui-monospace,monospace;letter-spacing:2px;color:#edd3b2}
+#page-nations .chrono-hero-copy h2{font-family:Georgia,'Noto Serif KR',serif;font-size:clamp(40px,6.9vw,103px);line-height:1.12;letter-spacing:-3px;font-weight:400;margin:13px 0 20px;max-width:1050px;overflow-wrap:anywhere;color:#fff4e5}
+#page-nations .chrono-hero-copy p{max-width:680px;font-size:14px;line-height:1.95;color:#e0d7ca;margin:0}
+#page-nations .chrono-photo-hint{position:absolute;right:21px;bottom:20px;z-index:3;color:#bcad9e;font:9px ui-monospace,monospace;letter-spacing:1px;opacity:.75}
+#page-nations .chrono-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-bottom:1px solid var(--chrono-line);margin:0 0 54px}
+#page-nations .chrono-meta>div{padding:22px 28px;border-right:1px solid var(--chrono-line)}
+#page-nations .chrono-meta>div:first-child{padding-left:0}#page-nations .chrono-meta>div:last-child{border-right:0}
+#page-nations .chrono-meta small{display:block;font:10px ui-monospace,monospace;letter-spacing:2px;color:#ad8d75;margin-bottom:8px}
+#page-nations .chrono-meta strong{font-size:15px;font-weight:500;line-height:1.7}
+#page-nations .chrono-section-no{font:10px ui-monospace,monospace;letter-spacing:2.3px;color:#bca584}
+#page-nations .chrono-section{padding:0 0 61px;margin-bottom:48px;border-bottom:1px solid var(--chrono-line)}
+#page-nations .chrono-section-heading{display:grid;grid-template-columns:minmax(180px, .8fr) minmax(0,1.3fr);gap:32px;align-items:end;margin:0 0 28px}
+#page-nations .chrono-section-heading h3{font:400 clamp(29px,3.7vw,56px)/1.23 Georgia,'Noto Serif KR',serif;margin:12px 0 0;letter-spacing:-1.5px}
+#page-nations .chrono-section-heading p{margin:0;color:#b5aaa0;line-height:2;font-size:14px}
+#page-nations .chrono-photo{position:relative;border:1px solid #80675c80;background:#21191a;height:clamp(300px,38vw,475px);display:flex;align-items:end;justify-content:start;text-align:left}
+#page-nations .chrono-photo::after{content:'';position:absolute;z-index:0;inset:0;background:linear-gradient(0deg,#080607d9,transparent 55%);pointer-events:none}
+#page-nations .chrono-photo.has-image{background-image:var(--uploaded-image)}
+#page-nations .chrono-photo .slot-await{display:none}
+#page-nations .chrono-photo>div{z-index:2;position:relative;margin:0 0 31px 32px;max-width:75%;color:white;text-shadow:0 3px 15px #000}
+#page-nations .chrono-photo strong{font:400 clamp(24px,3vw,42px)/1.2 Georgia,'Noto Serif KR',serif;display:block;margin-top:9px}
+#page-nations .chrono-photo small{font:10px ui-monospace,monospace;letter-spacing:2px;color:#e4bd97}
+#page-nations .chrono-photo .chrono-empty{position:absolute;right:20px;top:22px;font:10px ui-monospace,monospace;letter-spacing:1.2px;color:#b79f8d}
+#page-nations .chrono-photo.has-image .chrono-empty{display:none}
+#page-nations .chrono-feature-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#6d595055;border:1px solid #6d595055;margin-top:16px}
+#page-nations .chrono-feature-points>div{padding:23px;background:#151316;min-height:145px}
+#page-nations .chrono-feature-points b{display:block;font:10px ui-monospace,monospace;letter-spacing:1.3px;color:#ba9b78;margin-bottom:10px}
+#page-nations .chrono-feature-points p{color:#c4bab1;line-height:1.85;font-size:13px;margin:0}
+#page-nations .chrono-spotlight{display:grid;grid-template-columns:1.08fr .92fr;gap:0;border:1px solid #76665a78;min-height:340px}
+#page-nations .chrono-spotlight-photo{position:relative;min-height:340px;border:0;border-right:1px solid #76665a78}
+#page-nations .chrono-spotlight-photo.has-image{background-image:var(--uploaded-image)}
+#page-nations .chrono-spotlight-photo .slot-await{display:none}
+#page-nations .chrono-spotlight-copy{padding:clamp(28px,4vw,58px);background:linear-gradient(130deg,#211c1d,#141214);display:flex;flex-direction:column;justify-content:center}
+#page-nations .chrono-spotlight-copy h3{font:400 clamp(28px,3.5vw,52px)/1.2 Georgia,'Noto Serif KR',serif;margin:12px 0 21px}
+#page-nations .chrono-spotlight-copy p{color:#b4a9a0;font-size:14px;line-height:2;margin:0 0 23px}
+#page-nations .chrono-spots{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+#page-nations .chrono-spots li{border-top:1px solid #a6927540;padding:11px 0 0;color:#e0d5c9;font-size:13px}
+#page-nations .chrono-spots li::before{content:'✦';color:#b99577;margin-right:11px}
+#page-nations .chronicle-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 0 0;color:#8b7d75;font:10px ui-monospace,monospace;letter-spacing:2px}
+#page-nations .chronicle-footer button{padding:14px 19px;color:#ead7c1;background:#2b1b20;border:1px solid #8e6360;font:12px system-ui,sans-serif;letter-spacing:0}
+#page-nations .chronicle-footer button:hover{background:#51272b}
+#page-nations .chronicle-footer b{margin-left:12px}
+@media(max-width:1100px){#page-nations .chronicle-country-picker{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){#page-nations .chronicle-topline{font-size:9px;letter-spacing:1px}#page-nations .chronicle-intro{padding:28px 0}#page-nations .chronicle-intro h1{font-size:clamp(42px,10vw,70px);letter-spacing:-2px}#page-nations .chronicle-hero-copy h2{letter-spacing:-1px}#page-nations .chrono-hero{height:550px}#page-nations .chrono-hero-copy h2{font-size:clamp(38px,8vw,66px);letter-spacing:-1px}#page-nations .chrono-hero-copy p{font-size:13px}#page-nations .chrono-section-heading{grid-template-columns:1fr;gap:14px}#page-nations .chrono-meta>div{padding:16px 10px}#page-nations .chrono-meta strong{font-size:12px}#page-nations .chrono-feature-points{grid-template-columns:1fr}#page-nations .chrono-feature-points>div{min-height:0;padding:17px}#page-nations .chrono-spotlight{grid-template-columns:1fr}#page-nations .chrono-spotlight-photo{min-height:290px}#page-nations .chrono-spotlight-copy{padding:25px}#page-nations .chronicle-footer{flex-direction:column;align-items:stretch}#page-nations .chronicle-footer button{width:100%}}
+@media(max-width:420px){#page-nations .chronicle-country-picker{grid-template-columns:repeat(2,minmax(0,1fr))}#page-nations .chrono-pick{padding:12px 9px;gap:7px}#page-nations .chrono-pick b{font-size:14px}#page-nations .chrono-pick span{font-size:10px}#page-nations .chrono-hero{height:470px}#page-nations .chrono-hero-copy{bottom:25px;left:22px;right:22px}#page-nations .chrono-hero-top{left:22px;right:22px;top:24px;font-size:9px;letter-spacing:1px}#page-nations .chrono-photo>div{margin:0 0 24px 23px}}
+
+
+/* EASTERN CONTINENT · Nordic reference / 8 expanding vertical image slices */
+.realm-cover-header{position:relative;overflow:hidden;padding:22px clamp(20px,5vw,66px) 46px;border:1px solid #504143;background:radial-gradient(ellipse 70% 75% at 93% 80%,#58303950,transparent),linear-gradient(130deg,#201d23,#0b0c10 67%);margin-bottom:16px}
+.realm-cover-header:after{content:'EAST';position:absolute;bottom:-.3em;right:-.07em;font:normal clamp(140px,24vw,340px)/1 Georgia,serif;color:#ffffff05;pointer-events:none}
+.realm-cover-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #b9a9973f;padding-bottom:13px;color:#b7a58f;font:600 10px/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em}
+.realm-cover-title{position:relative;z-index:1;max-width:900px;padding-top:48px}.realm-cover-kicker{font-size:12px;letter-spacing:.3em;color:#d3a986;font-weight:650}
+.realm-cover-title h1{margin:15px 0;font:400 clamp(42px,7.5vw,110px)/1.07 Georgia,'Noto Serif KR',serif;letter-spacing:-.06em;color:#f6ede4}.realm-cover-title h1 em{font-style:normal;color:#be7974}.realm-cover-title p{font-size:13px;line-height:1.95;color:#c9bcb6;max-width:540px}
+.realm-explore-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;color:#a8a09d;font-size:11px;letter-spacing:.05em;margin:23px 0 11px}
+.realm-explore-heading>span:first-child{color:#eee5d8;letter-spacing:.14em}.realm-explore-heading i{display:inline-block;vertical-align:middle;width:7px;height:7px;border-radius:50%;background:#b8665d;box-shadow:0 0 14px #df6e5b88;margin-right:8px}
+.realm-explore-heading b{font-size:10px;color:#c8a18d;margin-left:4px}.realm-explore-heading strong{color:#ddbb9b;font-size:17px;vertical-align:middle}
+.realm-expander{display:flex;gap:3px;width:100%;height:clamp(450px,56vw,665px);overflow:hidden;background:#08090b;border:1px solid #665348;box-shadow:0 25px 70px #0009;padding:3px;isolation:isolate}
+.realm-strip{--strip-accent:#8f6c63;appearance:none;position:relative;isolation:isolate;min-width:0;flex:1 1 0;border:0;border-right:1px solid #e2cbb820;border-radius:0;overflow:hidden;cursor:pointer;color:white;background:linear-gradient(175deg,#28262a,var(--strip-accent) 65%,#15171e);transition:flex 740ms cubic-bezier(.22,.75,.15,1),filter .4s ease;filter:saturate(.85);text-align:left;padding:0}
+.realm-strip:last-child{border-right:0}.realm-strip:before{content:'';position:absolute;inset:0;z-index:-3;opacity:1;background:radial-gradient(ellipse 80% 65% at 58% 34%,var(--strip-sun,#bb995d55),transparent 80%),radial-gradient(ellipse 110% 70% at 42% 100%,var(--strip-mid,#666),transparent 85%),linear-gradient(170deg,var(--strip-sky,#383942),var(--strip-mid,#404450) 60%,#18161c);transition:transform .9s ease;background-size:cover;background-position:center}
+.realm-strip:after{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,#060607e8 0%,#0808098a 25%,transparent 61%),linear-gradient(90deg,#07080838,#0a0b0b0a 50%,#09090966);pointer-events:none}
+.realm-strip.has-image:before{background-image:radial-gradient(ellipse 95% 75% at 40% 35%,#1d172344,transparent 78%),var(--uploaded-image);background-size:cover;background-position:center;opacity:.95}
+.realm-strip:hover:not(.is-active){filter:saturate(1.25) brightness(1.12)}.realm-strip.is-active{flex:5.5 1 0;filter:saturate(1)}.realm-strip.is-active:before{transform:scale(1.055)}
+.realm-strip-shadowart{position:absolute;z-index:-2;inset:0;pointer-events:none;background:radial-gradient(circle at 52% 38%,#ffffff12 0 4%,transparent 4.4%),linear-gradient(to top,#08080bb3,transparent 44%);}
+.realm-strip-shadowart:before{content:'';position:absolute;bottom:14%;left:-30%;width:170%;height:50%;background:linear-gradient(to top,#0c0d13f0,#10111b35);clip-path:polygon(0 100%,0 65%,10% 71%,20% 40%,32% 53%,45% 21%,53% 40%,62% 11%,76% 46%,85% 26%,100% 58%,100% 100%)}
+.realm-strip-shadowart:after{content:'';position:absolute;bottom:10%;left:2%;width:120%;height:29%;opacity:.55;background:linear-gradient(0deg,#080b10,#121522aa);clip-path:polygon(0 100%,0 40%,12% 40%,12% 24%,18% 24%,18% 42%,30% 42%,30% 16%,39% 16%,39% 40%,51% 40%,51% 5%,58% 5%,58% 36%,68% 36%,68% 21%,78% 21%,78% 41%,100% 41%,100% 100%)}
+.realm-strip .realm-strip-number{position:absolute;top:19px;left:50%;transform:translateX(-50%);font-family:Georgia,serif;font-size:14px;letter-spacing:.08em;color:#e8e0d6dd;white-space:nowrap;transition:left .35s ease,transform .35s ease}
+.realm-strip .realm-strip-glyph{position:absolute;top:29%;left:50%;transform:translateX(-50%);font:normal clamp(42px,8vw,128px)/1 Georgia,serif;color:#f5ebdf30;text-shadow:0 0 70px #ffffff22;transition:all .6s ease}
+.realm-strip .realm-strip-vertical{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);writing-mode:vertical-rl;white-space:nowrap;line-height:1;font-size:clamp(14px,1.8vw,21px);font-weight:600;letter-spacing:.24em;color:#f4eee5;text-shadow:0 2px 12px #000;transition:opacity .3s ease}
+.realm-strip .realm-strip-info{position:absolute;bottom:0;left:0;right:0;padding:0 clamp(18px,3vw,43px) clamp(32px,5vw,55px);min-width:0;transform:translateY(26px);opacity:0;visibility:hidden;transition:opacity .45s ease .13s,transform .6s ease .1s,visibility .1s linear .4s}
+.realm-strip .realm-strip-info .realm-strip-small{font-size:10px;letter-spacing:.2em;color:#d4c3a9;font-weight:700;display:block;margin-bottom:14px;white-space:nowrap}
+.realm-strip .realm-strip-info h2{font:400 clamp(29px,4vw,64px)/1.1 Georgia,'Noto Serif KR',serif;letter-spacing:-.075em;margin:0 0 16px;color:#fff7f0;white-space:normal;overflow-wrap:keep-all;text-shadow:0 3px 20px #000b}
+.realm-strip .realm-strip-info .realm-strip-tag{font-weight:700;color:#ecc2aa;font-size:13px;margin-bottom:12px}.realm-strip .realm-strip-info .realm-strip-intro{max-width:520px;font-size:12px;line-height:1.9;color:#e0d9d1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.realm-strip .realm-strip-info .realm-strip-cta{display:inline-block;margin-top:17px;padding-top:12px;border-top:1px solid #e1bdaa64;font-size:10px;letter-spacing:.12em;color:#ebc7aa}
+.realm-strip.is-active .realm-strip-info{transform:translateY(0);opacity:1;visibility:visible;transition:opacity .48s ease .18s,transform .6s ease .12s,visibility 0s}
+.realm-strip.is-active .realm-strip-vertical{opacity:0;pointer-events:none}.realm-strip.is-active .realm-strip-number{left:clamp(20px,3vw,42px);transform:none}.realm-strip.is-active .realm-strip-glyph{left:50%;top:22%;font-size:clamp(75px,11vw,164px);color:#fff5e62e}
+.realm-strip:focus-visible{outline:3px solid #e7c18c;outline-offset:-5px;z-index:5}
+.realm-selected-ribbon{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;border:1px solid #6653466a;border-top:0;background:linear-gradient(100deg,#171317,#21191b);padding:16px clamp(15px,3vw,32px)}
+.realm-selected-ribbon>div{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}.realm-selected-ribbon small{color:#be9b86;font-size:10px;letter-spacing:.17em}.realm-selected-ribbon strong{color:#eee8dd;font-family:Georgia,'Noto Serif KR',serif;font-weight:500;font-size:21px}.realm-selected-ribbon button{border:1px solid #a7836c75;background:#6d322e2f;color:#f1e4d0;padding:10px 17px;font-size:12px}.realm-selected-ribbon button span{font-size:17px;margin-left:8px;color:#e9ad8e}
+.realm-intel-head{margin-top:55px;padding-bottom:17px;border-bottom:1px solid #a78b7255;scroll-margin-top:20px}.realm-intel-head>span{font-size:10px;color:#bb957e;letter-spacing:.24em}.realm-intel-head h2{font:normal clamp(29px,4.2vw,52px)/1.2 Georgia,serif;margin:13px 0 9px;color:#f4e9de}.realm-intel-head p{font-size:12px;color:#aea9a4;line-height:1.6}.realm-intel-content{margin-top:23px}.realm-intel-content .realm-dossier{scroll-margin-top:25px}
+.realm-map-optional{margin-top:50px;border:1px solid #7864526f;background:#111114}.realm-map-optional summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px clamp(18px,3vw,28px);list-style:none;background:linear-gradient(115deg,#211b1c,#121418);color:#eee1cd}.realm-map-optional summary::-webkit-details-marker{display:none}.realm-map-optional summary b{margin-right:12px;color:#cb8f71}.realm-map-optional summary small{display:block;margin:7px 0 0 30px;font-size:11px;color:#a6a3a3}.realm-map-chevron{font-size:27px;color:#c39b82;transition:transform .2s ease}.realm-map-optional[open] .realm-map-chevron{transform:rotate(45deg)}.realm-map-optional #continentMap{padding:14px}.realm-map-optional .realm-quick-pick{margin-top:12px}
+.realm-content-end{margin-top:36px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:25px 0;border-top:1px solid #7d63525b;color:#a2968e;font-size:10px;letter-spacing:.13em}.realm-content-end button{background:transparent;color:#e0b39a;border:0;border-bottom:1px solid #bd9075;padding:7px 0;font-size:12px;letter-spacing:0}.realm-content-end b{font-size:17px}
+@media (max-width:850px){.realm-expander{height:510px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#866154 #120f12}.realm-strip{flex:0 0 73px;scroll-snap-align:center;transition:width .65s ease,flex-basis .65s ease;min-width:73px}.realm-strip.is-active{flex:0 0 min(61vw,440px)}.realm-strip .realm-strip-info h2{font-size:clamp(26px,5vw,43px)}.realm-strip .realm-strip-info{padding:0 18px 33px}.realm-strip.is-active .realm-strip-number{left:18px}.realm-strip-vertical{font-size:17px!important}}
+@media (max-width:520px){.realm-cover-header{padding:17px 19px 30px}.realm-cover-title{padding-top:34px}.realm-cover-title h1{font-size:clamp(41px,9vw,55px)}.realm-cover-title p{font-size:12px}.realm-cover-meta{font-size:9px;letter-spacing:.06em}.realm-explore-heading{align-items:flex-start;flex-direction:column;gap:4px}.realm-expander{height:480px}.realm-strip{flex-basis:64px;min-width:64px}.realm-strip.is-active{flex-basis:min(77vw,345px)}.realm-strip .realm-strip-info h2{font-size:clamp(29px,8.2vw,39px)}.realm-strip .realm-strip-info .realm-strip-intro{-webkit-line-clamp:4}.realm-strip .realm-strip-number{font-size:11px}.realm-selected-ribbon{padding:14px 16px}.realm-selected-ribbon strong{font-size:17px}.realm-selected-ribbon>div{gap:7px}.realm-intel-head{margin-top:40px}}
+@media (prefers-reduced-motion:reduce){.realm-strip,.realm-strip:before,.realm-strip .realm-strip-info,.realm-map-chevron{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -578,8 +692,31 @@ body::before{background:radial-gradient(ellipse 50% 38% at 65% 0%,#6915222b,tran
         </div>
         <div class="council-bottom"><div class="council-notice"><small>WAR DESK / 전선 현황</small><h3>시즌 1 — 동부대륙</h3><p>현재 등록된 국가는 여덟 개입니다. 지도상의 국경은 임시 작전 도식으로, 실제 지리와 설정에 맞춰 향후 보완할 수 있습니다. 서부대륙과 시즌 2는 본 사이트에서 다루지 않습니다.</p><button type="button" data-council-nav="archive">중간계 기록보관실 열기 ↗</button></div><div class="council-notice-media media-slot" data-image-slot="councilOrders"><span class="slot-await">IMAGE SLOT 02</span><strong class="slot-await">회의실 보조 일러스트 / 작전 문서</strong><small class="slot-await">IMAGE_URLS.councilOrders</small></div></div>
       </section>
-      <section class="page" id="page-continent"><div class="page-head"><div class="eyebrow">CARTOGRAPHIC ARCHIVE / EAST</div><h1 class="hero-title">동부대륙 <span>전략 지도</span></h1><p class="hero-desc">동부대륙 전역에 흩어진 8개 국가의 영토를 선택해 보세요. 선택한 국가가 강조되고 바로 아래에서 군사·지리·인물·전략 정보를 열람할 수 있습니다.</p></div><div class="atlas-masthead media-slot" data-image-slot="continentHeader"><span class="slot-await">IMAGE SLOT 03</span><strong class="slot-await">동부대륙 대표 전경</strong><small class="slot-await">IMAGE_URLS.continentHeader</small></div><div class="strategy-grid atlas-only"><div id="continentMap"></div><div id="continentIntel"></div></div><div class="rule"></div><div class="section-head"><strong>동부대륙 군략도 안내</strong><small>SEASON 01 · EASTERN ARCHIVE</small></div><div class="info-list"><div class="info-item"><small>01 / MAP SELECTION</small><h3>8개 국가 영토 선택</h3><p>각 영토를 누르면 선택한 국가가 강조되고 아래쪽에 해당 국가의 상세 브리핑이 나타납니다.</p></div><div class="info-item"><small>02 / INTELLIGENCE</small><h3>시즌 1 국가 기록</h3><p>국가별 수도, 문명, 군사 체계, 전략적 약점과 주요 인물을 열람합니다. 국경 윤곽은 V1 임시 도식입니다.</p></div></div></section>
-      <section class="page" id="page-nations"><div class="page-head"><div class="eyebrow">POLITICAL INTELLIGENCE</div><h1 class="hero-title">국가 <span>기록</span></h1><p class="hero-desc">원본 세계관에서 확정된 8개 국가의 개요입니다. 카드를 누르면 지도와 해당 국가의 상세 전략 브리핑으로 이동합니다.</p></div><div class="section-head"><strong id="nationHeading">동부대륙 8개국 · 시즌 1</strong><small>COUNTRY FILES / SEASON 01</small></div><div class="section-cover media-slot" data-image-slot="nationsHeader"><span class="slot-await">NATION ARCHIVE · 대표 이미지</span><small class="slot-await">IMAGE_URLS.nationsHeader</small></div><div class="slots-grid" id="nationSlots"></div><div class="divider-title">국가 기록 안내</div><div class="record-shell"><div class="form-preview"><h3>지도 브리핑에서 확인할 항목</h3><p class="section-explain">영토를 선택하면 지리·기후·문명·군사·취약점·주요 인물·거점·전략적 이점이 한눈에 펼쳐집니다.</p></div><div class="form-preview"><h3>시즌 1 기록 적용 기준</h3><p class="section-explain">이 사이트에는 동부대륙 8개국의 시즌 1 소개만 수록하며, 확인되지 않은 국경 변화나 사건은 임의로 작성하지 않았습니다.</p></div></div></section>
+      <section class="page" id="page-continent">
+        <header class="realm-cover-header">
+          <div class="realm-cover-meta"><span>EMPIRE OF ECLIPSE</span><span>SEASON I / THE EASTERN CONTINENT</span></div>
+          <div class="realm-cover-title"><span class="realm-cover-kicker">동부대륙 · 여덟 국가의 경계</span><h1>여덟 국가,<br><em>하나의 대륙.</em></h1><p>서로 다른 여덟 문명이 이 땅을 나누어 지배합니다. 한 국가의 기록을 선택하면 봉인된 풍경이 펼쳐지고, 그 아래에 왕국의 이야기가 나타납니다.</p></div>
+        </header>
+        <div class="realm-explore-heading"><span><i></i> EXPLORE THE EIGHT REALMS <b>08</b></span><span>패널 선택 · 모바일은 좌우로 밀어보세요 <strong>↔</strong></span></div>
+        <div class="realm-expander" id="realmExpander" aria-label="동부대륙 여덟 국가의 선택형 펼침 패널"></div>
+        <div class="realm-selected-ribbon"><div><small>SELECTED REALM / 선택된 국가</small><strong id="realmSelectedLabel">아스트리아 대제국</strong></div><button type="button" id="realmOpenIntel" aria-label="선택한 국가의 상세 브리핑으로 이동">국가 브리핑 보기 <span>↓</span></button></div>
+        <div class="realm-intel-head" id="realmIntelAnchor"><span>THE REALM / RECORD</span><h2>선택 국가 기록</h2><p>선택한 국가의 위치·수도·문명과 주요 정보를 펼쳐 보여드립니다.</p></div>
+        <div id="continentIntel" class="realm-intel-content" aria-live="polite"></div>
+        <details class="realm-map-optional" id="continentMapFold"><summary><span><b>✥</b> 지도로 위치 확인하기 <small>동부대륙의 여덟 영토를 지도에서도 선택할 수 있습니다</small></span><span class="realm-map-chevron">＋</span></summary><div id="continentMap"></div></details>
+        <div class="realm-content-end"><span>THE EIGHT REALMS · ARCHIVE COMPLETED</span><button type="button" data-go-nation-archive>국가 기록 상세 페이지로 이동 <b>↗</b></button></div>
+      </section>
+      <section class="page" id="page-nations">
+  <div class="chronicle-topline"><span>THE MIDDLE WORLD · THE EASTERN CONTINENT</span><span>ARCHIVE / 01 — 08</span></div>
+  <header class="chronicle-intro">
+    <span class="chronicle-issue">동부대륙을 여행하는 여덟 개의 기록</span>
+    <h1>여덟 나라,<br><em>서로 다른 세계.</em></h1>
+    <p>신성 제국의 백색 성도부터 태고의 세계수, 구름 위의 용인과 하늘을 떠도는 엘프의 궁전까지. 국토와 문명, 도시와 사람들의 삶을 소개하는 기록집입니다.</p>
+  </header>
+  <div class="chronicle-picker-head"><span>COUNTRY INDEX <b>08</b></span><span>국가를 선택하여 기록을 펼쳐보세요</span></div>
+  <div class="chronicle-country-picker" id="chroniclePicker" aria-label="동부대륙 국가 선택"></div>
+  <div class="chronicle-content" id="chronicleDetail" aria-live="polite"></div>
+  <footer class="chronicle-footer"><span>END OF CHRONICLE · EASTERN CONTINENT</span><button type="button" id="chronicleMapBtn">동부대륙 지도로 이동 <b>↗</b></button></footer>
+</section>
       <section class="page" id="page-factions">
   <div class="fac-topline"><span>IMPERIAL WAR COUNCIL <em>/</em> EASTERN CONTINENT</span><span>ARCHIVE NO. 008 — FACTION DOSSIERS</span></div>
   <div class="fac-titleblock" data-image-slot="factionsHeader"><div class="eyebrow">마왕군 비밀 전략보고 · 여덟 국가의 기록</div><h1>세력의 <i>민낯</i>을<br>들여다보다.</h1><p>동부대륙을 지배하는 여덟 국가. 그들이 쌓아 올린 권력, 지키려는 가치, 견고한 방어선과 그 안에 난 균열까지. 국가를 선택하여 작전 보고서를 펼치십시오.</p></div>
@@ -748,6 +885,34 @@ function makeMap(hostId){const host=$(hostId);host.innerHTML=`<div class="map-pa
   host.querySelectorAll('[data-nation]').forEach(g=>{g.addEventListener('click',()=>selectSector(Number(g.dataset.nation),true));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectSector(Number(g.dataset.nation),true)}})});
   host.querySelectorAll('[data-nation-pick]').forEach(b=>b.addEventListener('click',()=>selectSector(Number(b.dataset.nationPick),true)));
 }
+
+function renderRealmExpander(){
+ const host=$('realmExpander');if(!host)return;
+ const symbols=['✠','♛','✧','✥','☾','❧','ϟ','✦'];
+ const skies=[['#6c777b','#866a52','#e8d4ad78'],['#6b5f64','#90674f','#f2b97e77'],['#3b466c','#605b88','#b4b9ff80'],['#44646a','#647d70','#cbe5d17d'],['#35465d','#637899','#c8dcff70'],['#3c5d4c','#57775f','#b0f6bb70'],['#2d4d68','#416f8c','#8cc8f58a'],['#7c90a0','#8794a3','#eef6ff90']];
+ const strips=NATIONS.map((n,i)=>{const on=i===selectedIndex;const num=String(i+1).padStart(2,'0');
+  return `<button type="button" class="realm-strip${on?' is-active':''}" data-realm-strip="${i}" data-image-slot="countries.${n.id}.card" style="--strip-accent:${n.tone};--strip-sky:${skies[i][0]};--strip-mid:${skies[i][1]};--strip-sun:${skies[i][2]}" aria-pressed="${on}" aria-label="${ESCAPE(n.name)} 선택하여 펼쳐보기">
+ <span class="realm-strip-shadowart" aria-hidden="true"></span><span class="realm-strip-number">${num} / 08</span><span class="realm-strip-glyph" aria-hidden="true">${symbols[i]}</span>
+ <span class="realm-strip-vertical" aria-hidden="true">${ESCAPE(n.short)}</span>
+ <span class="realm-strip-info"><span class="realm-strip-small">REALM ${num} / EASTERN CONTINENT</span><h2>${ESCAPE(n.name)}</h2><span class="realm-strip-tag">${ESCAPE(n.tag)}</span><span class="realm-strip-intro">${ESCAPE(n.intro)}</span><span class="realm-strip-cta">SELECTED REALM · 아래에서 상세 브리핑 확인 ↓</span></span>
+ </button>`}).join('');
+ host.innerHTML=strips;
+ applyImageSlots(host);
+ host.querySelectorAll('[data-realm-strip]').forEach(b=>b.addEventListener('click',()=>{
+  const i=Number(b.dataset.realmStrip);if(i!==selectedIndex)selectSector(i,false);
+  if(window.matchMedia('(max-width:850px)').matches){
+    const left=b.offsetLeft-(host.clientWidth-b.clientWidth)/2;
+    host.scrollTo({left:Math.max(0,left),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
+  }
+ }));
+ renderRealmExpanderSelection();
+}
+function renderRealmExpanderSelection(){
+ const host=$('realmExpander');if(!host)return;
+ host.querySelectorAll('[data-realm-strip]').forEach(b=>{const on=Number(b.dataset.realmStrip)===selectedIndex;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});
+ const label=$('realmSelectedLabel');if(label)label.textContent=NATIONS[selectedIndex].name;
+}
+
 function renderMaps(){for(const id of ['continentMap']){const host=$(id);host.querySelector('.mapSeason').textContent=String(currentSeason).padStart(2,'0');host.querySelectorAll('[data-nation]').forEach(g=>{const on=Number(g.dataset.nation)===selectedIndex;g.classList.toggle('selected',on);g.setAttribute('aria-pressed',String(on))});host.querySelectorAll('[data-nation-pick]').forEach(b=>{const on=Number(b.dataset.nationPick)===selectedIndex;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))})}}
 function renderIntel(){const n=NATIONS[selectedIndex];const html=`<article class="intel realm-dossier" id="dossier-${n.id}">
  <div class="dossier-head"><div><span class="intel-id">IMPERIAL INTELLIGENCE · NATION FILE ${String(selectedIndex+1).padStart(2,'0')}</span><h2>${ESCAPE(n.name)}</h2><p class="dossier-tagline">${ESCAPE(n.tag)}</p></div><div class="dossier-seal">${n.icon}<small>동부대륙</small></div></div>
@@ -765,8 +930,36 @@ function renderIntel(){const n=NATIONS[selectedIndex];const html=`<article class
  $('continentIntel').innerHTML=html;
  document.querySelectorAll('.intel-action').forEach(btn=>btn.onclick=()=>showPage('nations'));
 }
-function selectSector(i,scroll=false){selectedIndex=i;renderMaps();renderIntel();if(scroll){const target=$('continentIntel');target?.scrollIntoView({behavior:'smooth',block:'start'})}}
-function renderNationSlots(){const el=$('nationSlots');el.innerHTML=NATIONS.map((n,i)=>`<button class="slot-card nation-card" type="button" data-jump="${i}"><div class="nation-card-image media-slot" data-image-slot="countries.${n.id}.card"><span class="slot-await">국가 일러스트</span></div><div class="slot-index"><span>NATION ${String(i+1).padStart(2,'0')}</span><span class="ch-tag red">기록 확보</span></div><div class="slot-glyph"><span class="emblem-img media-slot" data-image-slot="countries.${n.id}.emblem">${n.icon}</span></div><h3>${ESCAPE(n.name)}</h3><p>${ESCAPE(n.zone)} · ${ESCAPE(n.tag)}<br/>수도 ${ESCAPE(n.capital)}</p><div class="slot-divider"></div><div class="slot-bottom">지도에서 상세 브리핑 열기 ↗</div></button>`).join('');applyImageSlots(el);el.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{selectedIndex=Number(b.dataset.jump);showPage('continent');renderMaps();renderIntel();$('continentIntel').scrollIntoView({behavior:'smooth',block:'start'})})}
+function selectSector(i,scroll=false){selectedIndex=i;renderMaps();renderRealmExpanderSelection();renderIntel();if(scroll){const target=$('continentIntel');target?.scrollIntoView({behavior:'smooth',block:'start'})}}
+let activeChronicle=0;
+function renderNationSlots(){renderChroniclePicker();renderChronicleDetail();}
+function renderChroniclePicker(){const root=$('chroniclePicker');if(!root)return;
+root.innerHTML=NATIONS.map((n,i)=>`<button type="button" class="chrono-pick" aria-pressed="${i===activeChronicle}" data-chrono="${i}"><b>${String(i+1).padStart(2,'0')}</b><span>${ESCAPE(n.short)}<small>${ESCAPE(n.zone)}</small></span></button>`).join('');
+root.querySelectorAll('[data-chrono]').forEach(b=>b.onclick=()=>{activeChronicle=Number(b.dataset.chrono);renderChroniclePicker();renderChronicleDetail();const head=$('chronicleDetail');head?.scrollIntoView({behavior:'smooth',block:'start'});});
+$('chronicleMapBtn').onclick=()=>{selectedIndex=activeChronicle;showPage('continent');renderMaps();renderIntel()};
+}
+function renderChronicleDetail(){const n=NATIONS[activeChronicle],root=$('chronicleDetail');if(!root||!n)return;
+const serial=String(activeChronicle+1).padStart(2,'0');const cityPlaces=n.places.split(' · ').filter(Boolean).slice(0,6);const res=n.resources.split('·').map(x=>x.trim()).filter(Boolean).slice(0,5);
+root.innerHTML=`
+<article class="chrono-hero" aria-labelledby="chronoTitle">
+ <div class="chrono-hero-media media-slot" data-image-slot="countries.${n.id}.hero"></div>
+ <div class="chrono-hero-ornament" aria-hidden="true"></div>
+ <div class="chrono-hero-top"><span>THE EIGHT REALMS / RECORD ${serial}</span><span>EMPIRE OF ECLIPSE</span></div>
+ <div class="chrono-hero-copy"><small>${ESCAPE(n.zone)} · ${ESCAPE(n.kind)}</small><h2 id="chronoTitle">${ESCAPE(n.name)}</h2><p>${ESCAPE(n.intro)}</p></div>
+ <span class="chrono-photo-hint">REPRESENTATIVE SCENERY · IMAGE ${serial}</span>
+</article>
+<div class="chrono-meta"><div><small>THE REGION</small><strong>${ESCAPE(n.zone)}</strong></div><div><small>THE CAPITAL</small><strong>${ESCAPE(n.capital)}</strong></div><div><small>THE CIVILIZATION</small><strong>${ESCAPE(n.kind)}</strong></div></div>
+<section class="chrono-section"><div class="chrono-section-heading"><div><span class="chrono-section-no">01 / LAND & CLIMATE</span><h3>풍경과 영토</h3></div><p>${ESCAPE(n.geo)}</p></div>
+<div class="chrono-photo media-slot" data-image-slot="countries.${n.id}.landscape"><div><small>LANDSCAPE ARCHIVE</small><strong>이 나라의 풍경</strong></div><span class="chrono-empty">LANDSCAPE IMAGE · 링크 입력 예정</span></div>
+<div class="chrono-feature-points"><div><b>위치</b><p>${ESCAPE(n.zone)}</p></div><div><b>환경과 기후</b><p>${ESCAPE(n.geo.split(/[.,。]/)[0])}</p></div><div><b>지역의 산물</b><p>${ESCAPE(res.join(' · ')||n.resources)}</p></div></div></section>
+<section class="chrono-section"><div class="chrono-section-heading"><div><span class="chrono-section-no">02 / HISTORY & CULTURE</span><h3>문명과 삶</h3></div><p>${ESCAPE(n.civ)}</p></div>
+<div class="chrono-spotlight"><div class="chrono-spotlight-photo media-slot" data-image-slot="countries.${n.id}.card"><span class="slot-await">문명·생활 배경 이미지</span></div><div class="chrono-spotlight-copy"><span class="chrono-section-no">CULTURAL IDENTITY</span><h3>${ESCAPE(n.tag)}</h3><p>${ESCAPE(n.civ)}</p><span class="chrono-section-no">문화의 정체성을 기록한 문명 아카이브</span></div></div></section>
+<section class="chrono-section"><div class="chrono-section-heading"><div><span class="chrono-section-no">03 / CAPITAL & LANDMARKS</span><h3>수도와 명소</h3></div><p>수도 <strong style="color:#f3dfc2;font-weight:500">${ESCAPE(n.capital)}</strong>를 중심으로 형성된 주요 시설과 국가의 상징을 살펴봅니다.</p></div>
+<div class="chrono-photo media-slot" data-image-slot="countries.${n.id}.capital"><div><small>CAPITAL CITY</small><strong>${ESCAPE(n.capital)}</strong></div><span class="chrono-empty">CAPITAL IMAGE · 링크 입력 예정</span></div>
+<div class="chrono-feature-points">${cityPlaces.slice(0,3).map((place,i)=>`<div><b>LANDMARK ${String(i+1).padStart(2,'0')}</b><p>${ESCAPE(place)}</p></div>`).join('')}</div></section>
+`;
+applyImageSlots(root);
+}
 
 const FACTION_COLORS={luminus:'#d7b38e',astria:'#d4aa81',etheria:'#93a9bd',silvarion:'#adbebd',selenia:'#b4aacd',verdia:'#8aa48e',azulon:'#9bacc0',frijia:'#d4c9b9'};
 const FACTION_STORIES={
@@ -814,7 +1007,9 @@ function toggleSidebar(){const open=$('sidebar').classList.toggle('open');$('sid
 
 $('sideNav').querySelectorAll('button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-council-nav]').forEach(b=>b.onclick=()=>showPage(b.dataset.councilNav));$('mobileMenu').onclick=toggleSidebar;$('sidebarShade').onclick=closeSidebar;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar()});
 makeMap('continentMap');applyImageSlots($('continentMap'));
-$('nationHeading').textContent='동부대륙 8개국 · 시즌 1';renderMaps();renderIntel();renderNationSlots();renderFactionsAndFigures();applyImageSlots();
+renderRealmExpander();renderMaps();renderIntel();
+$('realmOpenIntel').onclick=()=>$('realmIntelAnchor').scrollIntoView({behavior:'smooth',block:'start'});
+document.querySelectorAll('[data-go-nation-archive]').forEach(b=>b.onclick=()=>{activeChronicle=selectedIndex;renderNationSlots();showPage('nations')});renderNationSlots();renderFactionsAndFigures();applyImageSlots();
 // 로딩이 완료되거나 스킵 버튼 클릭 시 중복 타이머 없이 즉시 화면을 전환합니다.
 const intro=$('intro'),app=$('app');let ended=false,opened=false,frame=0,finishTimer=null,fadeTimer=null;
 function enterSite(immediately=false){if(ended)return;ended=true;cancelAnimationFrame(frame);clearTimeout(finishTimer);clearTimeout(fadeTimer);app.classList.add('ready');if(!immediately){intro.classList.add('doors-open');finishTimer=setTimeout(()=>{intro.classList.add('is-leaving');fadeTimer=setTimeout(()=>intro.remove(),800)},1430)}else{intro.classList.add('is-leaving');fadeTimer=setTimeout(()=>intro.remove(),800)}}
